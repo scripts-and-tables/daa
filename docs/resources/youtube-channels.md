@@ -29,7 +29,11 @@ The channels worth subscribing to, with a one-line *why* for each.
 
 ## SQL & databases
 
-- *To be added in [Months 3–4](../curriculum/month-03-sql-fundamentals/index.md).*
+- [**Alex The Analyst — SQL for Data Analytics playlist**](https://www.youtube.com/playlist?list=PLUaB-1hjhk8FE_XZ87vPPSfHqb6OcM0cF) — analyst-focused SQL tutorial that builds a portfolio-ready project alongside the syntax. Used in [Weeks 10–12](../curriculum/month-03-sql-fundamentals/week-10-select-where-groupby.md).
+- [**Mike Dane on freeCodeCamp**](https://www.youtube.com/watch?v=HXV3zeQKqGY) — the most-watched free SQL course on YouTube; clear and slow-paced. Used in [Week 10](../curriculum/month-03-sql-fundamentals/week-10-select-where-groupby.md).
+- [**Bert Wagner**](https://www.youtube.com/@bertwagner) — short, focused videos on SQL Server internals, joins, query optimisation. The *visualising joins* and *logical query processing order* videos are mandatory viewing.
+- [**Brent Ozar**](https://www.youtube.com/@BrentOzar) — one of the most respected SQL Server consultants in the world. Free training videos heavy on performance tuning and the *EXISTS vs IN* explanation.
+- [**Socratica**](https://www.youtube.com/@Socratica) — short, well-produced explainers across SQL, Python, statistics. Used in [Weeks 11–12](../curriculum/month-03-sql-fundamentals/week-11-joins.md).
 
 ## Power BI / DAX
 

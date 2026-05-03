@@ -31,7 +31,10 @@ The books cited across the curriculum, in the order they first become useful.
 
 ## SQL
 
-- *SQL for Data Analysis* — Cathy Tanimura. Practical SQL, organised by analytical pattern. **Used in:** [Months 3–4](../curriculum/month-03-sql-fundamentals/index.md).
+- *SQL for Data Analysis* — Cathy Tanimura. Practical SQL, organised by analytical pattern. **Used in:** [Months 3–4](../curriculum/month-03-sql-fundamentals/index.md). Chapter mapping: ch.1 → [Week 9](../curriculum/month-03-sql-fundamentals/week-09-relational-model.md); ch.2 → [Weeks 10–11](../curriculum/month-03-sql-fundamentals/week-10-select-where-groupby.md); ch.4–5 → [Week 12](../curriculum/month-03-sql-fundamentals/week-12-subqueries-ctes.md); ch.3 → [Month 4](../curriculum/month-04-sql-advanced/index.md).
+- *Joe Celko's SQL for Smarties* — Joe Celko. Old-school, dense, opinionated; the corner cases (especially around `EXISTS` and three-valued logic) are covered nowhere else. Used as supplementary reading in [Weeks 11–12](../curriculum/month-03-sql-fundamentals/week-11-joins.md).
+- *Database Design for Mere Mortals* — Michael J. Hernandez. The most readable introduction to relational design in print. **Used in:** [Week 9](../curriculum/month-03-sql-fundamentals/week-09-relational-model.md).
+- [*Use The Index, Luke!*](https://use-the-index-luke.com/) — Markus Winand. Free online book on SQL performance and indexing. Skim now, return in [Month 4, Week 15](../curriculum/month-04-sql-advanced/index.md).
 
 ## Python & ML
 

@@ -123,7 +123,12 @@ nav:
           - Week 6 — Lookup & logic formulas: curriculum/month-02-spreadsheets/week-06-lookup-logic-formulas.md
           - Week 7 — Pivot tables & charts: curriculum/month-02-spreadsheets/week-07-pivot-tables-charts.md
           - Week 8 — Power Query (M): curriculum/month-02-spreadsheets/week-08-power-query.md
-      - 03 — SQL Fundamentals: curriculum/month-03-sql-fundamentals/index.md
+      - 03 — SQL Fundamentals:
+          - Month overview: curriculum/month-03-sql-fundamentals/index.md
+          - Week 9 — Relational model: curriculum/month-03-sql-fundamentals/week-09-relational-model.md
+          - Week 10 — SELECT / WHERE / GROUP BY: curriculum/month-03-sql-fundamentals/week-10-select-where-groupby.md
+          - Week 11 — Joins: curriculum/month-03-sql-fundamentals/week-11-joins.md
+          - Week 12 — Subqueries & CTEs: curriculum/month-03-sql-fundamentals/week-12-subqueries-ctes.md
       - 04 — SQL Advanced: curriculum/month-04-sql-advanced/index.md
       - 05 — Visualization (Power BI): curriculum/month-05-visualization-powerbi/index.md
       - 06 — Python for Analytics: curriculum/month-06-python-pandas/index.md
