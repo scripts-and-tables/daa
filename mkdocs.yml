@@ -117,7 +117,12 @@ nav:
           - Week 2 — Problem framing: curriculum/month-01-foundations/week-02-problem-framing.md
           - Week 3 — Math refresher: curriculum/month-01-foundations/week-03-math-refresher.md
           - Week 4 — Stats intuition: curriculum/month-01-foundations/week-04-stats-intuition.md
-      - 02 — Spreadsheets (Excel): curriculum/month-02-spreadsheets/index.md
+      - 02 — Spreadsheets (Excel):
+          - Month overview: curriculum/month-02-spreadsheets/index.md
+          - Week 5 — Excel UI & references: curriculum/month-02-spreadsheets/week-05-excel-ui-references.md
+          - Week 6 — Lookup & logic formulas: curriculum/month-02-spreadsheets/week-06-lookup-logic-formulas.md
+          - Week 7 — Pivot tables & charts: curriculum/month-02-spreadsheets/week-07-pivot-tables-charts.md
+          - Week 8 — Power Query (M): curriculum/month-02-spreadsheets/week-08-power-query.md
       - 03 — SQL Fundamentals: curriculum/month-03-sql-fundamentals/index.md
       - 04 — SQL Advanced: curriculum/month-04-sql-advanced/index.md
       - 05 — Visualization (Power BI): curriculum/month-05-visualization-powerbi/index.md
