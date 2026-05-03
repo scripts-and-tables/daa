@@ -1,0 +1,139 @@
+site_name: Data Analytics Academy
+site_description: A one-year meta-course for data analytics — curated external resources, structured month by month.
+site_author: DAA
+site_url: https://scripts-and-tables.github.io/daa/
+
+repo_name: scripts-and-tables/daa
+repo_url: https://github.com/scripts-and-tables/daa
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    - content.action.edit
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - tags
+  - awesome-pages
+  - glightbox
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+      fallback_to_build_date: true
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/scripts-and-tables/daa
+  generator: false
+
+copyright: |
+  &copy; 2026 Data Analytics Academy &middot;
+  Content licensed under
+  <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>
+
+nav:
+  - Home: index.md
+  - About:
+      - How to use: about/how-to-use.md
+      - Learning philosophy: about/learning-philosophy.md
+  - Roadmap: roadmap/index.md
+  - Curriculum:
+      - Overview: curriculum/index.md
+      - 01 — Foundations:
+          - Month overview: curriculum/month-01-foundations/index.md
+          - Week 1 — Data literacy: curriculum/month-01-foundations/week-01-data-literacy.md
+          - Week 2 — Problem framing: curriculum/month-01-foundations/week-02-problem-framing.md
+          - Week 3 — Math refresher: curriculum/month-01-foundations/week-03-math-refresher.md
+          - Week 4 — Stats intuition: curriculum/month-01-foundations/week-04-stats-intuition.md
+      - 02 — Spreadsheets (Excel): curriculum/month-02-spreadsheets/index.md
+      - 03 — SQL Fundamentals: curriculum/month-03-sql-fundamentals/index.md
+      - 04 — SQL Advanced: curriculum/month-04-sql-advanced/index.md
+      - 05 — Visualization (Power BI): curriculum/month-05-visualization-powerbi/index.md
+      - 06 — Python for Analytics: curriculum/month-06-python-pandas/index.md
+      - 07 — Statistics for Analysts: curriculum/month-07-statistics/index.md
+      - 08 — Data Modeling & Warehousing: curriculum/month-08-data-modeling-warehousing/index.md
+      - 09 — ETL/ELT & Pipelines: curriculum/month-09-etl-elt-pipelines/index.md
+      - 10 — Azure Data Platform: curriculum/month-10-azure-data-platform/index.md
+      - 11 — ML Fundamentals: curriculum/month-11-ml-fundamentals/index.md
+      - 12 — Capstone & Soft Skills: curriculum/month-12-capstone-soft-skills/index.md
+  - Tracks:
+      - Certifications: tracks/certifications.md
+      - Tools: tracks/tools.md
+  - Resources:
+      - Books: resources/books.md
+      - Courses: resources/courses.md
+      - YouTube channels: resources/youtube-channels.md
+      - Datasets: resources/datasets.md
+  - Glossary: glossary.md

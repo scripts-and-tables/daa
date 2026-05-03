@@ -1,0 +1,25 @@
+/* DAA — small theme tweaks on top of mkdocs-material defaults. */
+
+/* Make the home-page card grid a little airier. */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid.cards > .card {
+  border-radius: 0.6rem;
+}
+
+/* Tighten up the curriculum tables (lots of long links per row). */
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  padding: 0.6em 0.9em;
+  font-size: 0.85rem;
+}
+
+/* Visual cue on "stub" / "draft" status frontmatter — applied via .md-content custom rule below.
+   Currently informational only; can be wired up to a hook later. */
+.daa-stub-banner {
+  background: var(--md-warning-bg-color, #fff8e1);
+  border-left: 0.25rem solid var(--md-warning-fg-color, #e6a23c);
+  padding: 0.6rem 0.9rem;
+  margin: 0.8rem 0 1.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.85rem;
+}
