@@ -18,7 +18,7 @@ status: complete
 - [ ] Read an ER (entity-relationship) diagram and identify entities, attributes, and the cardinality of each relationship (1-to-1, 1-to-many, many-to-many).
 - [ ] Explain *first*, *second*, and *third normal form* (1NF / 2NF / 3NF) using one concrete example each.
 - [ ] Recognise when a schema is *under-normalised* (a "spreadsheet in a database") and the analytical problems that causes.
-- [ ] Distinguish OLTP-style normalised schemas from OLAP-style denormalised schemas (full treatment in [Month 8](../month-08-data-modeling-warehousing/index.md)).
+- [ ] Distinguish OLTP-style normalised schemas from OLAP-style denormalised schemas (full treatment in [Month 4, Week 16](../month-04-sql-advanced/index.md)).
 
 ## Prerequisites
 
@@ -66,13 +66,13 @@ Total: ~6h  (Reading: 2h · Video: 2h · Hands-on: 2h)
     1. Why does a primary key have to be both *unique* and *not null*?
     2. A column violates 1NF — what does that mean concretely? Give an example.
     3. Why is a many-to-many relationship usually represented with a third table?
-    4. Why are operational (OLTP) schemas typically more normalised than analytical (OLAP) schemas? (Foreshadows [Month 8](../month-08-data-modeling-warehousing/index.md).)
+    4. Why are operational (OLTP) schemas typically more normalised than analytical (OLAP) schemas? (Foreshadows [Month 4, Week 16](../month-04-sql-advanced/index.md).)
 
 ## My notes
 
 The single most useful sentence about normalisation is **"each fact lives in exactly one place"**. If a customer's address is on every order row, you have to update twenty rows when they move house — and the moment one of those updates fails, the database disagrees with itself. Normalisation is the discipline of designing schemas where that *cannot* happen.
 
-The opposite of that — deliberate duplication for query speed — is **denormalisation**, and is what analytical warehouses do on purpose. You will design denormalised star schemas in [Month 8](../month-08-data-modeling-warehousing/index.md). The reason normalisation comes first is that you cannot defensibly denormalise something you don't first understand normalised.
+The opposite of that — deliberate duplication for query speed — is **denormalisation**, and is what analytical warehouses do on purpose. You will design denormalised star schemas in [Month 4, Week 16](../month-04-sql-advanced/index.md). The reason normalisation comes first is that you cannot defensibly denormalise something you don't first understand normalised.
 
 Most beginners over-rotate on normalisation theory. You do not need 4NF, 5NF, or BCNF to be a competent analyst. 1NF, 2NF, and 3NF — and the sentence above — are the working set.
 

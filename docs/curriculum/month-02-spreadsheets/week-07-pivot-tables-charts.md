@@ -10,7 +10,7 @@ status: complete
 
 # Week 7 — Pivot tables & charts
 
-> Pivot tables are the cheapest, fastest way to summarise tabular data — and the mental model behind them is the same one you will reuse next month for SQL `GROUP BY`. Charts get a smaller share of this week because the *principles* of visualisation land in [Month 5](../month-05-visualization-powerbi/index.md); this week is about competence, not artistry.
+> Pivot tables are the cheapest, fastest way to summarise tabular data — and the mental model behind them is the same one you will reuse next month for SQL `GROUP BY`. Charts get a smaller share of this week because the *principles* of visualisation land in [Month 8 — Power BI Core](../month-08-power-bi-core/index.md); this week is about competence, not artistry.
 
 ## Learning objectives
 
@@ -41,7 +41,7 @@ Total: ~6h  (Reading: 1h · Video: 2h · Hands-on: 3h)
 - [Create a PivotTable to analyze worksheet data](https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576) — **Why:** the canonical "first pivot table" reference, complete with the Recommended PivotTables shortcut.
 - [Use slicers to filter data](https://support.microsoft.com/en-us/office/use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d) — **Why:** slicers + report connections are how you turn a single pivot table into a small dashboard. The same idea reappears in Power BI.
 - [Group or ungroup data in a PivotTable](https://support.microsoft.com/en-us/office/group-or-ungroup-data-in-a-pivottable-c9d1ddd0-6580-47d1-82bc-c84a5a340725) — **Why:** date grouping is the single most useful pivot-table feature people miss.
-- [Available chart types in Office](https://support.microsoft.com/en-us/office/available-chart-types-in-office-a6187218-807e-4103-9e0a-27cdb19afb90) — **Why:** quick reference for choosing chart type. You will revisit chart *choice* properly in [Month 5, Week 17](../month-05-visualization-powerbi/index.md).
+- [Available chart types in Office](https://support.microsoft.com/en-us/office/available-chart-types-in-office-a6187218-807e-4103-9e0a-27cdb19afb90) — **Why:** quick reference for choosing chart type. You will revisit chart *choice* properly in [Month 8, Week 29](../month-08-power-bi-core/index.md).
 
 ### Videos
 
@@ -52,7 +52,7 @@ Total: ~6h  (Reading: 1h · Video: 2h · Hands-on: 3h)
 ### Books / long-form reading
 
 - *Pivot Table Data Crunching* — Bill Jelen ("Mr Excel") & Michael Alexander. Chapters 1–4 this week. **Why:** the canonical pivot-table book; the early chapters cover everything above and a dozen edge cases.
-- *Storytelling with Data* — Cole Knaflic (skim chapter 2 only — *choosing an effective visual*). **Why:** keeps you honest before you start building charts. The full read lands in [Month 5](../month-05-visualization-powerbi/index.md).
+- *Storytelling with Data* — Cole Knaflic (skim chapter 2 only — *choosing an effective visual*). **Why:** keeps you honest before you start building charts. The full read lands in [Month 8 — Power BI Core](../month-08-power-bi-core/index.md).
 
 ### Certifications (if relevant)
 
@@ -80,7 +80,7 @@ The biggest practical trap is that **a pivot table never refreshes itself**. If 
 
 The second trap is **mixed data types in a column**. One stray `"N/A"` in an `Amount` column and the entire column is treated as text — `Sum` quietly returns zero. Always sanity-check the row count: `COUNT` (numeric only) and `COUNTA` (any non-blank) should match.
 
-Avoid building "Excel dashboards" with slicers as your end goal for the year. The work transfers cleanly to Power BI in [Month 5](../month-05-visualization-powerbi/index.md), where it scales further; treat the slicer-and-pivot dashboard as an intermediate skill, not the final state.
+Avoid building "Excel dashboards" with slicers as your end goal for the year. The work transfers cleanly to Power BI in [Month 8 — Power BI Core](../month-08-power-bi-core/index.md), where it scales further; treat the slicer-and-pivot dashboard as an intermediate skill, not the final state.
 
 ## Further / optional
 

@@ -10,7 +10,7 @@ status: complete
 
 # Week 4 — Statistics intuition
 
-> Just enough statistics to read a chart honestly and not be embarrassed in a meeting. The deeper version — confidence intervals, hypothesis testing, A/B — lands in [Month 7](../month-07-statistics/index.md). This week is about *intuition*.
+> Just enough statistics to read a chart honestly and not be embarrassed in a meeting. The deeper version — confidence intervals, hypothesis testing, A/B — lands in [Month 6 — Python Statistics](../month-06-statistics-python/index.md). This week is about *intuition*.
 
 ## Learning objectives
 

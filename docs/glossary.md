@@ -9,7 +9,7 @@ The vocabulary used across the curriculum. Bookmark this page; you will return t
 ## A
 
 **A/B testing**
-:   A controlled experiment where two variants (A and B) are randomly served to users, and a metric is compared between groups. Covered in [Month 7](curriculum/month-07-statistics/index.md).
+:   A controlled experiment where two variants (A and B) are randomly served to users, and a metric is compared between groups. Covered in [Month 6](curriculum/month-06-statistics-python/index.md).
 
 **Active recall**
 :   The learning technique of *retrieving* information from memory rather than re-reading it. The single highest-leverage study habit. See [Learning philosophy](about/learning-philosophy.md).
@@ -28,28 +28,28 @@ The vocabulary used across the curriculum. Bookmark this page; you will return t
 :   A named, temporary result set defined within a SQL query using `WITH`. Used to make complex queries readable. Covered in [Month 3](curriculum/month-03-sql-fundamentals/index.md).
 
 **Confidence interval**
-:   A range of values, computed from a sample, that with a stated probability (commonly 95%) contains the true population parameter. Covered in [Month 7](curriculum/month-07-statistics/index.md).
+:   A range of values, computed from a sample, that with a stated probability (commonly 95%) contains the true population parameter. Covered in [Month 6](curriculum/month-06-statistics-python/index.md).
 
 ## D
 
 **DAX (Data Analysis Expressions)**
-:   The formula language used in Power BI, Excel Power Pivot, and Analysis Services. Covered in [Month 5](curriculum/month-05-visualization-powerbi/index.md).
+:   The formula language used in Power BI, Excel Power Pivot, and Analysis Services. Covered in [Month 8](curriculum/month-08-power-bi-core/index.md).
 
 **Dimension**
-:   In dimensional modelling, a table that describes the *who / what / where / when* of a business event — customers, products, dates, stores. Compare *fact*. Covered in [Month 8](curriculum/month-08-data-modeling-warehousing/index.md).
+:   In dimensional modelling, a table that describes the *who / what / where / when* of a business event — customers, products, dates, stores. Compare *fact*. Covered in [Month 4](curriculum/month-04-sql-advanced/index.md).
 
 ## E
 
 **ELT (Extract–Load–Transform)**
-:   Modern variant of ETL where data is loaded into the warehouse *first* and transformed in-warehouse using SQL (often via dbt). Covered in [Month 9](curriculum/month-09-etl-elt-pipelines/index.md).
+:   Modern variant of ETL where data is loaded into the warehouse *first* and transformed in-warehouse using SQL (often via dbt). Covered in [Month 7](curriculum/month-07-python-workflows/index.md).
 
 **ETL (Extract–Transform–Load)**
-:   The classic data-pipeline pattern where data is extracted from sources, transformed in flight, and loaded into the target. Covered in [Month 9](curriculum/month-09-etl-elt-pipelines/index.md).
+:   The classic data-pipeline pattern where data is extracted from sources, transformed in flight, and loaded into the target. Covered in [Month 7](curriculum/month-07-python-workflows/index.md).
 
 ## F
 
 **Fact**
-:   In dimensional modelling, a table containing the *measurements* of a business event — quantities, amounts, durations. Compare *dimension*. Covered in [Month 8](curriculum/month-08-data-modeling-warehousing/index.md).
+:   In dimensional modelling, a table containing the *measurements* of a business event — quantities, amounts, durations. Compare *dimension*. Covered in [Month 4](curriculum/month-04-sql-advanced/index.md).
 
 ## G
 
@@ -72,7 +72,7 @@ The vocabulary used across the curriculum. Bookmark this page; you will return t
 ## O
 
 **OLAP (Online Analytical Processing)**
-:   Systems and patterns optimised for analytical queries — large reads, aggregations, joins. Compare *OLTP*. Covered in [Month 8](curriculum/month-08-data-modeling-warehousing/index.md).
+:   Systems and patterns optimised for analytical queries — large reads, aggregations, joins. Compare *OLTP*. Covered in [Month 4](curriculum/month-04-sql-advanced/index.md).
 
 **OLTP (Online Transactional Processing)**
 :   Systems optimised for production transactional workloads — small reads/writes, low latency, ACID guarantees. Compare *OLAP*.
@@ -85,12 +85,12 @@ The vocabulary used across the curriculum. Bookmark this page; you will return t
 ## R
 
 **RLS (Row-Level Security)**
-:   Restricting which rows a user can see in a report based on their identity or group. Covered in [Month 5](curriculum/month-05-visualization-powerbi/index.md).
+:   Restricting which rows a user can see in a report based on their identity or group. Covered in [Month 8](curriculum/month-08-power-bi-core/index.md).
 
 ## S
 
 **SCD (Slowly Changing Dimension)**
-:   A pattern for handling changes to dimension attributes over time — *Type 1* overwrites, *Type 2* keeps history. Covered in [Month 8](curriculum/month-08-data-modeling-warehousing/index.md).
+:   A pattern for handling changes to dimension attributes over time — *Type 1* overwrites, *Type 2* keeps history. Covered in [Month 4](curriculum/month-04-sql-advanced/index.md).
 
 **SMART (Specific, Measurable, Achievable, Relevant, Time-bound)**
 :   Criteria for a well-framed analytical question. Covered in [Month 1, Week 2](curriculum/month-01-foundations/week-02-problem-framing.md).
@@ -99,4 +99,4 @@ The vocabulary used across the curriculum. Bookmark this page; you will return t
 :   A learning technique where reviews are scheduled at expanding intervals. Anki is the canonical tool. See [Learning philosophy](about/learning-philosophy.md).
 
 **Star schema**
-:   A dimensional model with one *fact* table joined to several *dimension* tables. Compare *snowflake schema* (where dimensions are themselves normalised). Covered in [Month 8](curriculum/month-08-data-modeling-warehousing/index.md).
+:   A dimensional model with one *fact* table joined to several *dimension* tables. Compare *snowflake schema* (where dimensions are themselves normalised). Covered in [Month 4](curriculum/month-04-sql-advanced/index.md).

@@ -31,7 +31,7 @@ Where to find data to practise on. The shortlist below biases towards datasets t
 - **AdventureWorks** — Microsoft's sample relational database, available for SQL Server / Azure SQL. Used widely in PL-300 prep.
 - **Sakila** — MySQL/PostgreSQL DVD-rental sample database. Friendly, well-documented schema.
 - **Northwind** — old but classic; still common in tutorials.
-- [**dbt Labs jaffle_shop**](https://github.com/dbt-labs/jaffle_shop) — small example used in [Month 9](../curriculum/month-09-etl-elt-pipelines/index.md) for dbt exercises.
+- [**dbt Labs jaffle_shop**](https://github.com/dbt-labs/jaffle_shop) — small example used in [Month 7 — Python Workflows & ETL](../curriculum/month-07-python-workflows/index.md) for dbt exercises.
 
 ## Domain-specific & fun
 
@@ -42,4 +42,4 @@ Where to find data to practise on. The shortlist below biases towards datasets t
 
 ## A note on scrappy data
 
-Once you finish [Month 6](../curriculum/month-06-python-pandas/index.md) you will be tempted to skip the cleaning practice. Don't. Find one *messy* dataset (ideally one of your own) and spend an afternoon on it. Real-world data is messy; the skill of *making it tidy* is itself the analytical skill.
+Once you finish [Month 5 — Python Fundamentals & pandas](../curriculum/month-05-python-fundamentals/index.md) you will be tempted to skip the cleaning practice. Don't. Find one *messy* dataset (ideally one of your own) and spend an afternoon on it. Real-world data is messy; the skill of *making it tidy* is itself the analytical skill.

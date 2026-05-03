@@ -25,7 +25,7 @@ The channels worth subscribing to, with a one-line *why* for each.
 - [**MyOnlineTrainingHub (Mynda Treacy)**](https://www.youtube.com/@MyOnlineTrainingHub) — Excel + Power BI MVP; especially strong on the comparison videos (`VLOOKUP` vs `INDEX/MATCH` vs `XLOOKUP`).
 - [**Excel Campus (Jon Acampora)**](https://www.youtube.com/@ExcelCampus) — focused tutorials, slicers/dashboards, well-paced.
 - [**Mr Excel (Bill Jelen)**](https://www.youtube.com/@MrExcel) — pivot-table edge cases and the *Excel Bible* author's deep well of tricks.
-- [**Curbal (Ruth Pozuelo Martinez)**](https://www.youtube.com/@CurbalEN) — Power Query and Power BI, with a strong M-language series. Bridges into [Month 5](../curriculum/month-05-visualization-powerbi/index.md).
+- [**Curbal (Ruth Pozuelo Martinez)**](https://www.youtube.com/@CurbalEN) — Power Query and Power BI, with a strong M-language series. Bridges into [Month 8 — Power BI Core](../curriculum/month-08-power-bi-core/index.md).
 
 ## SQL & databases
 
@@ -37,11 +37,11 @@ The channels worth subscribing to, with a one-line *why* for each.
 
 ## Power BI / DAX
 
-- *To be added in [Month 5](../curriculum/month-05-visualization-powerbi/index.md). Likely candidates: SQLBI, Guy in a Cube, Curbal.*
+- *To be added in [Month 8 — Power BI Core](../curriculum/month-08-power-bi-core/index.md). Likely candidates: SQLBI, Guy in a Cube, Curbal.*
 
 ## Python / pandas
 
-- *To be added in [Month 6](../curriculum/month-06-python-pandas/index.md).*
+- *To be added in [Month 5 — Python Fundamentals & pandas](../curriculum/month-05-python-fundamentals/index.md).*
 
 ## Decision intelligence & meta
 

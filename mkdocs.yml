@@ -129,14 +129,14 @@ nav:
           - Week 10 — SELECT / WHERE / GROUP BY: curriculum/month-03-sql-fundamentals/week-10-select-where-groupby.md
           - Week 11 — Joins: curriculum/month-03-sql-fundamentals/week-11-joins.md
           - Week 12 — Subqueries & CTEs: curriculum/month-03-sql-fundamentals/week-12-subqueries-ctes.md
-      - 04 — SQL Advanced: curriculum/month-04-sql-advanced/index.md
-      - 05 — Visualization (Power BI): curriculum/month-05-visualization-powerbi/index.md
-      - 06 — Python for Analytics: curriculum/month-06-python-pandas/index.md
-      - 07 — Statistics for Analysts: curriculum/month-07-statistics/index.md
-      - 08 — Data Modeling & Warehousing: curriculum/month-08-data-modeling-warehousing/index.md
-      - 09 — ETL/ELT & Pipelines: curriculum/month-09-etl-elt-pipelines/index.md
-      - 10 — Azure Data Platform: curriculum/month-10-azure-data-platform/index.md
-      - 11 — ML Fundamentals: curriculum/month-11-ml-fundamentals/index.md
+      - 04 — SQL Advanced & Modeling: curriculum/month-04-sql-advanced/index.md
+      - 05 — Python — Fundamentals & pandas: curriculum/month-05-python-fundamentals/index.md
+      - 06 — Python — Statistics: curriculum/month-06-statistics-python/index.md
+      - 07 — Python — Workflows & ETL: curriculum/month-07-python-workflows/index.md
+      - 08 — Power BI — Core: curriculum/month-08-power-bi-core/index.md
+      - 09 — Power BI — Advanced & Azure: curriculum/month-09-powerbi-advanced-azure/index.md
+      - 10 — AI — Classical ML: curriculum/month-10-classical-ml/index.md
+      - 11 — AI — GenAI & LLMs: curriculum/month-11-genai-llms/index.md
       - 12 — Capstone & Soft Skills: curriculum/month-12-capstone-soft-skills/index.md
   - Tracks:
       - Certifications: tracks/certifications.md

@@ -8,7 +8,7 @@ Excel is still the most-used analytics tool in the world. Treating it as "just s
 
 ## Why this month exists
 
-Two reasons. First: a non-trivial fraction of analytical work in any company will reach you as an Excel file, and you need to read, fix, and extend it confidently. Second: **Power Query (M)** ([Week 8](week-08-power-query.md)) is shared between Excel, Power BI, and Microsoft Fabric — learning it here pays off three more times in [Month 5](../month-05-visualization-powerbi/index.md), [Month 9](../month-09-etl-elt-pipelines/index.md), and [Month 10](../month-10-azure-data-platform/index.md).
+Two reasons. First: a non-trivial fraction of analytical work in any company will reach you as an Excel file, and you need to read, fix, and extend it confidently. Second: **Power Query (M)** ([Week 8](week-08-power-query.md)) is shared between Excel, Power BI, and Microsoft Fabric — learning it here pays off three more times in [Month 7](../month-07-python-workflows/index.md), [Month 8](../month-08-power-bi-core/index.md), and [Month 9](../month-09-powerbi-advanced-azure/index.md).
 
 This is not a "type 100 SUM formulas" month. The four weeks pick the small number of features that separate a productive Excel user from a frustrated one.
 
@@ -38,7 +38,7 @@ Take the dataset from your [Month 1 memo](../month-01-foundations/index.md#month
 
 Constraint: when the source file changes, the entire workbook should be one click of *Refresh All* away from being current. If anything has to be re-pasted by hand, fix it.
 
-Save the workbook. You will revisit it at the end of [Month 6](../month-06-python-pandas/index.md) to compare against the same task in pandas.
+Save the workbook. You will revisit it at the end of [Month 5 — Python Fundamentals & pandas](../month-05-python-fundamentals/index.md) to compare against the same task in pandas.
 
 ## Self-check before moving on
 

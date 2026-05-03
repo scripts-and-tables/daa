@@ -20,7 +20,7 @@ status: complete
 - [ ] Write a Common Table Expression (`WITH name AS (...)`) and chain multiple CTEs in one query.
 - [ ] Refactor a deeply nested subquery into a flat sequence of CTEs without changing the result.
 - [ ] Recognise a *correlated* subquery and explain why it executes once per outer row.
-- [ ] Internalise when to reach for a CTE vs a subquery vs a temp table vs a view (preview of [Month 8](../month-08-data-modeling-warehousing/index.md)).
+- [ ] Internalise when to reach for a CTE vs a subquery vs a temp table vs a view (preview of [Month 4, Week 16](../month-04-sql-advanced/index.md)).
 
 ## Prerequisites
 
@@ -94,7 +94,7 @@ When to reach for what:
 - **CTE** — anything used twice, anything more than ~5 lines, anything that helps name an intermediate step.
 - **Derived table (subquery in `FROM`)** — same use as a CTE; CTE is more readable. Use derived tables only when staying compatible with an old MySQL version that lacks CTEs, or for very small one-shot inline cases.
 - **Temp table** — when an intermediate result is large and reused multiple times in a session, or when you want indexes on it.
-- **View** — when the query is reused across sessions. (Materialised view if the cost of recomputation is high — preview of [Month 8](../month-08-data-modeling-warehousing/index.md).)
+- **View** — when the query is reused across sessions. (Materialised view if the cost of recomputation is high — preview of [Month 4, Week 16](../month-04-sql-advanced/index.md).)
 
 ## Further / optional
 

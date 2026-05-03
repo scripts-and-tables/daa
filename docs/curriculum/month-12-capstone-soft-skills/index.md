@@ -34,8 +34,8 @@ The capstone *is* the mini-project. Suggested constraints: real public data, a s
 
 By this point you should have a deliberate target. The three on which the curriculum has been mapped:
 
-- **PL-300** — Microsoft Power BI Data Analyst Associate. Best fit if Months 1–7 felt natural.
-- **DP-203 / DP-700** — Microsoft Azure / Fabric Data Engineer. Best fit if Months 8–10 felt natural.
+- **PL-300** — Microsoft Power BI Data Analyst Associate. Best fit if Months 2–4 (Excel, SQL) and Months 8–9 (Power BI) felt natural.
+- **DP-203 / DP-700** — Microsoft Azure / Fabric Data Engineer. Best fit if Months 4 (data modeling), 7 (ETL), and 9 (Azure) felt natural.
 - **Google Data Analytics Certificate** — entry-level, broad, less rigorous than the Microsoft exams. Useful as a portfolio addition when starting from zero.
 
 See the [Certifications track](../../tracks/certifications.md) for the mapping back into curriculum pages.

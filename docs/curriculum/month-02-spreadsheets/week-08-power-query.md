@@ -53,7 +53,7 @@ Total: ~6h  (Reading: 1h · Video: 2h · Hands-on: 3h)
 ### Books / long-form reading
 
 - *M Is for (Data) Monkey* — Ken Puls & Miguel Escobar (read chapters 2–5 this week; chapter 1 was Week 6). **Why:** the canonical Power Query book. The authors run [PowerQuery.Training](https://www.powerquery.training/); this is the most rigorous treatment in print.
-- *Master Your Data with Power Query in Excel and Power BI* — Ken Puls & Miguel Escobar. The follow-up to *M Is for (Data) Monkey*; covers Power BI integration. Skim now, return to in [Month 5](../month-05-visualization-powerbi/index.md).
+- *Master Your Data with Power Query in Excel and Power BI* — Ken Puls & Miguel Escobar. The follow-up to *M Is for (Data) Monkey*; covers Power BI integration. Skim now, return to in [Month 8 — Power BI Core](../month-08-power-bi-core/index.md).
 
 ### Certifications (if relevant)
 
@@ -73,7 +73,7 @@ Total: ~6h  (Reading: 1h · Video: 2h · Hands-on: 3h)
     2. Why is changing the column type the *first* step you should do after promoting headers, not the last?
     3. The *Combine Files* feature creates several auto-generated objects (Sample File, Transform Sample File, Helper queries). What are they and why is that pattern there?
     4. How would you parameterise a folder path so that the same workbook works on your laptop and a colleague's?
-    5. Power Query and Power BI use the *same* Power Query engine. What practical implication does that have for [Month 5](../month-05-visualization-powerbi/index.md)?
+    5. Power Query and Power BI use the *same* Power Query engine. What practical implication does that have for [Month 8 — Power BI Core](../month-08-power-bi-core/index.md)?
 
 ## Month-end mini-project (now is the time)
 
@@ -81,9 +81,9 @@ This is the closing week of Month 2; do the [Month 2 mini-project](index.md#mini
 
 ## My notes
 
-If you remember nothing else from this month: **Power Query is the same engine in Excel, Power BI, and Microsoft Fabric Dataflows**. A query you build in Excel today can be lifted into Power BI in [Month 5](../month-05-visualization-powerbi/index.md) with copy-paste of the M code. This portability is unusual in the Microsoft data stack and worth exploiting deliberately.
+If you remember nothing else from this month: **Power Query is the same engine in Excel, Power BI, and Microsoft Fabric Dataflows**. A query you build in Excel today can be lifted into Power BI in [Month 8 — Power BI Core](../month-08-power-bi-core/index.md) with copy-paste of the M code. This portability is unusual in the Microsoft data stack and worth exploiting deliberately.
 
-The mental model worth internalising is **"data flow as ordered steps"**. Each click in the Power Query UI is a *step* in the *Applied Steps* panel; the panel is a tiny program. You can rename, reorder, delete, and edit steps. Once that lands, you stop thinking of cleanup as "fixing a sheet" and start thinking of it as "a recipe I run on whatever arrives". This mental shift is exactly what dbt formalises in [Month 9](../month-09-etl-elt-pipelines/index.md); Power Query is your introduction to it.
+The mental model worth internalising is **"data flow as ordered steps"**. Each click in the Power Query UI is a *step* in the *Applied Steps* panel; the panel is a tiny program. You can rename, reorder, delete, and edit steps. Once that lands, you stop thinking of cleanup as "fixing a sheet" and start thinking of it as "a recipe I run on whatever arrives". This mental shift is exactly what dbt formalises in [Month 7 — Python Workflows & ETL](../month-07-python-workflows/index.md); Power Query is your introduction to it.
 
 The *Advanced Editor* is intimidating once and then unremarkable. M is a functional, quirky language — but for everyday cleanup you will only need to recognise `let … in`, `Table.SelectRows`, `Table.AddColumn`, and a handful of others. The function reference is the only page you need bookmarked.
 

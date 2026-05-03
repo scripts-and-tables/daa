@@ -39,7 +39,7 @@ Pick **one** SQL sandbox and one sample database from the prerequisites list. An
 
 The point of question 5 is to internalise the pattern from [Week 11](week-11-joins.md) and [Week 12](week-12-subqueries-ctes.md): aggregate-then-join, not join-then-aggregate, when the join changes the grain.
 
-Save the file. You will translate (most of) these queries into pandas in [Month 6](../month-06-python-pandas/index.md) and into DAX measures in [Month 5](../month-05-visualization-powerbi/index.md).
+Save the file. You will translate (most of) these queries into pandas in [Month 5 — Python Fundamentals](../month-05-python-fundamentals/index.md) and into DAX measures in [Month 8 — Power BI Core](../month-08-power-bi-core/index.md).
 
 ## Self-check before moving on
 
