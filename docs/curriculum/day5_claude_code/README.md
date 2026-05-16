@@ -1,4 +1,13 @@
-# Day 5 — Claude Code (AI-assisted analytics)
+<div class="hero-day" data-day="5" markdown>
+<div class="hero-day__icon" markdown>:material-creation:</div>
+<div class="hero-day__copy" markdown>
+<p class="hero-day__eyebrow">Day 5 of 5 · 4 hours</p>
+
+# Claude Code — AI-assisted analytics {: .hero-day__title }
+
+<p class="hero-day__sub">Direct an AI assistant to do real analytics work in plain English. Extract themes from thousands of reviews. Ship the final stakeholder report.</p>
+</div>
+</div>
 
 **Duration:** 4 hours
 **Prerequisites:** Days 1–4

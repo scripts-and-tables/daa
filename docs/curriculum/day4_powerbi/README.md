@@ -1,4 +1,13 @@
-# Day 4 — Power BI
+<div class="hero-day" data-day="4" markdown>
+<div class="hero-day__icon" markdown>:material-chart-areaspline-variant:</div>
+<div class="hero-day__copy" markdown>
+<p class="hero-day__eyebrow">Day 4 of 5 · 4 hours</p>
+
+# Power BI — interactive dashboards {: .hero-day__title }
+
+<p class="hero-day__sub">Wrap the analysis in something a non-analyst will actually click through. Model, measure, visualise, ship.</p>
+</div>
+</div>
 
 **Duration:** 4 hours
 **Prerequisites:** Days 1–3

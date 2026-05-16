@@ -1,4 +1,13 @@
-# Day 3 — Python (pandas for data analysis)
+<div class="hero-day" data-day="3" markdown>
+<div class="hero-day__icon" markdown>:material-language-python:</div>
+<div class="hero-day__copy" markdown>
+<p class="hero-day__eyebrow">Day 3 of 5 · 4 hours</p>
+
+# Python — pandas for analysis {: .hero-day__title }
+
+<p class="hero-day__sub">Excel with code. Load, filter, group, join, and chart 100K rows in a notebook you can re-run tomorrow.</p>
+</div>
+</div>
 
 **Duration:** 4 hours
 **Prerequisites:** Days 1–2

@@ -1,10 +1,21 @@
-# Data Analytics Academy
+<div class="hero-home" markdown>
 
-**5 days. 20 hours. Real data. Real findings.**
+# Data Analytics Academy {: .hero-home__title }
 
-A course that takes absolute beginners — people who've opened a spreadsheet a handful of times and nothing more — to *"I shipped a complete analytics project, end to end, that a stakeholder can read in 5 minutes."*
+<p class="hero-home__sub">5 days. 20 hours. From "I've opened Excel a few times" to shipping an end-to-end analytics project on real data.</p>
 
----
+[Start Day 1 →](curriculum/day1_excel/README.md){ .hero-home__cta }
+[See the capstone](capstone/README.md){ .hero-home__cta .hero-home__cta--ghost }
+
+<div class="day-chips">
+  <a href="curriculum/day1_excel/" class="day-chip" data-day="1"><span class="day-chip__num">1</span> Excel</a>
+  <a href="curriculum/day2_sql/" class="day-chip" data-day="2"><span class="day-chip__num">2</span> SQL</a>
+  <a href="curriculum/day3_python/" class="day-chip" data-day="3"><span class="day-chip__num">3</span> Python</a>
+  <a href="curriculum/day4_powerbi/" class="day-chip" data-day="4"><span class="day-chip__num">4</span> Power BI</a>
+  <a href="curriculum/day5_claude_code/" class="day-chip" data-day="5"><span class="day-chip__num">5</span> Claude Code</a>
+</div>
+
+</div>
 
 ## The path
 

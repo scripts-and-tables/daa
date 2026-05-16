@@ -1,4 +1,13 @@
-# Day 2 — SQL
+<div class="hero-day" data-day="2" markdown>
+<div class="hero-day__icon" markdown>:material-database:</div>
+<div class="hero-day__copy" markdown>
+<p class="hero-day__eyebrow">Day 2 of 5 · 4 hours</p>
+
+# SQL — querying real databases {: .hero-day__title }
+
+<p class="hero-day__sub">Everything you did with XLOOKUP and pivots, rewritten as queries that scale. Join four tables, aggregate millions of rows, crack the Olist database.</p>
+</div>
+</div>
 
 **Duration:** 4 hours
 **Prerequisites:** Day 1 (you've seen pivot tables, joins between sheets, and aggregation in Excel — SQL is the same thinking written down)

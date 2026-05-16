@@ -1,4 +1,13 @@
-# Day 1 — Excel
+<div class="hero-day" data-day="1" markdown>
+<div class="hero-day__icon" markdown>:material-microsoft-excel:</div>
+<div class="hero-day__copy" markdown>
+<p class="hero-day__eyebrow">Day 1 of 5 · 4 hours</p>
+
+# Excel — the foundation {: .hero-day__title }
+
+<p class="hero-day__sub">Open a messy CSV, clean it, pivot it. Five lessons take you from "I've used Excel a few times" to writing the formulas every later tool builds on.</p>
+</div>
+</div>
 
 **Duration:** 4 hours
 **Prerequisites:** none (assumes you've opened a spreadsheet before, nothing more)

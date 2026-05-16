@@ -14,8 +14,13 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.footer
     - navigation.top
     - navigation.tracking
+    - toc.follow
     - search.suggest
     - search.highlight
     - content.code.copy
@@ -41,11 +46,29 @@ theme:
     text: Inter
     code: JetBrains Mono
 
+extra_css:
+  - stylesheets/custom.css
+
+extra_javascript:
+  - javascripts/extra.js
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/scripts-and-tables/daa
+
+copyright: >
+  Copyright &copy; 2026 Scripts and Tables — released under the MIT license.
+
+not_in_nav: |
+  404.md
+
 nav:
   - Home: index.md
   - Course:
       - Day 1 — Excel:
-          - Overview: curriculum/day1_excel/README.md
+          - curriculum/day1_excel/README.md
           - 1. Tables & references: curriculum/day1_excel/01_tables.md
           - 2. Math & aggregation: curriculum/day1_excel/02_aggregation.md
           - 3. Logic & lookups: curriculum/day1_excel/03_logic_lookups.md
@@ -53,7 +76,7 @@ nav:
           - 5. Pivot tables & charts: curriculum/day1_excel/05_pivots.md
           - Self-test: curriculum/day1_excel/test.md
       - Day 2 — SQL:
-          - Overview: curriculum/day2_sql/README.md
+          - curriculum/day2_sql/README.md
           - 1. SELECT, FROM, WHERE: curriculum/day2_sql/01_select_basics.md
           - 2. Aggregation & GROUP BY: curriculum/day2_sql/02_aggregation.md
           - 3. Joins: curriculum/day2_sql/03_joins.md
@@ -61,7 +84,7 @@ nav:
           - 5. NULLs, types & SQLite quirks: curriculum/day2_sql/05_nulls_and_quirks.md
           - Self-test: curriculum/day2_sql/test.md
       - Day 3 — Python:
-          - Overview: curriculum/day3_python/README.md
+          - curriculum/day3_python/README.md
           - 1. Notebooks & loading data: curriculum/day3_python/01_notebooks_and_loading.md
           - 2. Selecting & filtering: curriculum/day3_python/02_selecting_filtering.md
           - 3. Aggregation & groupby: curriculum/day3_python/03_groupby.md
@@ -69,7 +92,7 @@ nav:
           - 5. Cleaning, dates, plots: curriculum/day3_python/05_cleaning_dates_plots.md
           - Self-test: curriculum/day3_python/test.md
       - Day 4 — Power BI:
-          - Overview: curriculum/day4_powerbi/README.md
+          - curriculum/day4_powerbi/README.md
           - 1. Get Data & Power Query: curriculum/day4_powerbi/01_get_data_power_query.md
           - 2. The data model: curriculum/day4_powerbi/02_data_model.md
           - 3. Building visuals: curriculum/day4_powerbi/03_visuals.md
@@ -77,7 +100,7 @@ nav:
           - 5. Interactivity, layout, polish: curriculum/day4_powerbi/05_interactivity_and_polish.md
           - Self-test: curriculum/day4_powerbi/test.md
       - Day 5 — Claude Code:
-          - Overview: curriculum/day5_claude_code/README.md
+          - curriculum/day5_claude_code/README.md
           - 1. Getting started: curriculum/day5_claude_code/01_getting_started.md
           - 2. Prompting that works: curriculum/day5_claude_code/02_prompting.md
           - 3. Plan mode & verification: curriculum/day5_claude_code/03_plan_mode_and_verification.md
@@ -101,6 +124,9 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true

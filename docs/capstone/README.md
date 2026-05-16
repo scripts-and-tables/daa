@@ -1,3 +1,14 @@
+<div class="hero-day" data-day="capstone" markdown>
+<div class="hero-day__icon" markdown>:material-flag-checkered:</div>
+<div class="hero-day__copy" markdown>
+<p class="hero-day__eyebrow">Capstone · across all 5 days</p>
+
+# The threaded project {: .hero-day__title }
+
+<p class="hero-day__sub">One business question. One real dataset. Five days of work. By Friday evening you'll answer it with each day's tool — five different ways.</p>
+</div>
+</div>
+
 # Capstone Project
 
 One project, threaded through all 5 days. By Friday you'll have used Excel, SQL, Python, Power BI, and Claude Code to answer the same real business question — and you'll present your findings in the final hour of Day 5.
