@@ -1,0 +1,92 @@
+site_name: Data Analytics Academy
+site_description: A 5-day, 20-hour intensive course taking absolute beginners from Excel to AI-assisted analytics.
+site_url: https://scripts-and-tables.github.io/daa/
+repo_url: https://github.com/scripts-and-tables/daa
+repo_name: scripts-and-tables/daa
+edit_uri: edit/main/docs/
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+nav:
+  - Home: index.md
+  - Course:
+      - Day 1 — Excel:
+          - Overview: curriculum/day1_excel/README.md
+          - Exercises: curriculum/day1_excel/exercises/README.md
+          - Solutions: curriculum/day1_excel/solutions/README.md
+      - Day 2 — SQL:
+          - Overview: curriculum/day2_sql/README.md
+          - Exercises: curriculum/day2_sql/exercises/README.md
+          - Solutions: curriculum/day2_sql/solutions/README.md
+      - Day 3 — Python:
+          - Overview: curriculum/day3_python/README.md
+          - Exercises: curriculum/day3_python/exercises/README.md
+          - Solutions: curriculum/day3_python/solutions/README.md
+      - Day 4 — Power BI:
+          - Overview: curriculum/day4_powerbi/README.md
+          - Exercises: curriculum/day4_powerbi/exercises/README.md
+          - Solutions: curriculum/day4_powerbi/solutions/README.md
+      - Day 5 — Claude Code:
+          - Overview: curriculum/day5_claude_code/README.md
+          - Exercises: curriculum/day5_claude_code/exercises/README.md
+          - Solutions: curriculum/day5_claude_code/solutions/README.md
+  - Capstone:
+      - Overview & rubric: capstone/README.md
+      - Day 1 — Excel: capstone/day1_excel/README.md
+      - Day 2 — SQL: capstone/day2_sql/README.md
+      - Day 3 — Python: capstone/day3_python/README.md
+      - Day 4 — Power BI: capstone/day4_powerbi/README.md
+      - Day 5 — Final report: capstone/day5_ai/README.md
+  - Dataset: data/README.md
+  - Instructor:
+      - Setup checklist: instructor/setup_checklist.md
+      - Timing notes: instructor/timing_notes.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true

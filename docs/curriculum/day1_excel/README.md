@@ -14,7 +14,7 @@
 | 01:50–02:00 | Break | |
 | 02:00–02:50 | Hour 3 — Pivots + charts | Pivot tables, pivot charts, conditional formatting |
 | 02:50–03:00 | Break | |
-| 03:00–04:00 | Hour 4 — Capstone | Apply to Olist data ([`capstone/day1_excel/`](../../capstone/day1_excel/)) |
+| 03:00–04:00 | Hour 4 — Capstone | Apply to Olist data ([`capstone/day1_excel/`](../../capstone/day1_excel/README.md)) |
 
 ## What you'll be able to do
 
@@ -74,7 +74,7 @@ Highlight cells that meet a condition (e.g., negative numbers red). Useful for s
 
 ## Exercises
 
-See [`exercises/`](exercises/) — 4 small drills, ~15 minutes each. Solutions in [`solutions/`](solutions/) (only peek when stuck).
+See [`exercises/`](exercises/README.md) — 4 small drills, ~15 minutes each. Solutions in [`solutions/`](solutions/README.md) (only peek when stuck).
 
 ## Capstone task for today
 

@@ -146,7 +146,7 @@ WHERE order_delivered_customer_date IS NULL  -- orders not yet delivered
 
 ## Exercises
 
-See [`exercises/`](exercises/) — 5 drills against the Olist data. Solutions in [`solutions/`](solutions/).
+See [`exercises/`](exercises/README.md) — 5 drills against the Olist data. Solutions in [`solutions/`](solutions/README.md).
 
 ## Capstone task for today
 

@@ -102,7 +102,7 @@ Core visuals you'll use today:
 
 ## Exercises
 
-See [`exercises/`](exercises/) — 3 drills that build skills you'll need for the capstone. Solutions in [`solutions/`](solutions/).
+See [`exercises/`](exercises/README.md) — 3 drills that build skills you'll need for the capstone. Solutions in [`solutions/`](solutions/README.md).
 
 ## Capstone task for today
 

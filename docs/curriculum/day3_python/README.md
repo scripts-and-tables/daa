@@ -140,7 +140,7 @@ For day 3 you don't need beautiful charts — that's Day 4 (Power BI). Quick plo
 
 ## Exercises
 
-See [`exercises/`](exercises/) — 4 drills, ~15 minutes each. Solutions in [`solutions/`](solutions/) (as a notebook + a markdown explainer).
+See [`exercises/`](exercises/README.md) — 4 drills, ~15 minutes each. Solutions in [`solutions/`](solutions/README.md) (as a notebook + a markdown explainer).
 
 ## Capstone task for today
 

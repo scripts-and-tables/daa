@@ -62,4 +62,4 @@ You should see a clear inverse relationship: as delivery time grows, review scor
 
 ---
 
-When you finish, compare with [`../solutions/`](../solutions/). The reference notebook also has the merge sanity check pattern that's worth absorbing.
+When you finish, compare with [`../solutions/`](../solutions/README.md). The reference notebook also has the merge sanity check pattern that's worth absorbing.

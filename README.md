@@ -29,20 +29,27 @@ By Friday evening you'll have answered it using all 5 tools and presented your f
 
 No coding background assumed. If you've opened a spreadsheet before, you're ready.
 
+## Read the course online
+
+**📘 [scripts-and-tables.github.io/daa](https://scripts-and-tables.github.io/daa/)** — the full course as a navigable site.
+
 ## How this repo is organized
 
 ```
-curriculum/   Lesson materials (READMEs, exercises, solutions) per day
-capstone/     The threaded capstone project — one folder per day
-data/         Dataset documentation + download script
-instructor/   Setup checklist and timing notes for whoever is teaching
+docs/
+├── curriculum/   Lesson materials (READMEs, exercises, solutions) per day
+├── capstone/     The threaded capstone project — one folder per day
+├── data/         Dataset documentation
+└── instructor/   Setup checklist and timing notes for whoever is teaching
+data/olist/       Download script + SQLite loader (the actual scripts)
+mkdocs.yml        Site config for the published version
 ```
 
 ## Getting started
 
-**Students:** start with [`curriculum/day1_excel/README.md`](curriculum/day1_excel/README.md). Before Day 2, download the dataset via [`data/olist/download.sh`](data/olist/download.sh).
+**Students:** start with [`docs/curriculum/day1_excel/README.md`](docs/curriculum/day1_excel/README.md). Before Day 2, download the dataset via [`data/olist/download.sh`](data/olist/download.sh).
 
-**Instructors:** start with [`instructor/setup_checklist.md`](instructor/setup_checklist.md).
+**Instructors:** start with [`docs/instructor/setup_checklist.md`](docs/instructor/setup_checklist.md).
 
 ## License
 

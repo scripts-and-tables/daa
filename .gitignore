@@ -3,6 +3,9 @@ data/olist/*.csv
 data/olist/*.zip
 data/olist/*.db
 
+# MkDocs build output
+site/
+
 # Excel / Office lock files
 ~$*
 *.xlsx#

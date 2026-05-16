@@ -1,6 +1,6 @@
 # Day 1 — Exercises
 
-These drills use small sample data (you'll create or paste it in). The Olist capstone is separate — see [`../../../capstone/day1_excel/`](../../../capstone/day1_excel/).
+These drills use small sample data (you'll create or paste it in). The Olist capstone is separate — see [`../../../capstone/day1_excel/`](../../../capstone/day1_excel/README.md).
 
 Time per exercise: ~15 minutes.
 

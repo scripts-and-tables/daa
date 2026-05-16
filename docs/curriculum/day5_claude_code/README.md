@@ -88,7 +88,7 @@ A useful instinct: **use Claude for the typing, keep the thinking yourself.**
 
 ## Exercises
 
-See [`exercises/`](exercises/) — 3 drills designed to build the verification reflex. Solutions in [`solutions/`](solutions/) (these include example prompts and example Claude output for comparison).
+See [`exercises/`](exercises/README.md) — 3 drills designed to build the verification reflex. Solutions in [`solutions/`](solutions/README.md) (these include example prompts and example Claude output for comparison).
 
 ## Capstone task for today
 
