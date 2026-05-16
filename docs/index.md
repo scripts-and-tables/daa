@@ -1,5 +1,7 @@
 <div class="hero-home" markdown>
 
+<div class="hero-home__main" markdown>
+
 <span class="hero-home__eyebrow">5-day intensive · MIT licensed</span>
 
 # Data Analytics Academy {: .hero-home__title }
@@ -23,6 +25,42 @@
   <div class="hero-home__stat"><span class="hero-home__stat-num">20h</span><span class="hero-home__stat-label">teaching</span></div>
   <div class="hero-home__stat"><span class="hero-home__stat-num">1</span><span class="hero-home__stat-label">capstone</span></div>
   <div class="hero-home__stat"><span class="hero-home__stat-num">100K</span><span class="hero-home__stat-label">real orders</span></div>
+</div>
+
+</div>
+
+<div class="hero-home__visual" aria-hidden="true">
+<svg viewBox="0 0 320 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(50 50) rotate(-5 110 80)">
+    <rect width="220" height="150" rx="12" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.18" stroke-width="1"/>
+    <line x1="20" y1="30" x2="200" y2="30" stroke="white" stroke-opacity="0.30" stroke-width="1"/>
+    <line x1="20" y1="55" x2="200" y2="55" stroke="white" stroke-opacity="0.18" stroke-width="1"/>
+    <line x1="20" y1="80" x2="200" y2="80" stroke="white" stroke-opacity="0.18" stroke-width="1"/>
+    <line x1="20" y1="105" x2="200" y2="105" stroke="white" stroke-opacity="0.18" stroke-width="1"/>
+    <line x1="20" y1="130" x2="200" y2="130" stroke="white" stroke-opacity="0.18" stroke-width="1"/>
+    <line x1="85" y1="20" x2="85" y2="140" stroke="white" stroke-opacity="0.15" stroke-width="1"/>
+    <line x1="145" y1="20" x2="145" y2="140" stroke="white" stroke-opacity="0.15" stroke-width="1"/>
+  </g>
+  <g transform="translate(35 130)">
+    <rect width="250" height="190" rx="16" fill="white" fill-opacity="0.14" stroke="white" stroke-opacity="0.38" stroke-width="1"/>
+    <g transform="translate(28 30)">
+      <rect x="0"   y="80" width="22" height="60"  rx="3" fill="#a5b4fc"/>
+      <rect x="34"  y="50" width="22" height="90"  rx="3" fill="#a5b4fc"/>
+      <rect x="68"  y="70" width="22" height="70"  rx="3" fill="#a5b4fc"/>
+      <rect x="102" y="30" width="22" height="110" rx="3" fill="#c4b5fd"/>
+      <rect x="136" y="10" width="22" height="130" rx="3" fill="#fbbf24"/>
+    </g>
+    <path d="M 39 170 L 73 140 L 107 154 L 141 122 L 175 94 L 211 66"
+          stroke="#fbbf24" stroke-width="3" fill="none"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="39"  cy="170" r="4.5" fill="#fbbf24"/>
+    <circle cx="73"  cy="140" r="4.5" fill="#fbbf24"/>
+    <circle cx="107" cy="154" r="4.5" fill="#fbbf24"/>
+    <circle cx="141" cy="122" r="4.5" fill="#fbbf24"/>
+    <circle cx="175" cy="94"  r="4.5" fill="#fbbf24"/>
+    <circle cx="211" cy="66"  r="4.5" fill="#fbbf24"/>
+  </g>
+</svg>
 </div>
 
 </div>
