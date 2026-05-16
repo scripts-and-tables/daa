@@ -44,7 +44,7 @@ Send students this list one week ahead. Day 1 morning runs much smoother if inst
 
 ### Before Day 1 (Excel)
 
-- [ ] Open `curriculum/day1_excel/exercises/` — confirm exercise files load cleanly in your Excel.
+- [ ] Walk through `docs/curriculum/day1_excel/01_tables.md` end-to-end in your Excel and confirm every "Try it yourself" drill runs in the time budget the lesson states.
 - [ ] Pre-download Olist CSVs to a USB stick or shared drive in case student internet is patchy.
 
 ### Before Day 2 (SQL)

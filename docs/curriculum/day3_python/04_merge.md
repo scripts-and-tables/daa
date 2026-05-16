@@ -11,6 +11,9 @@
 
 Every cross-table question you wrote in SQL yesterday becomes a `merge` in pandas. The semantics are identical; the syntax is a touch wordier.
 
+!!! tip "Day 2 ↔ Day 3 equivalents"
+    Every `JOIN … ON …` you wrote yesterday becomes a `pd.merge(left, right, on=…, how=…)` today. The row-count assertion (below) is the pandas-only addition — SQL crashes when you make this mistake; pandas silently inflates your numbers.
+
 ## `df.merge` — pandas' SQL JOIN
 
 ```python

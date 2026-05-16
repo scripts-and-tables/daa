@@ -65,6 +65,7 @@ not_in_nav: |
 
 nav:
   - Home: index.md
+  - About the role: about_the_role.md
   - Course:
       - Day 1 — Excel:
           - curriculum/day1_excel/README.md
@@ -114,6 +115,7 @@ nav:
       - Day 4 — Power BI: capstone/day4_powerbi/README.md
       - Day 5 — Final report: capstone/day5_ai/README.md
   - Dataset: data/README.md
+  - What's next: next_steps.md
   - Instructor:
       - Setup checklist: instructor/setup_checklist.md
       - Timing notes: instructor/timing_notes.md

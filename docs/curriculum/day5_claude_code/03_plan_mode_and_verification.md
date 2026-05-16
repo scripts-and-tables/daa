@@ -50,6 +50,9 @@ Three habits, in order of frequency you'll use them:
 
 ### Habit 1 — Sanity-check the magnitude
 
+!!! tip "Use your earlier days as ground truth"
+    The four days before this one were practice; today they become your **reference set**. If Claude says avg review = 3.1 but Day 4's dashboard said 4.1 and Day 2's SQL said ~4.1 too, Claude is wrong — not the four prior days. Trust the artifact you built and verified, not the new answer.
+
 When Claude produces a number, ask: **does it match what I already know from earlier days?**
 
 You've been computing the same things across Excel, SQL, pandas, and Power BI all week. The numbers should line up. If today's Claude-produced answer says `avg_review = 3.1` and Day 4's dashboard said `4.1`, one of them is wrong.
@@ -61,8 +64,8 @@ Useful comparison checkpoints:
 | Total order count | Day 2: `SELECT COUNT(*) FROM orders` → 99,441 |
 | Average review score | Day 4 dashboard or Day 3 `reviews['review_score'].mean()` → ~4.1 |
 | % of late deliveries | Day 4 `% Late` measure → ~7% |
-| Late vs. on-time review gap | Day 2 Exercise 4 → ~2.3 vs ~4.2 |
-| Top seller's revenue | Day 2 Exercise 5 → ~R$ 230K |
+| Late vs. on-time review gap | Day 2 Lesson 5 "Try it yourself" → ~2.3 vs ~4.2 |
+| Top seller's revenue | Day 2 Lesson 4 "Try it yourself" → ~R$ 230K |
 
 Keep a sticky note (literal or mental) of these reference numbers. Two minutes of curiosity catches confident wrong answers.
 

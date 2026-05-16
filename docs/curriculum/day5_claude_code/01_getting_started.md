@@ -10,9 +10,11 @@
 
 This lesson is short on purpose. Day 5's real learning happens in Lessons 2–5; this one just gets the tool in front of you so the rest works.
 
+By the end of today's capstone you'll have used an AI assistant to classify ~10,000 Portuguese review comments into themes, cross-referenced those themes with your top-10 risky sellers from Days 2–3, and shipped a 1-page stakeholder report. To get there you need 20 minutes of setup, then four lessons on how to direct the tool well.
+
 ## What Claude Code is
 
-[Claude Code](https://claude.ai/code) is an AI coding assistant that can read your files, run shell commands, write code, and iterate with you in plain English. Think of it as **an analyst who types 100× faster than you and never gets tired** — but who needs you to tell it what's worth doing, and to spot-check its work.
+[Claude Code](https://claude.ai/code) is an AI coding assistant that can read your files, run shell commands, write code, and iterate with you in plain English. You write the prompt, it writes (and runs) the SQL / pandas / markdown; you read what it produced and either accept it or push back. The relationship is editor + producer, not user + oracle.
 
 Two ways to use it:
 

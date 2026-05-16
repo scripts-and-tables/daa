@@ -45,7 +45,7 @@ Tip: rename the tables in the Fields pane to friendlier names (`Orders`, `Items`
 ### 2. Power Query transforms (10 min)
 
 In Power Query:
-- On `Orders`: add `delivery_days` (see Exercise 2)
+- On `Orders`: add `delivery_days` (see Lesson 1's "Try it yourself" — Power Query custom column)
 - On `Orders`: add `is_late` = `[order_delivered_customer_date] > [order_estimated_delivery_date]` (Boolean column)
 - On `Products`: merge in the English category name from `category_translation`
 

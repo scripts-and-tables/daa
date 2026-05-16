@@ -15,7 +15,7 @@
 
 ## What is Claude Code?
 
-[Claude Code](https://claude.ai/code) is an AI coding assistant that can read your files, run code, and iterate with you in plain English. Think of it as "an analyst who can type 100x faster than you and never gets tired" — but who needs you to tell it what's worth doing.
+[Claude Code](https://claude.ai/code) is an AI coding assistant that can read your files, run code, and iterate with you in plain English. You write the prompt; it writes (and runs) the SQL / pandas / markdown; you read its output and either accept it or push back. The relationship is editor + producer, not user + oracle — and that's exactly what makes it useful for analytics work you couldn't write from scratch yet.
 
 For this course, we'll use **Claude Code on the Web** (browser, zero install). Sign in at [claude.ai/code](https://claude.ai/code) with the same account as Claude.ai.
 

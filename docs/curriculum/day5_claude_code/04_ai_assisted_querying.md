@@ -118,8 +118,8 @@ against the SQL totals.
 
 You'll be editing notebooks in the Claude Code UI — same chat, but the file pane shows the `.ipynb` rendered.
 
-??? note "Try it yourself — reproduce Day 2 Exercise 4 in two dialects"
-    Day 2's Exercise 4 answered: *"What's the average review score for orders delivered late vs on-time?"* The reference answer:
+??? note "Try it yourself — reproduce Day 2's late-vs-on-time CTE in two dialects"
+    Day 2 Lesson 5's "Try it yourself" answered: *"What's the average review score for orders delivered late vs on-time?"* The reference answer:
 
     - `late = 2.3`
     - `on_time = 4.2`

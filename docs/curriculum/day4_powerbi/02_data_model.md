@@ -54,6 +54,9 @@ This shows up when the join column **isn't unique on either side**. It "works" �
 
 If you see `*─*` in Model view, **something's wrong**. The most common cause: you joined on the wrong column. Look at the relationship dialog (double-click the line) and check the join columns.
 
+!!! note "Why this matters more here than in SQL"
+    In SQL (Day 2 Lesson 3) you stated joins explicitly per query — wrong join = wrong query, but only in *that one query*. In Power BI you state relationships once in the model, and **every visual on every page** reuses them. A wrong cardinality silently inflates every measure that touches that join. Worth the extra five minutes here.
+
 ## Creating a relationship
 
 Three ways:

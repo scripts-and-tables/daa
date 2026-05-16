@@ -24,6 +24,28 @@ This is where Power BI starts feeling like the productivity multiplier it is. Mo
 
 You'll also see Donut, Tree map, Funnel, Scatter, KPI, Gauge. They have niche uses — start with the six above; everything else is icing.
 
+??? tip "Visualisation principles — which chart, when (a 90-second primer)"
+    The Power BI visual gallery doesn't tell you which chart to pick. Use these heuristics:
+
+    | Question shape | Chart |
+    |---|---|
+    | "What's the headline number?" | **Card** |
+    | "How does X compare across categories?" (≤12 categories) | **Bar / column**, sorted by value |
+    | "How does X change over time?" (continuous time axis) | **Line** |
+    | "Where is X happening geographically?" | **Filled map** (only when the spatial dimension matters — don't map data that fits in a table) |
+    | "Show me the detail" | **Table** with sortable columns |
+    | "Let me slice the page" | **Slicer** |
+
+    Five rules that compound:
+
+    1. **One question per visual.** If you can't say what question a chart answers in one sentence, the chart is the wrong shape.
+    2. **Sort bars by value, not alphabetically.** Alphabetical bar charts hide the finding.
+    3. **One color carries the message; the rest is grey.** A seven-color rainbow says "I want all of these to feel equally important" — almost never the truth.
+    4. **Don't truncate the Y-axis on a bar chart.** It exaggerates differences. Truncating on a line chart is fine because the eye reads slope, not bar length.
+    5. **A pie chart is almost always a bar chart in disguise.** Use the bar.
+
+    Further reading: *Storytelling with Data* by Cole Nussbaumer Knaflic — the single best book on this for analysts. The Financial Times publishes a free [Visual Vocabulary](https://github.com/Financial-Times/chart-doctor/tree/main/visual-vocabulary) one-pager that maps "this question → this chart" — print it, pin it next to your monitor.
+
 ## Adding a visual
 
 Three equivalent paths:

@@ -10,7 +10,10 @@
 - Sort and trim grouped results
 - Use `.reset_index()` to get a flat DataFrame back
 
-You've already seen this thinking — twice. SQL's `GROUP BY` (Day 2) and Excel's pivot tables (Day 1) are the same operation. pandas is the third dialect.
+You've already seen this thinking — twice.
+
+!!! tip "Same idea you used twice already"
+    Day 1's pivot tables and Day 2's `GROUP BY` are this same operation. Drag a category to **Rows** + a number to **Values** in Excel ↔ write `GROUP BY cat` + `SUM(num)` in SQL ↔ chain `.groupby('cat').agg(total=('num','sum'))` in pandas. The mental model is identical; only the syntax changes.
 
 ## `.value_counts()` — the one-liner you'll use forever
 

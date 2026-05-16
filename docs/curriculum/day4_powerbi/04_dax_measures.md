@@ -56,6 +56,9 @@ Avg Review      = AVERAGE(Reviews[review_score])
 
 ### `CALCULATE` — the most important function
 
+!!! tip "SQL analogy"
+    `CALCULATE([Total Revenue], Orders[order_status] = "delivered")` is essentially `SELECT SUM(price) FROM … WHERE order_status = 'delivered'`, but written as a **reusable measure** instead of a one-off query. Same idea you used on Day 2 — the difference is that the measure recomputes per visual cell in *that cell's* filter context, instead of running once.
+
 `CALCULATE` evaluates an expression with **modified filter context**. The structure:
 
 ```dax

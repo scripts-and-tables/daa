@@ -57,6 +57,59 @@ orders['delivery_days'] = (
 
 The `.dt.days` extracts the day count as an integer. (Without it, you get a `timedelta64` column which is harder to work with downstream.)
 
+### Dates to boolean flags
+
+A common analytics move: tag each row as "late" or "on-time" based on a date comparison.
+
+```python
+orders['is_late'] = (
+    orders['order_delivered_customer_date']
+    > orders['order_estimated_delivery_date']
+) & orders['order_delivered_customer_date'].notna()
+```
+
+Two things going on:
+
+1. **`>` on two date columns returns a boolean Series** — no special pandas method needed. Same as `int > int`.
+2. **The `.notna()` guard** is crucial. Without it, undelivered orders (where `order_delivered_customer_date` is `NaT`) silently get `False` for `is_late`, which is *correct by accident* — but if you wrote `<` instead of `>` the same accident would mis-tag them. Make the guard explicit; the comparison itself shouldn't carry the missingness assumption.
+
+### Conditional aggregation — different stats for late vs on-time
+
+Once you have `is_late`, you often want per-group statistics **split** by the flag. Two equivalent patterns:
+
+**A — Filter, then group (cleaner when readable):**
+
+```python
+late_per_seller = (
+    merged[merged['is_late']]
+    .groupby('seller_id')
+    .agg(avg_review_late=('review_score', 'mean'),
+         n_late=('order_id', 'count'))
+)
+on_time_per_seller = (
+    merged[~merged['is_late']]
+    .groupby('seller_id')
+    .agg(avg_review_on_time=('review_score', 'mean'),
+         n_on_time=('order_id', 'count'))
+)
+combined = late_per_seller.join(on_time_per_seller, how='outer')
+```
+
+**B — Single groupby with lambda aggregates (tighter, harder to debug):**
+
+```python
+combined = (
+    merged.groupby('seller_id').agg(
+        avg_review_late=('review_score', lambda s: s[merged.loc[s.index, 'is_late']].mean()),
+        avg_review_on_time=('review_score', lambda s: s[~merged.loc[s.index, 'is_late']].mean()),
+        n_late=('is_late', 'sum'),
+        n_on_time=('is_late', lambda s: (~s).sum()),
+    )
+)
+```
+
+**Prefer A.** It's more lines but each line is obvious. The lambda form (B) saves typing once but breaks the moment you try to add a third condition.
+
 ## Strings — the `.str` accessor
 
 Same idea, for `object`/string columns:
@@ -70,6 +123,16 @@ products['product_category_name'].str.split('_').str[0]   # first chunk
 ```
 
 `na=False` on `.str.contains()` matters — without it, NaN values in the column produce NaN in the mask, which then crashes when you try to filter with it.
+
+??? tip "Statistical thinking primer — the four things to internalise (sidebar, ~3 min)"
+    This course doesn't teach formal statistics. But four ideas come up in every analysis you'll ever do — internalise them now:
+
+    1. **Mean vs median.** Mean is the arithmetic average. Median is the middle value. When the distribution is skewed (a few huge values pull the mean upward), the median is the more honest summary. Olist's `delivery_days` has a few orders that took 200+ days — those pull the mean up to ~12 even though the median is ~10. Report the median, mention the mean, never just the mean.
+    2. **Spread matters as much as the centre.** A category with "avg review score 4.0" and another with "avg review score 4.0" might be very different — one could be 4.0 ± 0.1 (everyone agrees), the other 4.0 ± 1.8 (half love it, half hate it). Use `.describe()` (which gives you std + percentiles) before quoting a mean.
+    3. **Correlation isn't causation.** Day 2 found that late deliveries correlate with bad reviews. That's a real correlation. It does **not** prove late deliveries cause bad reviews — sellers who deliver late might also ship poor-quality products, and the product quality is what the customer is rating. Always ask: "what else could explain this?"
+    4. **Your sample isn't the population.** Olist's data is one Brazilian marketplace, 2017–2018. Findings here may not generalise to other marketplaces, other countries, or post-pandemic shopping behaviour. Caveat your reports accordingly.
+
+    If you want the real version of this primer: *Think Stats* by Allen Downey is free at greenteapress.com.
 
 ## `pd.cut` — bucket continuous values
 
@@ -173,7 +236,7 @@ worst_categories.to_csv('worst_categories.csv', index=False)
         score_by_bucket.plot(kind='bar')
         ```
 
-        The Exercise 4 chart is **the** key visual of the course. It proves Day 2's late-vs-on-time finding with a continuous gradient: as delivery slips from 0-7 days to 30+, average review score collapses from ~4.5 to ~2.5. Save it as PNG — Day 5 embeds it in the final report.
+        The delivery-bucket chart is **the** key visual of the course. It proves Day 2's late-vs-on-time finding with a continuous gradient: as delivery slips from 0-7 days to 30+, average review score collapses from ~4.5 to ~2.5. Save it as PNG — Day 5 embeds it in the final report.
 
 ## Common pitfalls
 

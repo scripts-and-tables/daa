@@ -33,6 +33,17 @@ Every day, the last hour (~Hour 4) is dedicated to applying that day's tool to t
 
 Each folder has its own README with the precise task for that day.
 
+!!! warning "Things to question about this data (a 90-second ethics sidebar)"
+    Every dataset is a partial, biased view of reality. Before you ship a finding from Olist, you should be able to answer how each of these affects your numbers:
+
+    1. **Sample representativeness.** Olist is one Brazilian marketplace, 2017–2018. Findings here don't automatically generalise to other countries, other marketplaces, or current behaviour. Caveat your report's recommendations accordingly.
+    2. **Observability bias.** Only ~40% of orders have a review. The reviews you analyse aren't a random sample — people with strong feelings (good or bad) leave reviews more often. Your "average review score" is the average of *reviewers*, not of *customers*.
+    3. **Language bias in reviews.** Day 5's theme extraction reads Portuguese comments via an AI assistant. Translation has biases: idioms get flattened, sarcasm gets missed, regional slang gets misclassified. Spot-check translations of edge cases.
+    4. **Time-window bias.** The data ends October 2018. Any "trend over time" stops there — not because the trend stopped, but because the data stopped. Don't extrapolate beyond the window.
+    5. **Survivorship bias.** You only see sellers who *kept selling* through 2018. Sellers who were delisted earlier (perhaps for being bad) aren't in the data. Your "worst sellers" are the worst *surviving* sellers, which understates the real problem.
+
+    A good final report names at least two of these explicitly in its caveats section. A great one names the one that most threatens its conclusion and explains how it could be checked.
+
 ## Rubric
 
 You'll be assessed on the final report (Day 5) against four dimensions, equally weighted:

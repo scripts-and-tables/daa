@@ -53,7 +53,7 @@ risky_sellers.to_csv('risky_sellers.csv', index=False)
 late_vs_ontime_by_seller.to_csv('late_vs_ontime_by_seller.csv', index=False)
 ```
 
-Also save the delivery-bucket chart from yesterday's Exercise 4.3 as a PNG — you'll embed it in the Day 5 final report.
+Also save the delivery-bucket chart from Day 3 Lesson 5's "Try it yourself" as a PNG — you'll embed it in the Day 5 final report.
 
 ```python
 import matplotlib.pyplot as plt

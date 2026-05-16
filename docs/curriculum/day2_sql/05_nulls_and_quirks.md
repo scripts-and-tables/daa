@@ -14,6 +14,9 @@ The last 25 minutes of Day 2. Mostly about the small things that make queries re
 
 ## `NULL` is not a value — it's the absence of one
 
+!!! note "Remember from Day 1"
+    Excel's `IFERROR` swallowed missing values silently — you wrapped a formula and got a fallback. SQL's NULLs are explicit but propagate through every operation: any arithmetic involving `NULL` is `NULL`, and every comparison to `NULL` is `NULL` (not true, not false). You'll handle them deliberately here.
+
 `NULL` means "we don't know." That's why comparisons to NULL are weird:
 
 ```sql

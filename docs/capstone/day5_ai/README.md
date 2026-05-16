@@ -17,7 +17,7 @@ Must contain:
 2. **The findings** — 2–3 concrete things you discovered, each backed by a number from one of the previous days.
 3. **A chart** — the delivery-vs-review chart from Day 3 (`delivery_vs_review.png`).
 4. **A dashboard screenshot** — the Power BI dashboard from Day 4 (`../day4_powerbi/dashboard.png`).
-5. **The qualitative finding** — what the unhappy reviews actually say (from Day 5 Exercise 3 themes).
+5. **The qualitative finding** — what the unhappy reviews actually say (from Day 5 Lesson 5 themes).
 6. **Recommended actions** — what should Olist's marketplace ops team do? Be specific. Name 2–3 sellers or categories.
 
 ## Suggested structure
@@ -42,7 +42,7 @@ On-time orders average 4.2 stars; orders >30 days late average 2.5 stars.
 These 5 sellers represent X% of revenue but Y% of bad-review impact.
 
 ## Finding 3: Some bad-review patterns are not about delivery
-[review theme breakdown from Day 5 Exercise 3]
+[review theme breakdown from Day 5 Lesson 5]
 ~25% of bad reviews mention product quality or wrong-item issues, independent of shipping.
 
 ## Dashboard
@@ -65,8 +65,9 @@ Prompt:
 
 ```
 INPUT: Look at all CSVs in capstone/ (day2_sql, day3_python) and the
-       markdown READMEs in each day's folder. Also read curriculum/day5_claude_code/
-       exercises/README.md Exercise 3 for the review theme analysis I did.
+       markdown READMEs in each day's folder. Also read the review-theme
+       analysis I produced earlier today (see Day 5 Lesson 5 — Text
+       analytics & the report).
 TASK:  Draft a 1-page markdown report following the structure I'll paste below.
        Use real numbers from the CSVs. Don't invent anything.
 OUTPUT: Save as capstone/day5_ai/final_report.md.

@@ -65,6 +65,11 @@
 
 </div>
 
+<span class="section-eyebrow">First, the mindset</span>
+## Before the tools — what an analyst actually does
+
+Five days of tool fluency is what this site teaches. But the job an analyst is *paid* for is what you do with the tools — translating vague stakeholder questions into specific ones, sanity-checking your own numbers, picking the chart a non-analyst can read in five seconds. **[Read: What a data analyst actually does →](about_the_role.md)** (5-minute read; ground the rest of the course before you dive into Day 1.)
+
 <span class="section-eyebrow">What you'll learn</span>
 ## Six concrete skills you'll walk away with
 
@@ -247,6 +252,11 @@ Not built for: software engineers who already know SQL/pandas (this will feel sl
 | Day 5 | [Claude Code](https://claude.ai/code) | Free tier sufficient |
 
 **Students** — head straight to [Day 1 — Excel](curriculum/day1_excel/README.md). **Instructors** — start with the [setup checklist](instructor/setup_checklist.md) and [timing notes](instructor/timing_notes.md).
+
+<span class="section-eyebrow">After the course</span>
+## Where to go from here
+
+Finished all five days plus the capstone? **[What to learn next →](next_steps.md)** — the books, courses, and habits that take a fluent beginner to a working analyst.
 
 <span class="section-eyebrow">About</span>
 ## This course
