@@ -2,7 +2,7 @@
 
 Only peek after attempting.
 
-Assumes the views from `exercises/README.md` are already created.
+Assumes the SQLite database is loaded (see [`data/README.md`](../../../data/README.md) Step 2) and you're connected via DB Browser or `sqlite3 data/olist/olist.db`.
 
 ---
 
@@ -36,7 +36,7 @@ ORDER BY order_purchase_timestamp;
 -- 1
 SELECT   c.customer_state, COUNT(*) AS n_orders
 FROM     orders o
-JOIN     'data/olist/olist_customers_dataset.csv' c ON o.customer_id = c.customer_id
+JOIN     customers c ON o.customer_id = c.customer_id
 GROUP BY c.customer_state
 ORDER BY n_orders DESC
 LIMIT 10;
@@ -50,10 +50,7 @@ FROM     orders
 GROUP BY order_status
 ORDER BY n DESC;
 
--- 4 (needs customers — create a view if you haven't)
-CREATE VIEW IF NOT EXISTS customers AS
-  SELECT * FROM 'data/olist/olist_customers_dataset.csv';
-
+-- 4
 SELECT   c.customer_state, SUM(i.price) AS revenue
 FROM     items i
 JOIN     orders o    ON i.order_id    = o.order_id
@@ -109,14 +106,16 @@ WITH delivery_status AS (
                 ELSE 'on_time'
            END AS status
     FROM   orders
-    WHERE  order_delivered_customer_date IS NOT NULL
-      AND  order_estimated_delivery_date IS NOT NULL
+    WHERE  order_delivered_customer_date    != ''
+      AND  order_estimated_delivery_date    != ''
 )
 SELECT   d.status, AVG(r.review_score) AS avg_review
 FROM     delivery_status d
 JOIN     reviews r ON d.order_id = r.order_id
 GROUP BY d.status;
 ```
+
+Note the `!= ''` filter: SQLite-from-CSV puts empty strings where you'd expect NULL. This is the gotcha to internalize today.
 
 Expected output (approximate):
 

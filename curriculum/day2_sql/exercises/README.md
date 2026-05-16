@@ -1,31 +1,35 @@
 # Day 2 — Exercises
 
-All exercises use the Olist CSVs in `data/olist/`. Run queries in DuckDB:
+All exercises use the SQLite database you built from `data/olist/load_into_sqlite.sql`. If you haven't built it yet, see [`data/README.md`](../../../data/README.md) Step 2.
+
+**Open the database** in DB Browser for SQLite (File → Open Database → `data/olist/olist.db`), or from the terminal:
 
 ```bash
-duckdb
+sqlite3 data/olist/olist.db
 ```
 
-then in the prompt:
+In the CLI, turn on nicer formatting:
 
-```sql
-.mode column
-.headers on
-SELECT * FROM 'data/olist/olist_orders_dataset.csv' LIMIT 3;
+```
+sqlite> .mode column
+sqlite> .headers on
+sqlite> SELECT * FROM orders LIMIT 3;
 ```
 
-You can save your work in a `.sql` file and run `duckdb < myfile.sql`, or just paste queries into the REPL.
+The tables already exist with these names — you can query them directly:
 
-For these exercises, set up table-like views once at the start so you don't have to keep typing CSV paths:
+| Table | What it holds |
+|---|---|
+| `orders` | One row per order |
+| `items` | One row per line item |
+| `reviews` | One row per review |
+| `customers` | Customer info |
+| `sellers` | Seller info |
+| `products` | Product info (Portuguese category names) |
+| `payments` | Payment info |
+| `category_translation` | Portuguese → English category names |
 
-```sql
-CREATE VIEW orders   AS SELECT * FROM 'data/olist/olist_orders_dataset.csv';
-CREATE VIEW items    AS SELECT * FROM 'data/olist/olist_order_items_dataset.csv';
-CREATE VIEW reviews  AS SELECT * FROM 'data/olist/olist_order_reviews_dataset.csv';
-CREATE VIEW sellers  AS SELECT * FROM 'data/olist/olist_sellers_dataset.csv';
-CREATE VIEW products AS SELECT * FROM 'data/olist/olist_products_dataset.csv';
-CREATE VIEW payments AS SELECT * FROM 'data/olist/olist_order_payments_dataset.csv';
-```
+You can save your work in a `.sql` file and run `sqlite3 data/olist/olist.db < myfile.sql`, or just paste queries into DB Browser's "Execute SQL" tab.
 
 ---
 

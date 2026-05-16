@@ -15,13 +15,12 @@ WITH delivery_status AS (
                 THEN 'late'
                 ELSE 'on_time'
            END AS status
-    FROM   read_csv_auto('data/olist/olist_orders_dataset.csv')
-    WHERE  order_delivered_customer_date IS NOT NULL
+    FROM   orders
+    WHERE  order_delivered_customer_date != ''
 )
 SELECT ds.status, AVG(r.review_score)
 FROM   delivery_status ds
-JOIN   read_csv_auto('data/olist/olist_order_reviews_dataset.csv') r
-       ON ds.order_id = r.order_id
+JOIN   reviews r ON ds.order_id = r.order_id
 GROUP BY ds.status;
 ```
 
@@ -33,9 +32,9 @@ on_time | 4.2
 ```
 
 **Common Claude mistakes to spot:**
-- Forgot `WHERE order_delivered_customer_date IS NOT NULL` — produces wrong counts because NULL dates count as "not late"
+- Used `IS NOT NULL` instead of `!= ''` — this is the classic SQLite-from-CSV trap. The query "runs" but treats every undelivered order as on-time, inflating numbers wildly. If Claude makes this mistake, say so explicitly: *"This is SQLite loaded from CSVs — empty cells are empty strings, not NULL. Re-do."*
 - Used `LEFT JOIN` to reviews — orders without reviews shouldn't be counted, so `JOIN` is correct here
-- Used `read_csv('...')` instead of `read_csv_auto('...')` — both work in DuckDB, but `_auto` infers types
+- Tried to use DuckDB-style CSV reads like `read_csv_auto(...)` — these don't exist in SQLite. The tables are already loaded; just reference them by name
 
 ---
 

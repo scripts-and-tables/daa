@@ -45,12 +45,22 @@ Order by revenue × (1 − avg_review_score / 5) descending. *(This is a rough "
 - An order can contain multiple items in different categories. For Sub-question A, **count an order once per distinct category in it**.
 - One order has one review. To aggregate review score by seller, join `items → reviews` on `order_id`, then `GROUP BY seller_id`. An order with two sellers contributes its review score to both — that's fine for this exercise.
 
-## How to export the result to a CSV in DuckDB
+## How to export the result to a CSV in SQLite
 
-```sql
-COPY (
-    -- your query here
-) TO 'capstone/day2_sql/worst_categories.csv' (HEADER, DELIMITER ',');
+**Easiest (GUI):** in DB Browser for SQLite, run the query → right-click the results grid → "Export to CSV file…" → save it into this folder.
+
+**From the CLI:** wrap each query in `.output` / `.mode csv` directives:
+
+```bash
+sqlite3 data/olist/olist.db <<'EOF'
+.headers on
+.mode csv
+.output capstone/day2_sql/worst_categories.csv
+
+-- your query here ;
+
+.output stdout
+EOF
 ```
 
 ## Deliverable

@@ -11,13 +11,15 @@ Each exercise has three parts: the prompt to give Claude, what to check, and wha
 **Prompt to Claude Code:**
 
 ```
-INPUT: data/olist/olist_orders_dataset.csv,
-       data/olist/olist_order_reviews_dataset.csv
-TASK:  Using DuckDB, write a single SQL query that returns the
-       average review score for orders delivered late vs on-time.
+INPUT: data/olist/olist.db (SQLite). Tables: orders, reviews.
+       Both came from the CSVs via .import, so empty cells are
+       empty strings ('') rather than NULL.
+TASK:  Write a single SQL query that returns the average review
+       score for orders delivered late vs on-time.
        "Late" = order_delivered_customer_date > order_estimated_delivery_date.
        Skip orders without a delivery date.
-OUTPUT: a SQL query I can paste into duckdb, and the result of running it.
+OUTPUT: a SQL query I can paste into DB Browser for SQLite, and the
+        result of running it.
 ```
 
 **Verify:**

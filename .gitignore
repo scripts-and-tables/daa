@@ -1,6 +1,7 @@
-# Olist CSVs — students download locally, we don't ship them
+# Olist CSVs + the SQLite database students build from them — local only
 data/olist/*.csv
 data/olist/*.zip
+data/olist/*.db
 
 # Excel / Office lock files
 ~$*

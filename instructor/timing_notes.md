@@ -24,7 +24,7 @@ If you're 30+ minutes behind by the end of Hour 2, **cut from Hour 3, never from
 | Window functions (only meant as a teaser anyway) | A second join exercise involving reviews |
 | CTE complexity — keep to single-CTE examples | `EXPLAIN` plan walkthrough |
 
-**Watch for:** students getting stuck on syntax errors. Have everyone use the same query editor (DuckDB CLI or DBeaver) — switching tools mid-class wastes time.
+**Watch for:** students getting stuck on syntax errors. Have everyone use the same query editor (DB Browser for SQLite) — switching tools mid-class wastes time. Also watch for the `!= ''` vs `IS NOT NULL` gotcha when filtering empty cells — call this out in Hour 1, not as a surprise in Hour 4.
 
 ## Day 3 — Python
 

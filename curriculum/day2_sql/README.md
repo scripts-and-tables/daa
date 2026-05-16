@@ -16,15 +16,40 @@ Everything you did with `XLOOKUP` and pivot tables in Excel has a direct SQL equ
 | Pivot table | `GROUP BY` + aggregates |
 | Sort | `ORDER BY` |
 
-## Tooling: DuckDB
+## Tooling: SQLite
 
-We use **[DuckDB](https://duckdb.org)** — a database that runs in-process (no server to set up) and reads CSV files directly. Zero-install for the most part: install once with `brew install duckdb` (Mac) or download a binary (Windows/Linux). Then:
+We use **[SQLite](https://sqlite.org)** — the simplest possible "real" database. One file (`olist.db`), no server, runs everywhere. You already have it: it's built into macOS, Linux, and Python.
 
-```sql
-SELECT * FROM 'data/olist/olist_orders_dataset.csv' LIMIT 5;
-```
+**Setup (5 minutes, do once):**
 
-That's it. You're querying. The Olist CSVs you downloaded yesterday are your database today.
+1. Make sure the CSVs are downloaded — `bash data/olist/download.sh`
+2. Build the database (loads all 8 CSVs into one `.db` file):
+   ```bash
+   cd data/olist
+   sqlite3 olist.db < load_into_sqlite.sql
+   ```
+3. Confirm it worked:
+   ```bash
+   sqlite3 olist.db "SELECT COUNT(*) FROM orders"
+   # → 99441
+   ```
+
+**Two ways to query:**
+
+| Tool | Best for |
+|---|---|
+| **[DB Browser for SQLite](https://sqlitebrowser.org/)** (GUI, free) | Beginners — looks like Excel for databases. Type query, click run, see results. **Recommended for class.** |
+| `sqlite3` CLI | Comfortable terminal users — faster for batch queries |
+
+Open the database in DB Browser: File → Open Database → pick `data/olist/olist.db`. Then "Execute SQL" tab.
+
+### SQLite quirks you'll meet today
+
+Two things SQLite does differently from "textbook" SQL — call these out to students early:
+
+- **All columns are TEXT after CSV import.** SQLite is permissive about types, so `AVG(price)` and `SUM(price)` still work on numeric-looking text. But if you need a real number, use `CAST(price AS REAL)`.
+- **Empty CSV cells become empty strings (`''`), not `NULL`.** Use `column != ''` instead of `column IS NOT NULL` when filtering "missing" values.
+- **Date math** uses `julianday()`: `CAST(julianday(b) - julianday(a) AS INTEGER)` gives day differences. ISO-formatted date strings compare correctly with `<` / `>`.
 
 ## Agenda
 
