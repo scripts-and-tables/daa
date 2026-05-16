@@ -1,4 +1,4 @@
-<div class="hero-home reveal" markdown>
+<div class="hero-home" markdown>
 
 <div class="hero-home__main" markdown>
 
@@ -65,7 +65,7 @@
 
 </div>
 
-<div class="full-bleed cream reveal" markdown>
+<div class="full-bleed cream" markdown>
 <div class="full-bleed__inner" markdown>
 
 <span class="section-eyebrow">First, the mindset</span>
@@ -79,7 +79,7 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 </div>
 </div>
 
-<div class="reveal" markdown>
+<div  markdown>
 
 <span class="section-eyebrow">What you'll learn</span>
 
@@ -114,7 +114,7 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 
 </div>
 
-<div class="full-bleed indigo-tint reveal" markdown>
+<div class="full-bleed indigo-tint" markdown>
 <div class="full-bleed__inner" markdown>
 
 <span class="section-eyebrow">Course at a glance</span>
@@ -157,7 +157,7 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 </div>
 </div>
 
-<div class="reveal" markdown>
+<div  markdown>
 
 <span class="section-eyebrow">Skills you'll gain</span>
 
@@ -192,7 +192,7 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 
 </div>
 
-<div class="full-bleed cream-warm reveal" markdown>
+<div class="full-bleed cream-warm" markdown>
 <div class="full-bleed__inner" markdown>
 
 <span class="section-eyebrow" id="whats-inside">What's inside</span>
@@ -291,7 +291,7 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 </div>
 </div>
 
-<div class="full-bleed dark reveal" markdown>
+<div class="full-bleed dark" markdown>
 <div class="full-bleed__inner" markdown>
 
 <div class="pull-quote">
@@ -305,7 +305,7 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 </div>
 </div>
 
-<div class="reveal" markdown>
+<div  markdown>
 
 <span class="section-eyebrow">Getting started</span>
 
@@ -323,7 +323,7 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 
 </div>
 
-<div class="full-bleed dark reveal" markdown>
+<div class="full-bleed dark" markdown>
 <div class="full-bleed__inner" markdown>
 
 <span class="section-eyebrow">After the course</span>
@@ -335,7 +335,7 @@ Finished all five days plus the capstone? Read **[What to learn next →](next_s
 </div>
 </div>
 
-<div class="reveal" markdown>
+<div  markdown>
 
 <span class="section-eyebrow">About</span>
 
