@@ -1,0 +1,9 @@
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Spreadsheet with highlighted cell">
+  <rect x="8" y="8" width="64" height="64" rx="8" fill="#fff" stroke="#10b981" stroke-width="2.5"/>
+  <line x1="29.3" y1="8" x2="29.3" y2="72" stroke="#10b981" stroke-width="1.4" stroke-opacity="0.4"/>
+  <line x1="50.7" y1="8" x2="50.7" y2="72" stroke="#10b981" stroke-width="1.4" stroke-opacity="0.4"/>
+  <line x1="8" y1="29.3" x2="72" y2="29.3" stroke="#10b981" stroke-width="1.4" stroke-opacity="0.4"/>
+  <line x1="8" y1="50.7" x2="72" y2="50.7" stroke="#10b981" stroke-width="1.4" stroke-opacity="0.4"/>
+  <rect x="29.3" y="29.3" width="21.4" height="21.4" fill="#10b981" fill-opacity="0.28"/>
+  <path d="M 33 41 L 38.5 46.5 L 47 35" stroke="#065f46" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two database tables connected by a JOIN">
+  <text x="40" y="13" font-family="ui-monospace, SFMono-Regular, monospace" font-size="6" font-weight="700" text-anchor="middle" fill="#1e40af" letter-spacing="0.6">JOIN</text>
+  <rect x="6" y="22" width="22" height="36" rx="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+  <line x1="6" y1="30" x2="28" y2="30" stroke="#3b82f6" stroke-width="1.6"/>
+  <line x1="6" y1="38" x2="28" y2="38" stroke="#3b82f6" stroke-width="0.8" stroke-opacity="0.5"/>
+  <line x1="6" y1="46" x2="28" y2="46" stroke="#3b82f6" stroke-width="0.8" stroke-opacity="0.5"/>
+  <line x1="6" y1="54" x2="28" y2="54" stroke="#3b82f6" stroke-width="0.8" stroke-opacity="0.5"/>
+  <rect x="52" y="22" width="22" height="36" rx="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+  <line x1="52" y1="30" x2="74" y2="30" stroke="#3b82f6" stroke-width="1.6"/>
+  <line x1="52" y1="38" x2="74" y2="38" stroke="#3b82f6" stroke-width="0.8" stroke-opacity="0.5"/>
+  <line x1="52" y1="46" x2="74" y2="46" stroke="#3b82f6" stroke-width="0.8" stroke-opacity="0.5"/>
+  <line x1="52" y1="54" x2="74" y2="54" stroke="#3b82f6" stroke-width="0.8" stroke-opacity="0.5"/>
+  <path d="M 28 40 L 52 40" stroke="#3b82f6" stroke-width="2.5" stroke-dasharray="3 2.5"/>
+  <circle cx="28" cy="40" r="2.6" fill="#3b82f6"/>
+  <circle cx="52" cy="40" r="2.6" fill="#3b82f6"/>
+  <text x="40" y="70" font-family="ui-monospace, SFMono-Regular, monospace" font-size="5" font-weight="600" text-anchor="middle" fill="#3b82f6" opacity="0.7">ON id</text>
+</svg>

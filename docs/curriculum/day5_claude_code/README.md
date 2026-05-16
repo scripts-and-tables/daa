@@ -1,5 +1,5 @@
 <div class="hero-day" data-day="5" markdown>
-<div class="hero-day__icon" markdown>:material-creation:</div>
+<div class="hero-day__icon"><img src="../../assets/illustrations/day5.svg" alt="" class="illus"></div>
 <div class="hero-day__copy" markdown>
 <p class="hero-day__eyebrow">Day 5 of 5 · 4 hours</p>
 

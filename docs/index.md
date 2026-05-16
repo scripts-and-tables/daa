@@ -1,4 +1,4 @@
-<div class="hero-home" markdown>
+<div class="hero-home reveal" markdown>
 
 <div class="hero-home__main" markdown>
 
@@ -20,10 +20,10 @@
 </div>
 
 <div class="hero-home__stats">
-  <div class="hero-home__stat"><span class="hero-home__stat-num">5</span><span class="hero-home__stat-label">days</span></div>
-  <div class="hero-home__stat"><span class="hero-home__stat-num">25</span><span class="hero-home__stat-label">lessons</span></div>
-  <div class="hero-home__stat"><span class="hero-home__stat-num">20h</span><span class="hero-home__stat-label">teaching</span></div>
-  <div class="hero-home__stat"><span class="hero-home__stat-num">1</span><span class="hero-home__stat-label">capstone</span></div>
+  <div class="hero-home__stat"><span class="hero-home__stat-num count-up" data-target="5">5</span><span class="hero-home__stat-label">days</span></div>
+  <div class="hero-home__stat"><span class="hero-home__stat-num count-up" data-target="25">25</span><span class="hero-home__stat-label">lessons</span></div>
+  <div class="hero-home__stat"><span class="hero-home__stat-num count-up" data-target="20" data-suffix="h">20h</span><span class="hero-home__stat-label">teaching</span></div>
+  <div class="hero-home__stat"><span class="hero-home__stat-num count-up" data-target="1">1</span><span class="hero-home__stat-label">capstone</span></div>
   <div class="hero-home__stat"><span class="hero-home__stat-num">100K</span><span class="hero-home__stat-label">real orders</span></div>
 </div>
 
@@ -65,12 +65,24 @@
 
 </div>
 
+<div class="full-bleed cream reveal" markdown>
+<div class="full-bleed__inner" markdown>
+
 <span class="section-eyebrow">First, the mindset</span>
+
 ## Before the tools — what an analyst actually does
 
-Five days of tool fluency is what this site teaches. But the job an analyst is *paid* for is what you do with the tools — translating vague stakeholder questions into specific ones, sanity-checking your own numbers, picking the chart a non-analyst can read in five seconds. **[Read: What a data analyst actually does →](about_the_role.md)** (5-minute read; ground the rest of the course before you dive into Day 1.)
+Five days of tool fluency is what this site teaches. But the job an analyst is *paid* for is what you do with the tools — translating vague stakeholder questions into specific ones, sanity-checking your own numbers, picking the chart a non-analyst can read in five seconds.
+
+[Read: What a data analyst actually does →](about_the_role.md){ .hero-home__cta }
+
+</div>
+</div>
+
+<div class="reveal" markdown>
 
 <span class="section-eyebrow">What you'll learn</span>
+
 ## Six concrete skills you'll walk away with
 
 <div class="learn-grid" markdown>
@@ -100,7 +112,55 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 </div>
 </div>
 
+</div>
+
+<div class="full-bleed indigo-tint reveal" markdown>
+<div class="full-bleed__inner" markdown>
+
+<span class="section-eyebrow">Course at a glance</span>
+
+## Five days, five tools, one capstone
+
+<div class="timeline">
+<a class="timeline-node" data-day="1" href="curriculum/day1_excel/README.md">
+<span class="timeline-node__dot"><img src="assets/illustrations/day1.svg" alt="" class="illus"></span>
+<p class="timeline-node__num">Day 1</p>
+<p class="timeline-node__title">Excel</p>
+<p class="timeline-node__meta">4 hours · 5 lessons</p>
+</a>
+<a class="timeline-node" data-day="2" href="curriculum/day2_sql/README.md">
+<span class="timeline-node__dot"><img src="assets/illustrations/day2.svg" alt="" class="illus"></span>
+<p class="timeline-node__num">Day 2</p>
+<p class="timeline-node__title">SQL</p>
+<p class="timeline-node__meta">4 hours · 5 lessons</p>
+</a>
+<a class="timeline-node" data-day="3" href="curriculum/day3_python/README.md">
+<span class="timeline-node__dot"><img src="assets/illustrations/day3.svg" alt="" class="illus"></span>
+<p class="timeline-node__num">Day 3</p>
+<p class="timeline-node__title">Python</p>
+<p class="timeline-node__meta">4 hours · 5 lessons</p>
+</a>
+<a class="timeline-node" data-day="4" href="curriculum/day4_powerbi/README.md">
+<span class="timeline-node__dot"><img src="assets/illustrations/day4.svg" alt="" class="illus"></span>
+<p class="timeline-node__num">Day 4</p>
+<p class="timeline-node__title">Power BI</p>
+<p class="timeline-node__meta">4 hours · 5 lessons</p>
+</a>
+<a class="timeline-node" data-day="5" href="curriculum/day5_claude_code/README.md">
+<span class="timeline-node__dot"><img src="assets/illustrations/day5.svg" alt="" class="illus"></span>
+<p class="timeline-node__num">Day 5</p>
+<p class="timeline-node__title">Claude Code</p>
+<p class="timeline-node__meta">4 hours · 5 lessons</p>
+</a>
+</div>
+
+</div>
+</div>
+
+<div class="reveal" markdown>
+
 <span class="section-eyebrow">Skills you'll gain</span>
+
 ## The toolbox
 
 <div class="skill-pills">
@@ -130,14 +190,20 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 <span class="skill-pill">Stakeholder reports</span>
 </div>
 
+</div>
+
+<div class="full-bleed cream-warm reveal" markdown>
+<div class="full-bleed__inner" markdown>
+
 <span class="section-eyebrow" id="whats-inside">What's inside</span>
+
 ## Your 5-day path
 
 <div class="day-cards" markdown>
 
 <a class="day-card" data-day="1" href="curriculum/day1_excel/README.md" markdown="1">
 <span class="day-card__top">
-<span class="day-card__icon" markdown="1">:material-microsoft-excel:</span>
+<span class="day-card__icon"><img src="assets/illustrations/day1.svg" alt="" class="illus"></span>
 <span class="day-card__label">
 <span class="day-card__eyebrow">Day 1</span>
 <span class="day-card__title">Excel</span>
@@ -154,7 +220,7 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 
 <a class="day-card" data-day="2" href="curriculum/day2_sql/README.md" markdown="1">
 <span class="day-card__top">
-<span class="day-card__icon" markdown="1">:material-database:</span>
+<span class="day-card__icon"><img src="assets/illustrations/day2.svg" alt="" class="illus"></span>
 <span class="day-card__label">
 <span class="day-card__eyebrow">Day 2</span>
 <span class="day-card__title">SQL</span>
@@ -171,7 +237,7 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 
 <a class="day-card" data-day="3" href="curriculum/day3_python/README.md" markdown="1">
 <span class="day-card__top">
-<span class="day-card__icon" markdown="1">:material-language-python:</span>
+<span class="day-card__icon"><img src="assets/illustrations/day3.svg" alt="" class="illus"></span>
 <span class="day-card__label">
 <span class="day-card__eyebrow">Day 3</span>
 <span class="day-card__title">Python</span>
@@ -188,7 +254,7 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 
 <a class="day-card" data-day="4" href="curriculum/day4_powerbi/README.md" markdown="1">
 <span class="day-card__top">
-<span class="day-card__icon" markdown="1">:material-chart-areaspline-variant:</span>
+<span class="day-card__icon"><img src="assets/illustrations/day4.svg" alt="" class="illus"></span>
 <span class="day-card__label">
 <span class="day-card__eyebrow">Day 4</span>
 <span class="day-card__title">Power BI</span>
@@ -205,7 +271,7 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 
 <a class="day-card" data-day="5" href="curriculum/day5_claude_code/README.md" markdown="1">
 <span class="day-card__top">
-<span class="day-card__icon" markdown="1">:material-creation:</span>
+<span class="day-card__icon"><img src="assets/illustrations/day5.svg" alt="" class="illus"></span>
 <span class="day-card__label">
 <span class="day-card__eyebrow">Day 5</span>
 <span class="day-card__title">Claude Code</span>
@@ -222,25 +288,27 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 
 </div>
 
-<span class="section-eyebrow">The capstone</span>
-## One question, threaded through every day
+</div>
+</div>
 
-One real dataset — Brazilian e-commerce, ~100,000 orders, 2017–2018 — and one business question, threaded through all five days:
+<div class="full-bleed dark reveal" markdown>
+<div class="full-bleed__inner" markdown>
 
-> *"Which sellers and product categories are driving low customer satisfaction at Olist, and what's the financial impact?"*
+<div class="pull-quote">
+<span class="pull-quote__mark">“</span>
+<p class="pull-quote__text">Which sellers and product categories are driving low customer satisfaction at Olist — and what's the financial impact?</p>
+<p class="pull-quote__cite">The capstone question · threaded through all 5 days</p>
+</div>
 
-By Friday evening you'll have answered it five different ways and produced a 1-page stakeholder report — with every number traceable to the day you computed it. [See the capstone overview →](capstone/README.md)
+[See the capstone overview →](capstone/README.md){ .hero-home__cta .hero-home__cta--ghost }
 
-<span class="section-eyebrow">Who this is for</span>
-## Built for working professionals new to data
+</div>
+</div>
 
-- **You've used Excel a handful of times.** That's enough — Day 1 starts from "what's a Table" and builds up.
-- **You don't write code yet.** Days 3 and 5 introduce just enough Python and AI tooling to do the work; nothing more.
-- **You want a real artifact at the end.** The capstone produces a 1-page report on real data — something you can show colleagues or put in a portfolio.
-
-Not built for: software engineers who already know SQL/pandas (this will feel slow), or someone looking for a 12-week deep dive (this is 5 days, not a bootcamp).
+<div class="reveal" markdown>
 
 <span class="section-eyebrow">Getting started</span>
+
 ## What you'll need
 
 | For | Tool | Cost |
@@ -253,12 +321,26 @@ Not built for: software engineers who already know SQL/pandas (this will feel sl
 
 **Students** — head straight to [Day 1 — Excel](curriculum/day1_excel/README.md). **Instructors** — start with the [setup checklist](instructor/setup_checklist.md) and [timing notes](instructor/timing_notes.md).
 
+</div>
+
+<div class="full-bleed dark reveal" markdown>
+<div class="full-bleed__inner" markdown>
+
 <span class="section-eyebrow">After the course</span>
+
 ## Where to go from here
 
-Finished all five days plus the capstone? **[What to learn next →](next_steps.md)** — the books, courses, and habits that take a fluent beginner to a working analyst.
+Finished all five days plus the capstone? Read **[What to learn next →](next_steps.md)** — the books, courses, and habits that take a fluent beginner to a working analyst.
+
+</div>
+</div>
+
+<div class="reveal" markdown>
 
 <span class="section-eyebrow">About</span>
+
 ## This course
 
 Built for an internal analytics academy and released publicly under [MIT](https://github.com/scripts-and-tables/daa/blob/main/LICENSE). Source code and all materials: **[github.com/scripts-and-tables/daa](https://github.com/scripts-and-tables/daa)**.
+
+</div>

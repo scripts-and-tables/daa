@@ -1,5 +1,5 @@
 <div class="hero-day" data-day="4" markdown>
-<div class="hero-day__icon" markdown>:material-chart-areaspline-variant:</div>
+<div class="hero-day__icon"><img src="../../assets/illustrations/day4.svg" alt="" class="illus"></div>
 <div class="hero-day__copy" markdown>
 <p class="hero-day__eyebrow">Day 4 of 5 · 4 hours</p>
 

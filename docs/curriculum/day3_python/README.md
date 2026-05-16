@@ -1,5 +1,5 @@
 <div class="hero-day" data-day="3" markdown>
-<div class="hero-day__icon" markdown>:material-language-python:</div>
+<div class="hero-day__icon"><img src="../../assets/illustrations/day3.svg" alt="" class="illus"></div>
 <div class="hero-day__copy" markdown>
 <p class="hero-day__eyebrow">Day 3 of 5 · 4 hours</p>
 

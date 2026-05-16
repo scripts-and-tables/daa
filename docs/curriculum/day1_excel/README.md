@@ -1,5 +1,5 @@
 <div class="hero-day" data-day="1" markdown>
-<div class="hero-day__icon" markdown>:material-microsoft-excel:</div>
+<div class="hero-day__icon"><img src="../../assets/illustrations/day1.svg" alt="" class="illus"></div>
 <div class="hero-day__copy" markdown>
 <p class="hero-day__eyebrow">Day 1 of 5 · 4 hours</p>
 

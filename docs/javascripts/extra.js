@@ -81,3 +81,138 @@
     window.document$.subscribe(injectBadge);
   }
 })();
+
+/* ============================================================
+   Scroll-fade reveals — IntersectionObserver
+   Adds .is-visible to elements with class .reveal as they enter the viewport.
+   ============================================================ */
+(function () {
+  "use strict";
+
+  var prefersReduce =
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function showAll() {
+    var els = document.querySelectorAll(".reveal");
+    for (var i = 0; i < els.length; i++) els[i].classList.add("is-visible");
+  }
+
+  function setupReveal() {
+    if (prefersReduce || !("IntersectionObserver" in window)) {
+      showAll();
+      return;
+    }
+
+    var obs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-visible");
+            obs.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+    );
+
+    document.querySelectorAll(".reveal").forEach(function (el) {
+      obs.observe(el);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupReveal);
+  } else {
+    setupReveal();
+  }
+
+  if (typeof window.document$ !== "undefined" && typeof window.document$.subscribe === "function") {
+    window.document$.subscribe(setupReveal);
+  }
+})();
+
+/* ============================================================
+   Hero stats counter — count up from 0 to the target value
+   Looks for elements with class .count-up and a data-target attribute.
+   ============================================================ */
+(function () {
+  "use strict";
+
+  var prefersReduce =
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function animateCount(el) {
+    var target = el.getAttribute("data-target");
+    var suffix = el.getAttribute("data-suffix") || "";
+    var numericTarget = parseFloat(target);
+    if (isNaN(numericTarget)) {
+      el.textContent = target + suffix;
+      return;
+    }
+    if (prefersReduce) {
+      el.textContent = formatNumber(numericTarget) + suffix;
+      return;
+    }
+
+    var duration = 900;
+    var start = performance.now();
+
+    function step(now) {
+      var t = Math.min(1, (now - start) / duration);
+      // easeOutQuart
+      var eased = 1 - Math.pow(1 - t, 4);
+      var current = numericTarget * eased;
+      el.textContent = formatNumber(current, numericTarget) + suffix;
+      if (t < 1) requestAnimationFrame(step);
+      else el.textContent = formatNumber(numericTarget) + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+
+  function formatNumber(value, target) {
+    target = target || value;
+    if (target >= 1000) {
+      // 100K case: keep raw — caller passed integer that's already shorthand
+      return Math.round(value).toString();
+    }
+    if (Number.isInteger(target)) {
+      return Math.round(value).toString();
+    }
+    return value.toFixed(1);
+  }
+
+  function setupCounters() {
+    var els = document.querySelectorAll(".count-up[data-target]");
+    if (els.length === 0) return;
+
+    if (!("IntersectionObserver" in window)) {
+      els.forEach(animateCount);
+      return;
+    }
+
+    var obs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            animateCount(e.target);
+            obs.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    els.forEach(function (el) { obs.observe(el); });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupCounters);
+  } else {
+    setupCounters();
+  }
+
+  if (typeof window.document$ !== "undefined" && typeof window.document$.subscribe === "function") {
+    window.document$.subscribe(setupCounters);
+  }
+})();
