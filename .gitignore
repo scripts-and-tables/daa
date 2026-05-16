@@ -1,0 +1,22 @@
+# Olist CSVs — students download locally, we don't ship them
+data/olist/*.csv
+data/olist/*.zip
+
+# Excel / Office lock files
+~$*
+*.xlsx#
+
+# Power BI temp + cache
+*.pbix.bak
+.pbi/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
