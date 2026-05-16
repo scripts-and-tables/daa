@@ -72,13 +72,63 @@ By the end of today, given a folder of CSVs and a question, you can:
 
 ## Lessons
 
-| # | Topic | Time | Key things |
-|---|---|---|---|
-| 1 | [Notebooks & loading data](01_notebooks_and_loading.md) | ~25 min | `read_csv`, `parse_dates`, `.info()`, dtypes |
-| 2 | [Selecting & filtering](02_selecting_filtering.md) | ~30 min | Boolean masks, `.query()`, `&`/`\|`/`~`, `SettingWithCopyWarning` |
-| 3 | [Aggregation & groupby](03_groupby.md) | ~30 min | `.value_counts()`, `.groupby()` + named `.agg()`, `.size()` vs `.count()` |
-| 4 | [Merge & combine](04_merge.md) | ~25 min | `pd.merge`, the row-count sanity check, `pd.concat` |
-| 5 | [Cleaning, dates, plots](05_cleaning_dates_plots.md) | ~30 min | `.isna()`/`.fillna()`, `.dt`/`.str`, `pd.cut`, quick charts |
+<div class="lesson-cards" markdown>
+
+<a class="lesson-card" data-day="3" href="01_notebooks_and_loading.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 01</span>
+<span class="lesson-card__time">~25 min</span>
+</span>
+<span class="lesson-card__title">Notebooks & loading data</span>
+<span class="lesson-card__desc">`read_csv` with `parse_dates`, the 30-second inspection routine: `.info()`, `.head()`, `.describe()`.</span>
+</a>
+
+<a class="lesson-card" data-day="3" href="02_selecting_filtering.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 02</span>
+<span class="lesson-card__time">~30 min</span>
+</span>
+<span class="lesson-card__title">Selecting & filtering</span>
+<span class="lesson-card__desc">Boolean masks, `.query()`, `&`/`|`/`~` with parentheses, taming `SettingWithCopyWarning`.</span>
+</a>
+
+<a class="lesson-card" data-day="3" href="03_groupby.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 03</span>
+<span class="lesson-card__time">~30 min</span>
+</span>
+<span class="lesson-card__title">Aggregation & groupby</span>
+<span class="lesson-card__desc">`.value_counts()`, named aggregations, `.size()` vs `.count()`, sort + trim chains.</span>
+</a>
+
+<a class="lesson-card" data-day="3" href="04_merge.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 04</span>
+<span class="lesson-card__time">~25 min</span>
+</span>
+<span class="lesson-card__title">Merge & combine</span>
+<span class="lesson-card__desc">`pd.merge`, the row-count sanity-check pattern, `indicator=True`, when `concat` is the right tool.</span>
+</a>
+
+<a class="lesson-card" data-day="3" href="05_cleaning_dates_plots.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 05</span>
+<span class="lesson-card__time">~30 min</span>
+</span>
+<span class="lesson-card__title">Cleaning, dates, plots</span>
+<span class="lesson-card__desc">`.isna()`/`.fillna()`, the `.dt`/`.str` accessors, `pd.cut`, quick plots, saving CSV + PNG.</span>
+</a>
+
+<a class="lesson-card lesson-card--test" data-day="3" href="test.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Self-test</span>
+<span class="lesson-card__time">~15 min</span>
+</span>
+<span class="lesson-card__title">Gate-check before the capstone</span>
+<span class="lesson-card__desc">12 questions covering the five lessons. Reveal each answer only after writing yours down.</span>
+</a>
+
+</div>
 
 Practice is folded into each lesson as collapsible "Try it yourself" boxes — read the concept, attempt the drill, reveal the solution.
 

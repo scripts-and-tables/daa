@@ -24,7 +24,6 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
-    - content.action.edit
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default

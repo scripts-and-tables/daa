@@ -62,13 +62,63 @@ By the end of today, given a folder of CSVs and a business question, you can:
 
 ## Lessons
 
-| # | Topic | Time | Key things |
-|---|---|---|---|
-| 1 | [Get Data & Power Query](01_get_data_power_query.md) | ~30 min | Importing CSVs, renaming, type-changing, custom columns, M one-liners |
-| 2 | [The data model](02_data_model.md) | ~25 min | Relationships, cardinality, star schema, verifying auto-detection |
-| 3 | [Building visuals](03_visuals.md) | ~30 min | Six core visuals, picking the aggregation, Top N filter, sorting |
-| 4 | [DAX measures](04_dax_measures.md) | ~30 min | `SUM`, `AVERAGE`, `CALCULATE`, `DIVIDE`, filter context |
-| 5 | [Interactivity, layout, polish](05_interactivity_and_polish.md) | ~25 min | Slicers, edit interactions, themes, export |
+<div class="lesson-cards" markdown>
+
+<a class="lesson-card" data-day="4" href="01_get_data_power_query.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 01</span>
+<span class="lesson-card__time">~30 min</span>
+</span>
+<span class="lesson-card__title">Get Data & Power Query</span>
+<span class="lesson-card__desc">Transform Data, the Applied Steps recipe, renaming, type-changing, custom columns with one-line M.</span>
+</a>
+
+<a class="lesson-card" data-day="4" href="02_data_model.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 02</span>
+<span class="lesson-card__time">~25 min</span>
+</span>
+<span class="lesson-card__title">The data model</span>
+<span class="lesson-card__desc">One-to-many relationships, cardinality, star schema basics, verifying Power BI's auto-detection.</span>
+</a>
+
+<a class="lesson-card" data-day="4" href="03_visuals.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 03</span>
+<span class="lesson-card__time">~30 min</span>
+</span>
+<span class="lesson-card__title">Building visuals</span>
+<span class="lesson-card__desc">The six core visuals, picking the right aggregation, Top N filters, sort, cross-filtering for free.</span>
+</a>
+
+<a class="lesson-card" data-day="4" href="04_dax_measures.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 04</span>
+<span class="lesson-card__time">~30 min</span>
+</span>
+<span class="lesson-card__title">DAX measures</span>
+<span class="lesson-card__desc">`SUM`, `AVERAGE`, `CALCULATE`, `DIVIDE`, and the filter-context mental model that unlocks everything.</span>
+</a>
+
+<a class="lesson-card" data-day="4" href="05_interactivity_and_polish.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 05</span>
+<span class="lesson-card__time">~25 min</span>
+</span>
+<span class="lesson-card__title">Interactivity, layout, polish</span>
+<span class="lesson-card__desc">Slicer styles, edit interactions, themes, layout discipline, exporting as PDF/PNG.</span>
+</a>
+
+<a class="lesson-card lesson-card--test" data-day="4" href="test.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Self-test</span>
+<span class="lesson-card__time">~15 min</span>
+</span>
+<span class="lesson-card__title">Gate-check before the capstone</span>
+<span class="lesson-card__desc">12 questions covering Power Query vs DAX decisions, cardinality, measures, and common gotchas.</span>
+</a>
+
+</div>
 
 Practice is folded into each lesson as collapsible "Try it yourself" boxes — read the concept, attempt in Power BI, reveal the sanity checks.
 

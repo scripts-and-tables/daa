@@ -94,13 +94,63 @@ By the end of today, given a relational database with 8 tables you've never seen
 
 ## Lessons
 
-| # | Topic | Time | Key things |
-|---|---|---|---|
-| 1 | [SELECT, FROM, WHERE](01_select_basics.md) | ~30 min | Query anatomy, filters, sort, logical execution order |
-| 2 | [Aggregation & GROUP BY](02_aggregation.md) | ~30 min | `COUNT`/`SUM`/`AVG`, `HAVING`, `DISTINCT` |
-| 3 | [Joins](03_joins.md) | ~40 min | `INNER`/`LEFT`, multi-table, anti-join, aliases |
-| 4 | [CTEs & multi-step queries](04_ctes.md) | ~30 min | `WITH … AS`, `CASE`, peek at window functions |
-| 5 | [NULLs, types & SQLite quirks](05_nulls_and_quirks.md) | ~25 min | `IS NULL`, `COALESCE`, empty-string-vs-NULL, `julianday`, `CAST` |
+<div class="lesson-cards" markdown>
+
+<a class="lesson-card" data-day="2" href="01_select_basics.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 01</span>
+<span class="lesson-card__time">~30 min</span>
+</span>
+<span class="lesson-card__title">SELECT, FROM, WHERE</span>
+<span class="lesson-card__desc">Query anatomy, filters, `ORDER BY`, `LIMIT`, and the logical execution order that trips up everyone.</span>
+</a>
+
+<a class="lesson-card" data-day="2" href="02_aggregation.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 02</span>
+<span class="lesson-card__time">~30 min</span>
+</span>
+<span class="lesson-card__title">Aggregation & GROUP BY</span>
+<span class="lesson-card__desc">Five aggregates, the `SELECT`-must-be-grouped rule, `HAVING` vs `WHERE`, `DISTINCT`.</span>
+</a>
+
+<a class="lesson-card" data-day="2" href="03_joins.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 03</span>
+<span class="lesson-card__time">~40 min</span>
+</span>
+<span class="lesson-card__title">Joins</span>
+<span class="lesson-card__desc">`INNER`/`LEFT`, multi-table chains, the anti-join pattern, why you always alias.</span>
+</a>
+
+<a class="lesson-card" data-day="2" href="04_ctes.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 04</span>
+<span class="lesson-card__time">~30 min</span>
+</span>
+<span class="lesson-card__title">CTEs & multi-step queries</span>
+<span class="lesson-card__desc">`WITH … AS`, chained CTEs, `CASE WHEN`, and a peek at window functions.</span>
+</a>
+
+<a class="lesson-card" data-day="2" href="05_nulls_and_quirks.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 05</span>
+<span class="lesson-card__time">~25 min</span>
+</span>
+<span class="lesson-card__title">NULLs & SQLite quirks</span>
+<span class="lesson-card__desc">`IS NULL` semantics, `COALESCE`, the empty-string-vs-NULL trap, `julianday`, `CAST`.</span>
+</a>
+
+<a class="lesson-card lesson-card--test" data-day="2" href="test.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Self-test</span>
+<span class="lesson-card__time">~15 min</span>
+</span>
+<span class="lesson-card__title">Gate-check before the capstone</span>
+<span class="lesson-card__desc">12 short questions: MCQ, write-the-query, spot-the-bug. Reveal each answer only after writing yours down.</span>
+</a>
+
+</div>
 
 Practice is **folded into each lesson** as collapsible "Try it yourself" boxes — read the concept, attempt the drill, reveal the solution.
 

@@ -47,13 +47,63 @@ By the end of today, given a CSV of orders you've never seen before, you can:
 
 ## The five lessons
 
-| # | Lesson | Headline skills |
-|---|---|---|
-| 1 | [Tables & references](01_tables.md) | `Ctrl+T`, `[@col]`, `Sales[Revenue]`, `$A$1` vs `A$1`, sort/filter/freeze |
-| 2 | [Math & aggregation](02_aggregation.md) | `SUM`, `AVERAGE`, `COUNT` vs `COUNTA`, `MIN`/`MAX`, `ROUND`, % patterns |
-| 3 | [Logic & lookups](03_logic_lookups.md) | `IF`, `IFS`, `IFERROR`, `SUMIFS`/`COUNTIFS`/`AVERAGEIFS`, **`XLOOKUP`** |
-| 4 | [Dates, text & cleaning](04_dates_cleaning.md) | Date arithmetic, `TEXT`, `TRIM`, Flash Fill, Text-to-Columns |
-| 5 | [Pivot tables & charts](05_pivots.md) | Build from a Table, slicers, date grouping, pivot charts |
+<div class="lesson-cards" markdown>
+
+<a class="lesson-card" data-day="1" href="01_tables.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 01</span>
+<span class="lesson-card__time">~30 min</span>
+</span>
+<span class="lesson-card__title">Tables & references</span>
+<span class="lesson-card__desc">`Ctrl+T`, structured refs (`[@col]`), absolute vs relative, sort/filter, freeze panes, Find & Replace.</span>
+</a>
+
+<a class="lesson-card" data-day="1" href="02_aggregation.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 02</span>
+<span class="lesson-card__time">~30 min</span>
+</span>
+<span class="lesson-card__title">Math & aggregation</span>
+<span class="lesson-card__desc">`SUM`, `AVERAGE`, `COUNT`/`COUNTA`, `MIN`/`MAX`, `ROUND`, percentage patterns.</span>
+</a>
+
+<a class="lesson-card" data-day="1" href="03_logic_lookups.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 03</span>
+<span class="lesson-card__time">~30 min</span>
+</span>
+<span class="lesson-card__title">Logic & lookups</span>
+<span class="lesson-card__desc">`IF`/`IFS`, `IFERROR`, `COUNTIFS`/`SUMIFS`/`AVERAGEIFS`, **`XLOOKUP`**, `INDEX`+`MATCH`.</span>
+</a>
+
+<a class="lesson-card" data-day="1" href="04_dates_cleaning.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 04</span>
+<span class="lesson-card__time">~30 min</span>
+</span>
+<span class="lesson-card__title">Dates, text & cleaning</span>
+<span class="lesson-card__desc">Date arithmetic, `TEXT`, `DATEVALUE`, `TRIM`, `LEFT`/`MID`, Flash Fill, Remove Duplicates, Text-to-Columns.</span>
+</a>
+
+<a class="lesson-card" data-day="1" href="05_pivots.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 05</span>
+<span class="lesson-card__time">~30 min</span>
+</span>
+<span class="lesson-card__title">Pivot tables & charts</span>
+<span class="lesson-card__desc">Build pivots from a Table, slicers, date grouping, calculated fields, refresh, pivot charts.</span>
+</a>
+
+<a class="lesson-card lesson-card--test" data-day="1" href="test.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Self-test</span>
+<span class="lesson-card__time">~15 min</span>
+</span>
+<span class="lesson-card__title">Gate-check before the capstone</span>
+<span class="lesson-card__desc">12 questions covering all five lessons. Reveal each answer only after writing yours down.</span>
+</a>
+
+</div>
 
 Each lesson is 25–40 minutes and ends with a collapsible "Try it yourself" drill plus a list of pitfalls. Work through them in order — Lesson 3 builds on Lesson 1, and the capstone uses formulas from every lesson.
 

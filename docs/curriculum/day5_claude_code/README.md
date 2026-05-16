@@ -58,13 +58,63 @@ By the end of today, you can:
 
 ## Lessons
 
-| # | Topic | Time | Key things |
-|---|---|---|---|
-| 1 | [Getting started](01_getting_started.md) | ~20 min | The interface, signing in, when to reach for AI vs. do it yourself |
-| 2 | [Prompting that works](02_prompting.md) | ~25 min | INPUT/TASK/OUTPUT, specificity, iteration patterns |
-| 3 | [Plan mode & verification](03_plan_mode_and_verification.md) | ~25 min | Plan mode workflow, the verification reflex, productive pushback |
-| 4 | [AI-assisted querying](04_ai_assisted_querying.md) | ~30 min | Re-doing Day 2 / 3 with Claude, the four most common mistakes |
-| 5 | [Text analytics & the report](05_text_and_report.md) | ~30 min | Theme extraction from reviews, taxonomy iteration, assembling the final deliverable |
+<div class="lesson-cards" markdown>
+
+<a class="lesson-card" data-day="5" href="01_getting_started.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 01</span>
+<span class="lesson-card__time">~20 min</span>
+</span>
+<span class="lesson-card__title">Getting started</span>
+<span class="lesson-card__desc">The interface, signing in, connecting the repo, and when to reach for AI vs. do it yourself.</span>
+</a>
+
+<a class="lesson-card" data-day="5" href="02_prompting.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 02</span>
+<span class="lesson-card__time">~25 min</span>
+</span>
+<span class="lesson-card__title">Prompting that works</span>
+<span class="lesson-card__desc">The INPUT/TASK/OUTPUT template, specificity moves, productive iteration patterns.</span>
+</a>
+
+<a class="lesson-card" data-day="5" href="03_plan_mode_and_verification.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 03</span>
+<span class="lesson-card__time">~25 min</span>
+</span>
+<span class="lesson-card__title">Plan mode & verification</span>
+<span class="lesson-card__desc">Plan-mode workflow, the three verification habits, productive pushback when numbers don't match.</span>
+</a>
+
+<a class="lesson-card" data-day="5" href="04_ai_assisted_querying.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 04</span>
+<span class="lesson-card__time">~30 min</span>
+</span>
+<span class="lesson-card__title">AI-assisted querying</span>
+<span class="lesson-card__desc">Re-doing Day 2 / 3 with Claude, the four most common mistakes, dialect translation.</span>
+</a>
+
+<a class="lesson-card" data-day="5" href="05_text_and_report.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Lesson 05</span>
+<span class="lesson-card__time">~30 min</span>
+</span>
+<span class="lesson-card__title">Text analytics & the report</span>
+<span class="lesson-card__desc">Theme extraction from reviews, taxonomy iteration, assembling the final stakeholder deliverable.</span>
+</a>
+
+<a class="lesson-card lesson-card--test" data-day="5" href="test.md" markdown="1">
+<span class="lesson-card__head">
+<span class="lesson-card__num">Self-test</span>
+<span class="lesson-card__time">~15 min</span>
+</span>
+<span class="lesson-card__title">Gate-check before the capstone</span>
+<span class="lesson-card__desc">12 questions covering prompting, verification, and AI-assisted querying habits.</span>
+</a>
+
+</div>
 
 Practice is folded into each lesson as collapsible "Try it yourself" boxes — try the prompt, verify the output, reveal the gotchas.
 
