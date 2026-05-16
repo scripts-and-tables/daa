@@ -2,19 +2,25 @@
 
 **Duration:** 4 hours
 **Prerequisites:** none (assumes you've opened a spreadsheet before, nothing more)
-**Learning goals:** by end of day you can confidently open a messy CSV, clean it, build pivot tables and charts to answer business questions, and write the 5 most useful Excel formulas for analytics work.
+**Learning goals:** by end of day you can confidently open a messy CSV, clean it, write the formulas that matter for analytics work, build pivot tables and charts to answer business questions, and join two sheets together with `XLOOKUP`.
+
+## Why start with Excel?
+
+Most analytics work in companies still happens in spreadsheets. SQL and Python are faster at scale, but Excel is what your stakeholder will open on their laptop, what HR will hand you for the headcount review, and what marketing will paste survey results into.
+
+By the end of today you'll know the Excel patterns that matter — the seven aggregation functions, the conditional logic family, lookups, dates, and pivots — and you'll have applied them to ~100k rows of real Olist e-commerce data. Tomorrow (SQL) does the same operations on millions of rows.
 
 ## Agenda
 
-| Time | Block | Topic |
+| Time | Block | What you'll work on |
 |---|---|---|
-| 00:00–00:50 | Hour 1 — Concepts + demo | Workbook navigation, data types, Tables, sorting/filtering |
+| 00:00–00:50 | Hour 1 — Foundations | [Lesson 1 — Tables & references](01_tables.md), [Lesson 2 — Math & aggregation](02_aggregation.md) |
 | 00:50–01:00 | Break | |
-| 01:00–01:50 | Hour 2 — Formulas | `XLOOKUP`, `IF`/`IFS`, `SUMIFS`/`COUNTIFS`, dates |
+| 01:00–01:50 | Hour 2 — Formulas that earn their keep | [Lesson 3 — Logic & lookups](03_logic_lookups.md) |
 | 01:50–02:00 | Break | |
-| 02:00–02:50 | Hour 3 — Pivots + charts | Pivot tables, pivot charts, conditional formatting |
-| 02:50–03:00 | Break | |
-| 03:00–04:00 | Hour 4 — Capstone | Apply to Olist data ([`capstone/day1_excel/`](../../capstone/day1_excel/README.md)) |
+| 02:00–02:50 | Hour 3 — Cleaning, dates, and pivots | [Lesson 4 — Dates, text, and cleaning](04_dates_cleaning.md), [Lesson 5 — Pivot tables & charts](05_pivots.md) |
+| 02:50–03:00 | Break + [self-test](test.md) | |
+| 03:00–04:00 | Hour 4 — Capstone | [Apply to Olist data](../../capstone/day1_excel/README.md) |
 
 ## What you'll be able to do
 
@@ -24,65 +30,36 @@ By the end of today, given a CSV of orders you've never seen before, you can:
 - Convert it to a Table (`Ctrl+T`) so formulas auto-expand
 - Filter and sort to spot weird rows
 - Write `XLOOKUP` to join two sheets
-- Use `SUMIFS` to answer "total revenue by category"
-- Build a pivot table summarizing it by any dimension
+- Use `IFERROR` to handle missing data without your formulas going red
+- Use `SUMIFS` / `COUNTIFS` to answer "total revenue by category", "count of orders by status"
+- Build a pivot table summarising it by any dimension
+- Add a slicer so a stakeholder can filter the pivot without touching a formula
 - Make a bar chart that doesn't look ugly
 
-## Key concepts
+## The five lessons
 
-### 1. Tables, not ranges
-
-Convert any data to a Table with `Ctrl+T`. Then:
-- Formulas auto-extend to new rows
-- Column headers freeze automatically
-- You can reference columns by name: `=SUM(Sales[Revenue])` instead of `=SUM(B2:B1000)`
-
-**Rule of thumb:** if data has headers and rows, make it a Table. Always.
-
-### 2. The 5 formulas worth knowing
-
-| Formula | What it does | Example |
+| # | Lesson | Headline skills |
 |---|---|---|
-| `XLOOKUP` | Find a value in one column, return the matching value from another. Replaces `VLOOKUP`. | `=XLOOKUP(A2, Customers[ID], Customers[Name])` |
-| `IF` / `IFS` | Branch based on a condition. | `=IFS(A2>100, "big", A2>10, "medium", TRUE, "small")` |
-| `SUMIFS` | Sum a column where multiple conditions are true. | `=SUMIFS(Sales[Revenue], Sales[Region], "NE", Sales[Year], 2024)` |
-| `COUNTIFS` | Count rows matching multiple conditions. | `=COUNTIFS(Orders[Status], "shipped")` |
-| `TEXT` | Format a number or date as text. | `=TEXT(A2, "yyyy-mm")` to get month from a date |
+| 1 | [Tables & references](01_tables.md) | `Ctrl+T`, `[@col]`, `Sales[Revenue]`, `$A$1` vs `A$1`, sort/filter/freeze |
+| 2 | [Math & aggregation](02_aggregation.md) | `SUM`, `AVERAGE`, `COUNT` vs `COUNTA`, `MIN`/`MAX`, `ROUND`, % patterns |
+| 3 | [Logic & lookups](03_logic_lookups.md) | `IF`, `IFS`, `IFERROR`, `SUMIFS`/`COUNTIFS`/`AVERAGEIFS`, **`XLOOKUP`** |
+| 4 | [Dates, text & cleaning](04_dates_cleaning.md) | Date arithmetic, `TEXT`, `TRIM`, Flash Fill, Text-to-Columns |
+| 5 | [Pivot tables & charts](05_pivots.md) | Build from a Table, slicers, date grouping, pivot charts |
 
-### 3. Pivot tables
+Each lesson is 25–40 minutes and ends with a collapsible "Try it yourself" drill plus a list of pitfalls. Work through them in order — Lesson 3 builds on Lesson 1, and the capstone uses formulas from every lesson.
 
-The fastest way to answer "X by Y" in Excel. Select your Table → Insert → PivotTable.
+## Test yourself
 
-- **Rows:** what you want to group by (e.g., category)
-- **Columns:** optional second grouping (e.g., year)
-- **Values:** what you want to summarize (e.g., revenue — sum, count, or average)
-- **Filters:** dimensions you want to slice on
-
-**Pro tip:** drag a date field to Rows and Excel auto-groups by Year/Quarter/Month. Right-click to choose grouping.
-
-### 4. Date columns
-
-Excel's #1 source of pain. CSVs often have dates as text. Fix it:
-- Select the column → Data → Text to Columns → Next → Next → choose date format
-- Or use `DATEVALUE()` in a helper column
-
-**Always check:** sort the date column ascending. Do the dates actually look chronological? If "12/01" sorts between "11/30" and "12/02", you're good. If it sorts as text, fix it now or pay later.
-
-### 5. Conditional formatting (used sparingly)
-
-Highlight cells that meet a condition (e.g., negative numbers red). Useful for spotting outliers in 100s of rows. **Don't overdo it** — a rainbow spreadsheet is harder to read than a plain one.
-
-## Exercises
-
-See [`exercises/`](exercises/README.md) — 4 small drills, ~15 minutes each. Solutions in [`solutions/`](solutions/README.md) (only peek when stuck).
+Before the capstone, run the **[self-test](test.md)** — twelve questions, ~15 minutes, collapsible answers. Treat it as the gate-check: if you can't write the `XLOOKUP`/`IFERROR`/date-subtraction formulas from memory, re-read the relevant lesson before opening the Olist data.
 
 ## Capstone task for today
 
-See [`../../capstone/day1_excel/README.md`](../../capstone/day1_excel/README.md).
+See **[the Day 1 capstone](../../capstone/day1_excel/README.md)**. You'll load two Olist CSVs into Excel, derive `delivery_days`, join Orders to Reviews with `XLOOKUP`, and build two pivot tables to first-scope the capstone question: *"which sellers and product categories are driving low customer satisfaction, and what's the financial impact?"*
 
-## Common pitfalls
+## Common pitfalls (a preview)
 
-- **CSVs opened by double-click sometimes mangle dates.** Use Data → Get Data → From Text/CSV for safer import.
+Each lesson has its own pitfalls section. Three you'll meet today no matter what:
+
+- **CSVs opened by double-click sometimes mangle dates.** Use **Data → Get Data → From Text/CSV** for safer import.
 - **Pivot tables don't auto-refresh.** Right-click → Refresh after changing source data.
-- **`VLOOKUP` only looks right.** Use `XLOOKUP` instead — it's strictly better.
 - **Don't merge cells.** Ever. Merged cells break pivots, filters, sorts, and your soul.

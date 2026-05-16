@@ -46,8 +46,12 @@ nav:
   - Course:
       - Day 1 — Excel:
           - Overview: curriculum/day1_excel/README.md
-          - Exercises: curriculum/day1_excel/exercises/README.md
-          - Solutions: curriculum/day1_excel/solutions/README.md
+          - 1. Tables & references: curriculum/day1_excel/01_tables.md
+          - 2. Math & aggregation: curriculum/day1_excel/02_aggregation.md
+          - 3. Logic & lookups: curriculum/day1_excel/03_logic_lookups.md
+          - 4. Dates & cleaning: curriculum/day1_excel/04_dates_cleaning.md
+          - 5. Pivot tables & charts: curriculum/day1_excel/05_pivots.md
+          - Self-test: curriculum/day1_excel/test.md
       - Day 2 — SQL:
           - Overview: curriculum/day2_sql/README.md
           - Exercises: curriculum/day2_sql/exercises/README.md
