@@ -43,118 +43,71 @@ We use **[SQLite](https://sqlite.org)** — the simplest possible "real" databas
 
 Open the database in DB Browser: File → Open Database → pick `data/olist/olist.db`. Then "Execute SQL" tab.
 
-### SQLite quirks you'll meet today
+### Table names
 
-Two things SQLite does differently from "textbook" SQL — call these out to students early:
+The loader gives the eight Olist tables short, query-friendly names:
 
-- **All columns are TEXT after CSV import.** SQLite is permissive about types, so `AVG(price)` and `SUM(price)` still work on numeric-looking text. But if you need a real number, use `CAST(price AS REAL)`.
-- **Empty CSV cells become empty strings (`''`), not `NULL`.** Use `column != ''` instead of `column IS NOT NULL` when filtering "missing" values.
-- **Date math** uses `julianday()`: `CAST(julianday(b) - julianday(a) AS INTEGER)` gives day differences. ISO-formatted date strings compare correctly with `<` / `>`.
+| Table | What it holds |
+|---|---|
+| `orders` | One row per order |
+| `items` | One row per line item |
+| `reviews` | One row per review |
+| `customers` | Customer info |
+| `sellers` | Seller info |
+| `products` | Product info (Portuguese category names) |
+| `payments` | Payment info |
+| `category_translation` | Portuguese → English category names |
 
 ## Agenda
 
-| Time | Block | Topic |
-|---|---|---|
-| 00:00–00:50 | Hour 1 — Basics | `SELECT`, `WHERE`, `ORDER BY`, `LIMIT` |
-| 00:50–01:00 | Break | |
-| 01:00–01:50 | Hour 2 — Aggregation + joins | `GROUP BY`, aggregate functions, `INNER`/`LEFT JOIN` |
-| 01:50–02:00 | Break | |
-| 02:00–02:50 | Hour 3 — CTEs + advanced | `WITH` clauses, multi-step queries, peek at window functions |
-| 02:50–03:00 | Break | |
-| 03:00–04:00 | Hour 4 — Capstone | Join 4+ tables to answer real Olist questions |
+| Time | Block | Topic | Lesson |
+|---|---|---|---|
+| 00:00–00:30 | Hour 1 | SELECT, FROM, WHERE, ORDER BY, LIMIT | [Lesson 1](01_select_basics.md) |
+| 00:30–01:00 | Hour 1 | Aggregation: GROUP BY, HAVING, the five aggregates | [Lesson 2](02_aggregation.md) |
+| 01:00–01:10 | Break | | |
+| 01:10–01:50 | Hour 2 | Joins: INNER, LEFT, multi-table, anti-join | [Lesson 3](03_joins.md) |
+| 01:50–02:00 | Break | | |
+| 02:00–02:30 | Hour 3 | CTEs & CASE: multi-step queries | [Lesson 4](04_ctes.md) |
+| 02:30–02:55 | Hour 3 | NULLs, types & SQLite quirks | [Lesson 5](05_nulls_and_quirks.md) |
+| 02:55–03:00 | Self-test | 12-question gate-check | [Self-test](test.md) |
+| 03:00–04:00 | Hour 4 | Capstone | [Capstone](../../capstone/day2_sql/README.md) |
 
-## Key concepts
+## What you'll be able to do
 
-### 1. The shape of a SELECT
+By the end of today, given a relational database with 8 tables you've never seen before, you can:
 
-```sql
-SELECT   column_a, column_b, COUNT(*) AS n
-FROM     some_table
-WHERE    column_a > 100
-GROUP BY column_a, column_b
-HAVING   COUNT(*) > 5
-ORDER BY n DESC
-LIMIT    10;
-```
+- Read its schema and write `SELECT … FROM … WHERE` to inspect any table
+- Aggregate with `GROUP BY` to answer "X by Y" questions — pivot tables, in 3 lines
+- Join 3+ tables to ask cross-table questions
+- Use a `LEFT JOIN … IS NULL` to find "missing things" — orders without reviews, products never sold
+- Break a complex question into a recipe of CTEs
+- Handle NULLs and empty-string CSV gotchas without getting silently wrong answers
 
-The clauses run in this **logical** order (different from how they're written):
+## Lessons
 
-```
-FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT
-```
+| # | Topic | Time | Key things |
+|---|---|---|---|
+| 1 | [SELECT, FROM, WHERE](01_select_basics.md) | ~30 min | Query anatomy, filters, sort, logical execution order |
+| 2 | [Aggregation & GROUP BY](02_aggregation.md) | ~30 min | `COUNT`/`SUM`/`AVG`, `HAVING`, `DISTINCT` |
+| 3 | [Joins](03_joins.md) | ~40 min | `INNER`/`LEFT`, multi-table, anti-join, aliases |
+| 4 | [CTEs & multi-step queries](04_ctes.md) | ~30 min | `WITH … AS`, `CASE`, peek at window functions |
+| 5 | [NULLs, types & SQLite quirks](05_nulls_and_quirks.md) | ~25 min | `IS NULL`, `COALESCE`, empty-string-vs-NULL, `julianday`, `CAST` |
 
-Burn this in. It explains why you can't reference a `SELECT` alias in a `WHERE` (the WHERE runs first).
+Practice is **folded into each lesson** as collapsible "Try it yourself" boxes — read the concept, attempt the drill, reveal the solution.
 
-### 2. Joins
+## Self-test
 
-A join answers "for each row in A, find the matching row(s) in B."
-
-```sql
-SELECT o.order_id, c.customer_state
-FROM   olist_orders o
-JOIN   olist_customers c ON o.customer_id = c.customer_id;
-```
-
-- `INNER JOIN` (just `JOIN`): only rows where both sides match
-- `LEFT JOIN`: every row from the left, NULLs on the right if no match
-- **You almost always want one of these two.** Right and full joins exist; you rarely need them.
-
-**Always alias your tables** (`olist_orders o`). It saves your sanity once you join 4+ tables.
-
-### 3. GROUP BY
-
-Same mental model as a pivot table. The columns you put in `GROUP BY` are the "row labels" of the pivot. The aggregates in `SELECT` are the "values."
-
-```sql
-SELECT   customer_state, COUNT(*) AS n_orders, AVG(price) AS avg_price
-FROM     olist_order_items
-GROUP BY customer_state
-ORDER BY n_orders DESC;
-```
-
-**Rule:** every column in `SELECT` must either be in `GROUP BY` or wrapped in an aggregate function (`SUM`, `COUNT`, `AVG`, `MIN`, `MAX`).
-
-### 4. CTEs (`WITH` clauses)
-
-When a query gets complex, break it into named steps:
-
-```sql
-WITH late_orders AS (
-    SELECT order_id
-    FROM   olist_orders
-    WHERE  order_delivered_customer_date > order_estimated_delivery_date
-),
-late_reviews AS (
-    SELECT r.*
-    FROM   olist_order_reviews r
-    JOIN   late_orders l ON r.order_id = l.order_id
-)
-SELECT AVG(review_score) FROM late_reviews;
-```
-
-Reads top-to-bottom like a recipe. **Use CTEs liberally** — they make queries readable. Performance is the same as a subquery in modern engines.
-
-### 5. NULLs
-
-`NULL` ≠ anything, not even `NULL`. Use `IS NULL` / `IS NOT NULL`, never `= NULL`.
-
-```sql
-WHERE order_delivered_customer_date IS NULL  -- orders not yet delivered
-```
-
-`COUNT(column)` ignores NULLs. `COUNT(*)` counts all rows. This trips up everyone once.
-
-## Exercises
-
-See [`exercises/`](exercises/README.md) — 5 drills against the Olist data. Solutions in [`solutions/`](solutions/README.md).
+When you've worked through all five lessons, take the **[12-question self-test](test.md)** to confirm you're capstone-ready. ~15 minutes.
 
 ## Capstone task for today
 
-See [`../../capstone/day2_sql/README.md`](../../capstone/day2_sql/README.md).
+[`../../capstone/day2_sql/README.md`](../../capstone/day2_sql/README.md) — produce two CSVs (`worst_categories.csv` + `risky_sellers.csv`) that Day 3 will pick up in pandas.
 
 ## Common pitfalls
 
-- **Forgetting `GROUP BY` columns.** If you `SELECT seller_id, AVG(price)` without `GROUP BY seller_id`, you'll get a confusing error or one row.
-- **Joining without ON.** Cross joins explode row counts. Always include the join condition.
-- **`SELECT *` in production code.** Fine while exploring; never in a query you'll reuse — it's slow and breaks when columns change.
-- **Forgetting Brazil uses commas as decimal separators.** Olist already normalized to dots, but watch for it elsewhere.
+- **Forgetting `GROUP BY` columns.** Every column in `SELECT` must be in `GROUP BY` or wrapped in an aggregate. SQLite will silently return arbitrary values if you forget.
+- **Joining without `ON`.** Cross-join explosion. Always include the join condition.
+- **`column = NULL`.** Always false. Use `IS NULL`.
+- **Empty strings, not NULLs, from CSV.** In this dataset, "missing" is `= ''`, not `IS NULL`. Use the defensive form `col IS NULL OR col = ''` when in doubt.
+- **Integer division.** `1 / 3 = 0`. Multiply by `1.0` first when computing percentages.
+- **`SELECT *` in production code.** Fine while exploring; slow and brittle once a query is reused.

@@ -54,8 +54,12 @@ nav:
           - Self-test: curriculum/day1_excel/test.md
       - Day 2 — SQL:
           - Overview: curriculum/day2_sql/README.md
-          - Exercises: curriculum/day2_sql/exercises/README.md
-          - Solutions: curriculum/day2_sql/solutions/README.md
+          - 1. SELECT, FROM, WHERE: curriculum/day2_sql/01_select_basics.md
+          - 2. Aggregation & GROUP BY: curriculum/day2_sql/02_aggregation.md
+          - 3. Joins: curriculum/day2_sql/03_joins.md
+          - 4. CTEs & multi-step queries: curriculum/day2_sql/04_ctes.md
+          - 5. NULLs, types & SQLite quirks: curriculum/day2_sql/05_nulls_and_quirks.md
+          - Self-test: curriculum/day2_sql/test.md
       - Day 3 — Python:
           - Overview: curriculum/day3_python/README.md
           - Exercises: curriculum/day3_python/exercises/README.md
