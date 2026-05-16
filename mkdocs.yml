@@ -62,16 +62,28 @@ nav:
           - Self-test: curriculum/day2_sql/test.md
       - Day 3 — Python:
           - Overview: curriculum/day3_python/README.md
-          - Exercises: curriculum/day3_python/exercises/README.md
-          - Solutions: curriculum/day3_python/solutions/README.md
+          - 1. Notebooks & loading data: curriculum/day3_python/01_notebooks_and_loading.md
+          - 2. Selecting & filtering: curriculum/day3_python/02_selecting_filtering.md
+          - 3. Aggregation & groupby: curriculum/day3_python/03_groupby.md
+          - 4. Merge & combine: curriculum/day3_python/04_merge.md
+          - 5. Cleaning, dates, plots: curriculum/day3_python/05_cleaning_dates_plots.md
+          - Self-test: curriculum/day3_python/test.md
       - Day 4 — Power BI:
           - Overview: curriculum/day4_powerbi/README.md
-          - Exercises: curriculum/day4_powerbi/exercises/README.md
-          - Solutions: curriculum/day4_powerbi/solutions/README.md
+          - 1. Get Data & Power Query: curriculum/day4_powerbi/01_get_data_power_query.md
+          - 2. The data model: curriculum/day4_powerbi/02_data_model.md
+          - 3. Building visuals: curriculum/day4_powerbi/03_visuals.md
+          - 4. DAX measures: curriculum/day4_powerbi/04_dax_measures.md
+          - 5. Interactivity, layout, polish: curriculum/day4_powerbi/05_interactivity_and_polish.md
+          - Self-test: curriculum/day4_powerbi/test.md
       - Day 5 — Claude Code:
           - Overview: curriculum/day5_claude_code/README.md
-          - Exercises: curriculum/day5_claude_code/exercises/README.md
-          - Solutions: curriculum/day5_claude_code/solutions/README.md
+          - 1. Getting started: curriculum/day5_claude_code/01_getting_started.md
+          - 2. Prompting that works: curriculum/day5_claude_code/02_prompting.md
+          - 3. Plan mode & verification: curriculum/day5_claude_code/03_plan_mode_and_verification.md
+          - 4. AI-assisted querying: curriculum/day5_claude_code/04_ai_assisted_querying.md
+          - 5. Text analytics & the report: curriculum/day5_claude_code/05_text_and_report.md
+          - Self-test: curriculum/day5_claude_code/test.md
   - Capstone:
       - Overview & rubric: capstone/README.md
       - Day 1 — Excel: capstone/day1_excel/README.md

@@ -8,96 +8,70 @@
 
 [Claude Code](https://claude.ai/code) is an AI coding assistant that can read your files, run code, and iterate with you in plain English. Think of it as "an analyst who can type 100x faster than you and never gets tired" — but who needs you to tell it what's worth doing.
 
-For this course, we'll use **Claude Code on the Web** (browser, zero install). Sign in at [claude.ai/code](https://claude.ai/code) — same account as Claude.ai.
+For this course, we'll use **Claude Code on the Web** (browser, zero install). Sign in at [claude.ai/code](https://claude.ai/code) with the same account as Claude.ai.
 
 ## Why this is Day 5
 
-You've spent 4 days seeing what Excel, SQL, Python, and Power BI **do**. Today you learn to **orchestrate** them through an AI assistant. The lesson is not "AI replaces analysts" — it's "AI lets a beginner do work that previously required 6 months of training."
+You've spent four days seeing what Excel, SQL, Python, and Power BI **do**. Today you learn to **orchestrate** them through an AI assistant. The lesson is not "AI replaces analysts" — it's "AI lets a beginner do work that previously required six months of training, *if* you know how to direct it."
 
 The day has two arcs:
 
-1. **Hours 1–3:** practice with the AI on tasks you've already done by hand. You'll spot when it's right, when it's wrong, and how to steer it.
-2. **Hour 4:** use it to do something genuinely new — extract themes from thousands of free-text product reviews — and ship the final capstone deliverable.
+1. **Lessons 2–4 + Hours 1–3:** practice with Claude Code on tasks you already did by hand. You'll spot when it's right, when it's wrong, and how to steer it.
+2. **Lesson 5 + Hour 4:** use it to do something genuinely new — extract themes from thousands of free-text product reviews — and ship the final capstone deliverable.
 
 ## Agenda
 
-| Time | Block | Topic |
-|---|---|---|
-| 00:00–00:50 | Hour 1 — How to talk to Claude Code | Prompting basics, plan mode, verifying output |
-| 00:50–01:00 | Break | |
-| 01:00–01:50 | Hour 2 — AI-assisted querying | Have it write the SQL/pandas you wrote yesterday; compare and learn |
-| 01:50–02:00 | Break | |
-| 02:00–02:50 | Hour 3 — Review-text analysis | The real "AI" value: extract themes & sentiment from review comments |
-| 02:50–03:00 | Break | |
-| 03:00–03:30 | Hour 4a — Final report | Compose the 1-page report with Claude Code's help |
-| 03:30–04:00 | Hour 4b — Presentations | 3 min per student, 2 questions each |
+| Time | Block | Topic | Lesson |
+|---|---|---|---|
+| 00:00–00:20 | Hour 1 | What Claude Code is, getting connected | [Lesson 1](01_getting_started.md) |
+| 00:20–00:50 | Hour 1 | Prompting that works (the INPUT/TASK/OUTPUT template) | [Lesson 2](02_prompting.md) |
+| 00:50–01:00 | Break | | |
+| 01:00–01:30 | Hour 2 | Plan mode & verification | [Lesson 3](03_plan_mode_and_verification.md) |
+| 01:30–02:00 | Hour 2 | AI-assisted querying & analysis | [Lesson 4](04_ai_assisted_querying.md) |
+| 02:00–02:10 | Break | | |
+| 02:10–02:40 | Hour 3 | Text analytics & shipping the report | [Lesson 5](05_text_and_report.md) |
+| 02:40–02:55 | Self-test | 12-question gate-check | [Self-test](test.md) |
+| 02:55–03:00 | Break | | |
+| 03:00–03:30 | Hour 4a | Capstone — assemble the final report | [Capstone](../../capstone/day5_ai/README.md) |
+| 03:30–04:00 | Hour 4b | Presentations | (3 min each + 2 questions) |
 
-## Key concepts
+## What you'll be able to do
 
-### 1. The verification mindset
+By the end of today, you can:
 
-Claude Code can make mistakes. Sometimes confidently. **Verify everything important before trusting it.** Your job today is not to outsource your judgment — it's to multiply your output by being a good editor.
+- Sign in to Claude Code, point it at this repo, and prompt it productively
+- Use INPUT/TASK/OUTPUT to get verifiable, specific answers
+- Use plan mode for non-trivial tasks
+- Sanity-check numbers, read generated code, spot-check rows — the verification trio
+- Translate analyses between SQL, pandas, and DAX in seconds
+- Extract themes from 10,000+ Portuguese reviews and tie them to specific sellers
+- Assemble a 1-page stakeholder report combining numbers from four days plus today's qualitative findings
 
-Three verification habits that will save you all week:
+## Lessons
 
-| Habit | What to do |
-|---|---|
-| **Sanity check numbers** | If Claude says "average review is 4.1", and your Day 4 dashboard said 4.1, you're probably good. If they disagree, find out why. |
-| **Read code before running** | When Claude writes a SQL query or Python snippet, skim it. Does the join column match what you'd pick? |
-| **Spot-check a few rows** | If Claude says "negative reviews about late delivery", click into 3 actual reviews. Are they really about delivery? |
+| # | Topic | Time | Key things |
+|---|---|---|---|
+| 1 | [Getting started](01_getting_started.md) | ~20 min | The interface, signing in, when to reach for AI vs. do it yourself |
+| 2 | [Prompting that works](02_prompting.md) | ~25 min | INPUT/TASK/OUTPUT, specificity, iteration patterns |
+| 3 | [Plan mode & verification](03_plan_mode_and_verification.md) | ~25 min | Plan mode workflow, the verification reflex, productive pushback |
+| 4 | [AI-assisted querying](04_ai_assisted_querying.md) | ~30 min | Re-doing Day 2 / 3 with Claude, the four most common mistakes |
+| 5 | [Text analytics & the report](05_text_and_report.md) | ~30 min | Theme extraction from reviews, taxonomy iteration, assembling the final deliverable |
 
-### 2. Plan mode
+Practice is folded into each lesson as collapsible "Try it yourself" boxes — try the prompt, verify the output, reveal the gotchas.
 
-Claude Code has a **plan mode** (toggle in the UI, or type `/plan`). In plan mode, Claude reads your files and proposes a plan — but doesn't write or run anything yet. **Use plan mode for any non-trivial task.** It catches misunderstandings before they become 30 minutes of wrong code.
+## Self-test
 
-A typical good flow:
-
-```
-1. Describe the task in plain English ("analyze why reviews are bad")
-2. Toggle plan mode
-3. Claude proposes a step-by-step plan
-4. You read it, adjust, approve
-5. Claude executes
-```
-
-### 3. Prompting that works
-
-Bad prompt: *"Analyze the reviews."*
-Good prompt: *"Take the file `capstone/day3_python/late_vs_ontime_by_seller.csv`. For the 10 sellers with the worst avg_review_late, pull all their 1- and 2-star reviews from `reviews.csv`, group the review_comment_message into 3–5 themes, and tell me the top theme for each seller."*
-
-The difference is **specificity**: what input, what scope, what output shape.
-
-A simple template:
-
-```
-INPUT: <which file(s), which columns, which subset>
-TASK:  <what to do in plain English>
-OUTPUT: <what shape of result I want — table, list, summary, chart>
-```
-
-### 4. When to use Claude Code vs do it yourself
-
-| Use Claude Code | Do it yourself |
-|---|---|
-| Generating SQL or pandas you'd find tedious to write | Quick `.value_counts()` you already know |
-| Free-text processing (sentiment, themes, summarization) | Filtering by a date range — faster to just write |
-| Generating chart code in matplotlib | Clicking 2 buttons in Power BI |
-| Writing the prose for your final report | Final business interpretation — that's *your* judgment |
-
-A useful instinct: **use Claude for the typing, keep the thinking yourself.**
-
-## Exercises
-
-See [`exercises/`](exercises/README.md) — 3 drills designed to build the verification reflex. Solutions in [`solutions/`](solutions/README.md) (these include example prompts and example Claude output for comparison).
+When you've worked through all five lessons, take the **[12-question self-test](test.md)** before the capstone. ~15 minutes. More conceptual than the previous days — about *how* to work with AI, not which function to call.
 
 ## Capstone task for today
 
-See [`../../capstone/day5_ai/README.md`](../../capstone/day5_ai/README.md).
+[`../../capstone/day5_ai/README.md`](../../capstone/day5_ai/README.md) — assemble the 1-page stakeholder report, present it. The deliverable that the whole week has been building toward.
 
 ## Common pitfalls
 
 - **Letting Claude do the thinking.** It will happily write a 200-line analysis based on a 3-word prompt. The result will be generic and miss your business context. Be specific.
-- **Trusting numbers without checking.** Claude can hallucinate. Always sanity-check key numbers against Day 2/3/4 outputs.
+- **Trusting numbers without checking.** Sanity-check key numbers against Day 2/3/4 references. The verification reflex is the whole skill.
 - **Asking for too much at once.** Break tasks into small steps. A 30-minute prompt produces 30-minute mistakes.
 - **Skipping plan mode.** For anything that touches files, plan mode catches misunderstandings cheap.
-- **Treating Claude like a search engine.** It's a collaborator. Iterate. Push back. "That number doesn't match — recheck and tell me where the discrepancy is."
+- **Treating Claude like a search engine.** It's a collaborator. Iterate. Push back with specific corrections, not "try again."
+- **Letting Claude write the recommendations.** The headline findings can be drafted; the *what should we do* is yours.
