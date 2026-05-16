@@ -104,6 +104,19 @@
       return;
     }
 
+    var els = document.querySelectorAll(".reveal");
+    if (els.length === 0) return;
+
+    // Arm: only hide the elements once we know JS is running and can animate them.
+    // (CSS defaults .reveal to visible so the page never renders blank if JS fails.)
+    els.forEach(function (el) {
+      // Skip elements already in viewport on first paint (typically the hero) —
+      // they should be visible immediately without a fade-in flash.
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.85) return;
+      el.classList.add("reveal--armed");
+    });
+
     var obs = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (e) {
@@ -116,7 +129,7 @@
       { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
     );
 
-    document.querySelectorAll(".reveal").forEach(function (el) {
+    document.querySelectorAll(".reveal--armed").forEach(function (el) {
       obs.observe(el);
     });
   }

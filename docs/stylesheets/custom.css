@@ -1097,23 +1097,31 @@
 }
 
 /* ============================================================
-   15. Scroll-fade motion (set initial state, JS toggles .is-visible)
+   15. Scroll-fade motion (only armed once JS is ready, so the page
+       never renders blank if JS fails or hasn't started yet)
    ============================================================ */
 
 .reveal {
+  /* visible by default — JS adds .reveal--armed before observing */
+  opacity: 1;
+  transform: none;
+}
+
+.reveal--armed {
   opacity: 0;
   transform: translateY(18px);
   transition: opacity 0.55s ease-out, transform 0.55s ease-out;
 }
 
-.reveal.is-visible {
+.reveal--armed.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* If the user prefers reduced motion, never animate */
+/* If the user prefers reduced motion, never arm — content stays visible */
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
+  .reveal,
+  .reveal--armed {
     opacity: 1;
     transform: none;
     transition: none;
