@@ -1,0 +1,886 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const modules = [
+  {
+    day: 1,
+    tool: 'Excel',
+    duration: '4 hours',
+    bullets: 'Tables · structured refs · XLOOKUP · IFERROR · SUMIFS · pivot tables',
+    href: `${base}/curriculum/day1_excel/`,
+    illus: `${base}/assets/illustrations/day1.svg`,
+    lessons: [
+      ['Tables & references', '~30 min', `${base}/curriculum/day1_excel/01_tables/`],
+      ['Math & aggregation', '~30 min', `${base}/curriculum/day1_excel/02_aggregation/`],
+      ['Logic & lookups', '~30 min', `${base}/curriculum/day1_excel/03_logic_lookups/`],
+      ['Dates, text & cleaning', '~30 min', `${base}/curriculum/day1_excel/04_dates_cleaning/`],
+      ['Pivot tables & charts', '~30 min', `${base}/curriculum/day1_excel/05_pivots/`],
+      ['Self-test', '~15 min', `${base}/curriculum/day1_excel/test/`],
+    ],
+  },
+  {
+    day: 2,
+    tool: 'SQL',
+    duration: '4 hours',
+    bullets: 'SELECT · GROUP BY · JOIN · CTEs · NULL semantics · SQLite quirks',
+    href: `${base}/curriculum/day2_sql/`,
+    illus: `${base}/assets/illustrations/day2.svg`,
+    lessons: [
+      ['SELECT, FROM, WHERE', '~30 min', `${base}/curriculum/day2_sql/01_select_basics/`],
+      ['Aggregation & GROUP BY', '~30 min', `${base}/curriculum/day2_sql/02_aggregation/`],
+      ['Joins', '~40 min', `${base}/curriculum/day2_sql/03_joins/`],
+      ['CTEs & multi-step queries', '~30 min', `${base}/curriculum/day2_sql/04_ctes/`],
+      ['NULLs, types & SQLite quirks', '~25 min', `${base}/curriculum/day2_sql/05_nulls_and_quirks/`],
+      ['Self-test', '~15 min', `${base}/curriculum/day2_sql/test/`],
+    ],
+  },
+  {
+    day: 3,
+    tool: 'Python',
+    duration: '4 hours',
+    bullets: 'pandas · DataFrames · groupby · pd.merge · the row-count assertion',
+    href: `${base}/curriculum/day3_python/`,
+    illus: `${base}/assets/illustrations/day3.svg`,
+    lessons: [
+      ['Notebooks & loading data', '~25 min', `${base}/curriculum/day3_python/01_notebooks_and_loading/`],
+      ['Selecting & filtering', '~30 min', `${base}/curriculum/day3_python/02_selecting_filtering/`],
+      ['Aggregation & groupby', '~30 min', `${base}/curriculum/day3_python/03_groupby/`],
+      ['Merge & combine', '~25 min', `${base}/curriculum/day3_python/04_merge/`],
+      ['Cleaning, dates, plots', '~30 min', `${base}/curriculum/day3_python/05_cleaning_dates_plots/`],
+      ['Self-test', '~15 min', `${base}/curriculum/day3_python/test/`],
+    ],
+  },
+  {
+    day: 4,
+    tool: 'Power BI',
+    duration: '4 hours',
+    bullets: 'Power Query · the data model · DAX measures · interactive dashboard',
+    href: `${base}/curriculum/day4_powerbi/`,
+    illus: `${base}/assets/illustrations/day4.svg`,
+    lessons: [
+      ['Get Data & Power Query', '~30 min', `${base}/curriculum/day4_powerbi/01_get_data_power_query/`],
+      ['The data model', '~25 min', `${base}/curriculum/day4_powerbi/02_data_model/`],
+      ['Building visuals', '~30 min', `${base}/curriculum/day4_powerbi/03_visuals/`],
+      ['DAX measures', '~30 min', `${base}/curriculum/day4_powerbi/04_dax_measures/`],
+      ['Interactivity, layout, polish', '~25 min', `${base}/curriculum/day4_powerbi/05_interactivity_and_polish/`],
+      ['Self-test', '~15 min', `${base}/curriculum/day4_powerbi/test/`],
+    ],
+  },
+  {
+    day: 5,
+    tool: 'Claude Code',
+    duration: '4 hours',
+    bullets: 'Prompting · plan mode · verification · text analytics · the final report',
+    href: `${base}/curriculum/day5_claude_code/`,
+    illus: `${base}/assets/illustrations/day5.svg`,
+    lessons: [
+      ['Getting started', '~20 min', `${base}/curriculum/day5_claude_code/01_getting_started/`],
+      ['Prompting that works', '~25 min', `${base}/curriculum/day5_claude_code/02_prompting/`],
+      ['Plan mode & verification', '~25 min', `${base}/curriculum/day5_claude_code/03_plan_mode_and_verification/`],
+      ['AI-assisted querying', '~30 min', `${base}/curriculum/day5_claude_code/04_ai_assisted_querying/`],
+      ['Text analytics & the report', '~30 min', `${base}/curriculum/day5_claude_code/05_text_and_report/`],
+      ['Self-test', '~15 min', `${base}/curriculum/day5_claude_code/test/`],
+    ],
+  },
+];
+
+const skills = [
+  'Excel Tables', 'XLOOKUP', 'SUMIFS', 'Pivot tables',
+  'SQL SELECT', 'GROUP BY', 'JOIN', 'CTEs', 'SQLite',
+  'pandas DataFrames', 'groupby + agg', 'pd.merge', 'Jupyter',
+  'Power Query (M)', 'Data modeling', 'DAX measures', 'CALCULATE', 'Cross-filtering',
+  'Claude Code', 'AI prompting', 'Plan mode', 'Verification habits',
+  'Theme extraction', 'Stakeholder reports',
+];
+
+const learn = [
+  ['Clean a messy CSV in Excel.', 'Tables, lookups, conditional aggregation, dates, pivots — the formula library every analyst leans on daily.'],
+  ['Query a real database with SQL.', 'Joins across 4+ tables, CTEs, aggregations, and the empty-string-vs-NULL gotchas that catch most beginners.'],
+  ['Reproduce SQL analysis in pandas.', 'Load, filter, group, and merge with row-count sanity checks — the habits that prevent silent wrong answers.'],
+  ['Build a 1-page interactive Power BI dashboard.', 'Data model, DAX measures, slicers — a deliverable a non-analyst will actually click through.'],
+  ['Direct an AI assistant to do real analytics.', 'The prompting templates, plan mode, and verification habits that make Claude Code a force multiplier instead of a confidently-wrong oracle.'],
+  ['Ship a stakeholder-ready 1-page report.', 'Findings backed by traceable numbers, embedded charts, and recommendations a head of operations can act on.'],
+];
+
+const faqs = [
+  ['How long does the course take?',
+   'Five days at four hours each — twenty hours of teaching and one hour of capstone application per day. It is self-paced, so you can stretch it across a fortnight or compress it into a long weekend.'],
+  ['Do I need coding experience?',
+   'No. Day 1 starts from "what is a Table" in Excel. Day 3 starts from <code>import pandas as pd</code>. If you have opened a spreadsheet a few times you are qualified.'],
+  ['Is it really free?',
+   'Yes. MIT licensed, no signup, no email capture, no ads, no upsell. Source on <a href="https://github.com/scripts-and-tables/daa">GitHub</a>.'],
+  ['Can I do this on a Mac?',
+   'Mostly. Days 1, 2, 3, 5 work natively on macOS. Day 4 (Power BI Desktop) is Windows-only — alternatives noted in the lesson.'],
+  ['Is there a certificate?',
+   'No paper certificate. The capstone — a 1-page stakeholder report on real data — <em>is</em> the certificate. Push it to your GitHub, link from LinkedIn.'],
+  ['What if I get stuck?',
+   'Every lesson ends with a "Common pitfalls" section and a "Try it yourself" drill with collapsible solution. <a href="https://github.com/scripts-and-tables/daa/issues">Open an issue</a> for anything not covered.'],
+  ['Who built this and why?',
+   'Originally written for an internal analytics academy and released publicly under MIT. See <a href="' + base + '/about-the-role/">What a data analyst actually does</a> for the framing.'],
+];
+---
+
+<BaseLayout
+  title="Data Analytics Academy · 5-day free intensive"
+  description="From Excel to AI in 5 days. A free, MIT-licensed course on real e-commerce data. Self-paced, capstone included, no signup."
+  showSections={true}
+>
+
+<!-- ============= HERO ============= -->
+<section class="hero" id="top">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <div class="hero__tag">
+        <span class="hero__dot"></span> Open source · MIT licensed · 0 prerequisites
+      </div>
+      <h1 class="hero__title">Data Analytics Academy</h1>
+      <p class="hero__sub">
+        Five days. Twenty hours. From "I've opened Excel a few times" to shipping an end-to-end analytics project on real data — Excel → SQL → Python → Power BI → AI.
+      </p>
+      <div class="hero__meta">
+        <span class="hero__meta-item">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          20 hours
+        </span>
+        <span class="hero__meta-item">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Beginner level
+        </span>
+        <span class="hero__meta-item">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Self-paced
+        </span>
+      </div>
+      <div class="hero__ctas">
+        <a class="btn btn--primary" href={`${base}/curriculum/day1_excel/`}>Get started · Day 1 →</a>
+        <a class="btn btn--ghost-light" href="#modules">See the syllabus</a>
+      </div>
+    </div>
+
+    <aside class="hero__card" aria-label="Course summary">
+      <div class="hero__card-thumb">
+        <img src={`${base}/assets/illustrations/olist_schema.svg`} alt="Olist database schema preview" loading="eager" width="540" height="380" />
+      </div>
+      <div class="hero__card-body">
+        <p class="hero__card-meta">A 5-day intensive · Free</p>
+        <h2 class="hero__card-title">5 modules · 1 capstone</h2>
+        <ul class="hero__card-bullets">
+          <li>~100K real Olist orders</li>
+          <li>25 lessons + 5 self-tests</li>
+          <li>1-page report ships Friday</li>
+          <li>MIT licensed source</li>
+        </ul>
+        <a class="btn btn--primary btn--small hero__card-cta" href={`${base}/curriculum/day1_excel/`}>Start free, now →</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============= STICKY SECTION NAV ============= -->
+<nav class="subnav" aria-label="Course outline">
+  <div class="container subnav__inner">
+    <a href="#about">About</a>
+    <a href="#modules">Modules</a>
+    <a href="#sample">Sample</a>
+    <a href="#details">Details</a>
+    <a href="#faq">FAQ</a>
+    <a class="btn btn--primary btn--small subnav__cta" href={`${base}/curriculum/day1_excel/`}>Get started</a>
+  </div>
+</nav>
+
+<!-- ============= ABOUT / WHAT YOU'LL LEARN ============= -->
+<section class="section" id="about">
+  <div class="container">
+    <span class="section__eyebrow">What you'll learn</span>
+    <h2 class="section__heading">Six concrete skills you'll walk away with</h2>
+    <div class="learn-grid">
+      {learn.map(([title, body]) => (
+        <div class="learn-item">
+          <span class="learn-item__check" aria-hidden="true">✓</span>
+          <div>
+            <p class="learn-item__title">{title}</p>
+            <p class="learn-item__body">{body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ============= SKILLS PILLS ============= -->
+<section class="section section--soft">
+  <div class="container">
+    <span class="section__eyebrow">Skills you'll gain</span>
+    <h2 class="section__heading">The toolbox</h2>
+    <div class="pills">
+      {skills.map((s) => <span class="pill">{s}</span>)}
+    </div>
+  </div>
+</section>
+
+<!-- ============= DETAILS GRID ============= -->
+<section class="section" id="details">
+  <div class="container">
+    <span class="section__eyebrow">Details to know</span>
+    <h2 class="section__heading">Practical facts</h2>
+    <div class="details-grid">
+      <div class="detail">
+        <div class="detail__icon" aria-hidden="true">🆓</div>
+        <p class="detail__title">Free, MIT-licensed</p>
+        <p class="detail__body">No signup, no email, no ads. Fork the repo and customise for your team.</p>
+      </div>
+      <div class="detail">
+        <div class="detail__icon" aria-hidden="true">⏱</div>
+        <p class="detail__title">20 hours, self-paced</p>
+        <p class="detail__body">Five days × four hours, but stretch or compress to suit your schedule.</p>
+      </div>
+      <div class="detail">
+        <div class="detail__icon" aria-hidden="true">🎯</div>
+        <p class="detail__title">Beginner-friendly</p>
+        <p class="detail__body">No coding background assumed. Day 3 starts from "import pandas as pd".</p>
+      </div>
+      <div class="detail">
+        <div class="detail__icon" aria-hidden="true">📊</div>
+        <p class="detail__title">Real data, real capstone</p>
+        <p class="detail__body">~100K Olist orders threaded through every day; ships as a public 1-page report.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= MODULES ACCORDION ============= -->
+<section class="section section--soft" id="modules">
+  <div class="container">
+    <span class="section__eyebrow">Curriculum</span>
+    <h2 class="section__heading">5 modules in this course</h2>
+    <p class="section__lead">Each module is one day of teaching plus one hour of capstone application. Click a module to see its lessons.</p>
+
+    <div class="modules">
+      {modules.map((m) => (
+        <details class={`module module--day${m.day}`}>
+          <summary class="module__summary">
+            <span class="module__icon">
+              <img src={m.illus} alt="" width="40" height="40" loading="lazy" />
+            </span>
+            <div class="module__heading">
+              <p class="module__day">Module {m.day} · {m.tool}</p>
+              <p class="module__meta">{m.duration} · {m.lessons.length} lessons</p>
+              <p class="module__bullets">{m.bullets}</p>
+            </div>
+            <span class="module__chevron" aria-hidden="true">+</span>
+          </summary>
+          <div class="module__body">
+            <ol class="module__lessons">
+              {m.lessons.map(([title, time, href]) => (
+                <li>
+                  <a class="module__lesson" href={href}>
+                    <span class="module__lesson-title">{title}</span>
+                    <span class="module__lesson-time">{time}</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+            <a class="btn btn--secondary btn--small" href={m.href}>Open the module →</a>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ============= SAMPLE LESSON ============= -->
+<section class="section" id="sample">
+  <div class="container">
+    <span class="section__eyebrow">Sample lesson · Day 1 Lesson 1</span>
+    <h2 class="section__heading">Read a real lesson before you commit</h2>
+
+    <article class="sample-lesson">
+      <header class="sample-lesson__chrome">
+        <span class="sample-lesson__dots"><span></span><span></span><span></span></span>
+        <span>curriculum / day1_excel / 01_tables.md</span>
+      </header>
+      <div class="sample-lesson__body">
+        <h3>Lesson 1 — Tables & references</h3>
+        <p><strong>Time:</strong> ~30 min.  <strong>You'll be able to:</strong></p>
+        <ul>
+          <li>Convert a range to an Excel Table with <code>Ctrl+T</code> and reference its columns by name</li>
+          <li>Use structured references like <code>[@col]</code> and <code>Sales[Revenue]</code> instead of <code>B2:B1000</code></li>
+          <li>Tell when to use <code>$A$1</code>, <code>A$1</code>, <code>$A1</code>, and <code>A1</code> — and stop guessing</li>
+          <li>Sort, filter, and freeze panes without breaking your formulas</li>
+        </ul>
+        <p>Tables are the single most under-used Excel feature. Convert any data range to a Table with <code>Ctrl+T</code> (Windows) or <code>⌘+T</code> (Mac). The moment you do, three things happen:</p>
+        <ol>
+          <li><strong>Headers freeze automatically</strong> when you scroll past the first row.</li>
+          <li><strong>Formulas auto-extend</strong> when you add a row at the bottom — no copy-paste.</li>
+          <li><strong>You can reference columns by name</strong>: <code>=SUM(Sales[Revenue])</code> instead of <code>=SUM(B2:B1000)</code>.</li>
+        </ol>
+      </div>
+      <footer class="sample-lesson__cta">
+        <a class="btn btn--primary" href={`${base}/curriculum/day1_excel/01_tables/`}>Read the rest of Lesson 1 →</a>
+      </footer>
+    </article>
+  </div>
+</section>
+
+<!-- ============= FREE VS PAID COMPARE ============= -->
+<section class="section section--soft">
+  <div class="container">
+    <span class="section__eyebrow">Where this course fits</span>
+    <h2 class="section__heading">Free intensive vs paid certificates</h2>
+    <div class="compare">
+      <div class="compare__col compare__col--free">
+        <span class="compare__badge">You are here</span>
+        <h3>This course</h3>
+        <p class="compare__price">$0</p>
+        <ul>
+          <li>5 days · ~20 hours of teaching</li>
+          <li>Real dataset (~100K Brazilian e-commerce orders)</li>
+          <li>Capstone is a public 1-page report you can share</li>
+          <li>MIT licensed; fork the repo, customise for your team</li>
+          <li>No signup, no email, no ads, no tracking</li>
+          <li>Includes a full day on AI-assisted analytics</li>
+        </ul>
+      </div>
+      <div class="compare__col">
+        <h3>Paid certificate (Coursera / IBM / Google)</h3>
+        <p class="compare__price">$400–$4,000</p>
+        <ul>
+          <li>6 months · ~240 hours</li>
+          <li>Toy datasets per module</li>
+          <li>Capstone is a PDF certificate</li>
+          <li>Curriculum is fixed; can't adapt it</li>
+          <li>Email signup, marketing reminders, paid upsells</li>
+          <li>AI usually a final-week module, not the workflow</li>
+        </ul>
+      </div>
+    </div>
+    <p class="compare__note">Different tools for different jobs. Paid certs are better for formal hiring credentials. This course is better for fast portfolio impact and team upskilling.</p>
+  </div>
+</section>
+
+<!-- ============= FAQ ============= -->
+<section class="section" id="faq">
+  <div class="container container--narrow">
+    <span class="section__eyebrow">Frequently asked</span>
+    <h2 class="section__heading">Questions students actually ask</h2>
+    <div class="faq">
+      {faqs.map(([q, a]) => (
+        <details>
+          <summary>{q}</summary>
+          <div set:html={a}></div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ============= AFTER + ABOUT ============= -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="closing">
+      <div>
+        <span class="section__eyebrow">After the course</span>
+        <h2>Where to go from here</h2>
+        <p>Finished all five days plus the capstone? <a href={`${base}/next-steps/`}>What to learn next</a> — the books, courses, and habits that take a fluent beginner to a working analyst.</p>
+      </div>
+      <div>
+        <span class="section__eyebrow">About</span>
+        <h2>Built in the open</h2>
+        <p>Built for an internal analytics academy and released publicly under MIT. Source, issues, contributions: <a href="https://github.com/scripts-and-tables/daa">github.com/scripts-and-tables/daa</a>. Spotted a typo or have a better worked example? Open a PR.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* HERO */
+  .hero {
+    background:
+      radial-gradient(circle at 95% 5%, rgba(124, 58, 237, 0.18), transparent 50%),
+      radial-gradient(circle at 5% 95%, rgba(16, 185, 129, 0.10), transparent 50%),
+      linear-gradient(180deg, #0b0f23 0%, #1a1a40 100%);
+    color: var(--color-ink-on-dark);
+    padding: clamp(3rem, 6vw + 1rem, 6rem) 0 clamp(3rem, 5vw, 5rem);
+  }
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: center;
+  }
+  .hero__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.4rem 0.9rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: var(--space-6);
+  }
+  .hero__dot {
+    width: 0.5rem; height: 0.5rem; border-radius: 50%;
+    background: var(--color-success);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+  }
+  .hero__title {
+    color: #fff;
+    font-size: clamp(2.4rem, 4vw + 1rem, 4.4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 0.98;
+    margin: 0 0 var(--space-4);
+    background: linear-gradient(120deg, #ffffff 0%, #ffffff 50%, #c4b5fd 80%, #fbbf24 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero__sub {
+    color: rgba(255, 255, 255, 0.86);
+    font-size: clamp(1rem, 0.6vw + 0.85rem, 1.22rem);
+    max-width: 58ch;
+    margin: 0 0 var(--space-6);
+    line-height: 1.55;
+  }
+  .hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+  .hero__meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+  .hero__ctas { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+
+  /* HERO CARD */
+  .hero__card {
+    background: #ffffff;
+    color: var(--color-ink);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .hero__card-thumb {
+    background: linear-gradient(135deg, #eef2ff 0%, #e9d5ff 100%);
+    padding: var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero__card-thumb img {
+    width: 100%;
+    height: auto;
+    max-width: 380px;
+  }
+  .hero__card-body { padding: var(--space-6); }
+  .hero__card-meta {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-primary);
+    margin: 0 0 var(--space-2);
+  }
+  .hero__card-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin: 0 0 var(--space-3);
+  }
+  .hero__card-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-4);
+  }
+  .hero__card-bullets li {
+    padding: var(--space-2) 0 var(--space-2) 1.5rem;
+    position: relative;
+    font-size: 0.92rem;
+  }
+  .hero__card-bullets li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 800;
+  }
+  .hero__card-cta { width: 100%; }
+
+  @media (max-width: 900px) {
+    .hero__grid { grid-template-columns: 1fr; }
+    .hero__card { max-width: 480px; margin: 0 auto; }
+  }
+
+  /* SUBNAV */
+  .subnav {
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .subnav__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    min-height: 56px;
+    overflow-x: auto;
+  }
+  .subnav__inner a {
+    color: var(--color-ink-2) !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    border-bottom: 0 !important;
+    white-space: nowrap;
+  }
+  .subnav__inner a:hover { background: var(--color-bg-soft); color: var(--color-ink) !important; }
+  .subnav__cta { margin-left: auto; }
+
+  /* LEARN GRID */
+  .section__lead {
+    color: var(--color-ink-2);
+    font-size: 1rem;
+    max-width: 64ch;
+    margin-bottom: var(--space-6);
+  }
+  .learn-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: var(--space-6) var(--space-8);
+  }
+  .learn-item {
+    display: flex;
+    gap: var(--space-4);
+  }
+  .learn-item__check {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    margin-top: 0.2rem;
+  }
+  .learn-item__title { font-weight: 700; margin: 0 0 var(--space-2); }
+  .learn-item__body { color: var(--color-ink-2); margin: 0; font-size: 0.95rem; line-height: 1.55; }
+
+  /* PILLS */
+  .pills { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .pill {
+    display: inline-block;
+    padding: 0.45rem 0.95rem;
+    background: var(--color-bg);
+    color: var(--color-ink);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-pill);
+    font-size: 0.86rem;
+    font-weight: 600;
+  }
+
+  /* DETAILS GRID */
+  .details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-4);
+  }
+  .detail {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+  .detail__icon { font-size: 1.7rem; margin-bottom: var(--space-3); }
+  .detail__title { font-weight: 700; font-size: 1.05rem; margin: 0 0 var(--space-2); }
+  .detail__body { color: var(--color-ink-2); margin: 0; font-size: 0.92rem; line-height: 1.5; }
+
+  /* MODULES */
+  .modules { display: flex; flex-direction: column; gap: var(--space-3); }
+  .module {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .module[open] {
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-md);
+  }
+  .module--day1[open] { border-color: var(--day-1); }
+  .module--day2[open] { border-color: var(--day-2); }
+  .module--day3[open] { border-color: var(--day-3); }
+  .module--day4[open] { border-color: var(--day-4); }
+  .module--day5[open] { border-color: var(--day-5); }
+
+  .module__summary {
+    list-style: none;
+    cursor: pointer;
+    padding: var(--space-4) var(--space-6);
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    align-items: center;
+    gap: var(--space-4);
+  }
+  .module__summary::-webkit-details-marker { display: none; }
+  .module__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--color-bg-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .module--day1 .module__icon { background: rgba(16, 185, 129, 0.12); }
+  .module--day2 .module__icon { background: rgba(59, 130, 246, 0.12); }
+  .module--day3 .module__icon { background: rgba(139, 92, 246, 0.12); }
+  .module--day4 .module__icon { background: rgba(245, 158, 11, 0.12); }
+  .module--day5 .module__icon { background: rgba(244, 63, 94, 0.12); }
+  .module__icon img { width: 36px; height: 36px; }
+
+  .module__heading p { margin: 0; }
+  .module__day {
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: var(--color-ink-3);
+  }
+  .module--day1 .module__day { color: var(--day-1); }
+  .module--day2 .module__day { color: var(--day-2); }
+  .module--day3 .module__day { color: var(--day-3); }
+  .module--day4 .module__day { color: var(--day-4); }
+  .module--day5 .module__day { color: var(--day-5); }
+
+  .module__meta {
+    font-size: 0.85rem;
+    color: var(--color-ink-2);
+    margin: 0.15rem 0 0.35rem !important;
+  }
+  .module__bullets {
+    font-size: 0.92rem;
+    color: var(--color-ink-2);
+    max-width: 56ch;
+  }
+
+  .module__chevron {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-bg-soft);
+    color: var(--color-ink-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+  .module[open] .module__chevron { transform: rotate(45deg); }
+
+  .module__body {
+    padding: 0 var(--space-6) var(--space-6);
+    border-top: 1px solid var(--color-border);
+  }
+  .module__lessons {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-4) 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-2);
+  }
+  .module__lessons li { margin: 0; }
+  .module__lesson {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-ink) !important;
+    border-bottom: 1px solid var(--color-border) !important;
+    font-size: 0.92rem;
+    background: var(--color-bg);
+  }
+  .module__lesson:hover {
+    border-color: var(--color-primary);
+    background: var(--color-primary-soft);
+  }
+  .module__lesson-title { font-weight: 600; }
+  .module__lesson-time { color: var(--color-ink-3); font-size: 0.82rem; }
+
+  @media (max-width: 600px) {
+    .module__summary { grid-template-columns: 44px 1fr auto; gap: var(--space-3); padding: var(--space-4); }
+    .module__bullets { display: none; }
+  }
+
+  /* SAMPLE LESSON */
+  .sample-lesson {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .sample-lesson__chrome {
+    background: var(--color-bg-soft);
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: 0.82rem;
+    color: var(--color-ink-2);
+    font-family: var(--font-mono);
+  }
+  .sample-lesson__dots { display: inline-flex; gap: var(--space-2); }
+  .sample-lesson__dots span {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--color-border-strong);
+  }
+  .sample-lesson__body { padding: var(--space-8); }
+  .sample-lesson__body h3 { font-size: 1.5rem; margin: 0 0 var(--space-3); }
+  .sample-lesson__cta {
+    padding: 0 var(--space-8) var(--space-8);
+    display: flex;
+    justify-content: center;
+  }
+
+  /* COMPARE */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+  .compare__col {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    position: relative;
+  }
+  .compare__col--free {
+    border: 2px solid var(--color-primary);
+    background: var(--color-primary-soft);
+  }
+  .compare__badge {
+    position: absolute;
+    top: -12px;
+    left: var(--space-6);
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 800;
+    padding: 0.3rem 0.7rem;
+    border-radius: var(--radius-pill);
+  }
+  .compare__col h3 { font-size: 1.15rem; margin: 0 0 var(--space-2); }
+  .compare__price {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 var(--space-4);
+    color: var(--color-ink);
+  }
+  .compare__col--free .compare__price { color: var(--color-primary); }
+  .compare__col ul { list-style: none; padding: 0; margin: 0; }
+  .compare__col li {
+    padding: 0.4rem 0 0.4rem 1.7rem;
+    position: relative;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .compare__col--free li::before {
+    content: "✓";
+    position: absolute; left: 0; top: 0.4rem;
+    color: var(--color-primary);
+    font-weight: 800;
+  }
+  .compare__col:not(.compare__col--free) li::before {
+    content: "—";
+    position: absolute; left: 0; top: 0.4rem;
+    color: var(--color-ink-3);
+  }
+  .compare__col:not(.compare__col--free) li { color: var(--color-ink-2); }
+  .compare__note {
+    text-align: center;
+    color: var(--color-ink-2);
+    font-size: 0.92rem;
+    margin: var(--space-6) auto 0;
+    max-width: 64ch;
+  }
+  @media (max-width: 720px) { .compare { grid-template-columns: 1fr; } }
+
+  /* FAQ */
+  .container--narrow { max-width: var(--container-narrow); }
+  .faq { display: flex; flex-direction: column; gap: var(--space-2); }
+  .faq details {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 0;
+  }
+  .faq details > summary {
+    padding: var(--space-4) var(--space-6);
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.02rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+  }
+  .faq details > summary::-webkit-details-marker { display: none; }
+  .faq details > summary::after {
+    content: "+";
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .faq details[open] > summary::after { content: "−"; }
+  .faq details > div {
+    padding: 0 var(--space-6) var(--space-4);
+    color: var(--color-ink-2);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* CLOSING */
+  .closing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
+  .closing h2 { font-size: 1.4rem; margin: var(--space-2) 0 var(--space-3); }
+  .closing p { color: rgba(255, 255, 255, 0.78); margin: 0; }
+  @media (max-width: 720px) { .closing { grid-template-columns: 1fr; gap: var(--space-6); } }
+</style>
+
+</BaseLayout>

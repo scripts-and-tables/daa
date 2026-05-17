@@ -1,0 +1,116 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const links = [
+  { href: '#about', label: 'About' },
+  { href: '#modules', label: 'Modules' },
+  { href: '#sample', label: 'Sample' },
+  { href: '#faq', label: 'FAQ' },
+];
+const { showSections = false } = Astro.props;
+---
+
+<header class="topnav" id="topnav">
+  <div class="container topnav__inner">
+    <a class="topnav__brand" href={`${base}/`}>
+      <span class="topnav__brand-mark" aria-hidden="true">D<span>A</span>A</span>
+      <span class="topnav__brand-text">Data Analytics Academy</span>
+    </a>
+
+    {showSections && (
+      <nav class="topnav__sections" aria-label="Page sections">
+        {links.map((l) => (
+          <a href={l.href} class="topnav__sec-link">{l.label}</a>
+        ))}
+      </nav>
+    )}
+
+    <div class="topnav__actions">
+      <a class="topnav__github" href="https://github.com/scripts-and-tables/daa" aria-label="View on GitHub" rel="noopener" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+      </a>
+      <a class="btn btn--primary btn--small topnav__cta" href={`${base}/curriculum/day1_excel/`}>Start Day 1</a>
+    </div>
+  </div>
+</header>
+
+<style>
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+}
+.topnav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: var(--nav-height);
+}
+.topnav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-weight: 700;
+  color: var(--color-ink) !important;
+  border-bottom: 0 !important;
+  font-size: 0.95rem;
+}
+.topnav__brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+}
+.topnav__brand-mark span { color: #fcd34d; }
+.topnav__sections {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex: 1;
+  justify-content: center;
+}
+.topnav__sec-link {
+  color: var(--color-ink-2) !important;
+  font-weight: 600;
+  font-size: 0.92rem;
+  border-bottom: 0 !important;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  transition: background 0.12s ease, color 0.12s ease;
+}
+.topnav__sec-link:hover { background: var(--color-bg-soft); color: var(--color-ink) !important; }
+.topnav__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.topnav__github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  color: var(--color-ink-2);
+  border: 0 !important;
+}
+.topnav__github:hover { background: var(--color-bg-soft); color: var(--color-ink); }
+
+@media (max-width: 800px) {
+  .topnav__sections { display: none; }
+  .topnav__brand-text { display: none; }
+}
+</style>

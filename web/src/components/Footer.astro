@@ -1,0 +1,135 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <span class="site-footer__brand-mark">D<span>A</span>A</span>
+      <p class="site-footer__brand-name">Data Analytics Academy</p>
+      <p class="site-footer__brand-tag">A free 5-day intensive for working professionals new to data.</p>
+    </div>
+
+    <div class="site-footer__col">
+      <h4>Course</h4>
+      <ul>
+        <li><a href={`${base}/curriculum/day1_excel/`}>Day 1 — Excel</a></li>
+        <li><a href={`${base}/curriculum/day2_sql/`}>Day 2 — SQL</a></li>
+        <li><a href={`${base}/curriculum/day3_python/`}>Day 3 — Python</a></li>
+        <li><a href={`${base}/curriculum/day4_powerbi/`}>Day 4 — Power BI</a></li>
+        <li><a href={`${base}/curriculum/day5_claude_code/`}>Day 5 — Claude Code</a></li>
+        <li><a href={`${base}/capstone/`}>The capstone</a></li>
+      </ul>
+    </div>
+
+    <div class="site-footer__col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href={`${base}/about-the-role/`}>What an analyst does</a></li>
+        <li><a href={`${base}/next-steps/`}>What to learn next</a></li>
+        <li><a href={`${base}/data/`}>The Olist dataset</a></li>
+        <li><a href={`${base}/instructor-setup/`}>Instructor setup</a></li>
+      </ul>
+    </div>
+
+    <div class="site-footer__col">
+      <h4>Built with</h4>
+      <ul>
+        <li><a href="https://github.com/scripts-and-tables/daa" rel="noopener" target="_blank">GitHub repo</a></li>
+        <li><a href="https://github.com/scripts-and-tables/daa/issues" rel="noopener" target="_blank">Open an issue</a></li>
+        <li><a href="https://github.com/scripts-and-tables/daa/blob/main/LICENSE" rel="noopener" target="_blank">MIT licensed</a></li>
+        <li><a href="https://astro.build" rel="noopener" target="_blank">Built with Astro</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container site-footer__bottom">
+    <p>© {year} Scripts and Tables · Free under MIT · No signup, no tracking, no ads.</p>
+  </div>
+</footer>
+
+<style>
+.site-footer {
+  background: var(--color-bg-dark);
+  color: var(--color-ink-on-dark);
+  padding-top: var(--space-12);
+}
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: var(--space-8);
+  padding-bottom: var(--space-12);
+}
+.site-footer__brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.site-footer__brand-mark span { color: #fcd34d; }
+.site-footer__brand-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin: var(--space-3) 0 var(--space-2);
+  color: var(--color-ink-on-dark) !important;
+}
+.site-footer__brand-tag {
+  color: var(--color-ink-on-dark-2);
+  font-size: 0.92rem;
+  margin: 0;
+  max-width: 38ch;
+}
+.site-footer__col h4 {
+  color: #fcd34d;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin: 0 0 var(--space-4);
+}
+.site-footer__col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.site-footer__col a {
+  color: var(--color-ink-on-dark-2) !important;
+  font-size: 0.93rem;
+  border-bottom: 0 !important;
+}
+.site-footer__col a:hover { color: var(--color-ink-on-dark) !important; }
+.site-footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: var(--space-6) 0;
+}
+.site-footer__bottom p {
+  color: var(--color-ink-on-dark-2);
+  font-size: 0.85rem;
+  margin: 0;
+}
+@media (max-width: 800px) {
+  .site-footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+  .site-footer__brand { grid-column: 1 / -1; }
+}
+@media (max-width: 480px) {
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

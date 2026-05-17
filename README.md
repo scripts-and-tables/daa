@@ -36,20 +36,36 @@ No coding background assumed. If you've opened a spreadsheet before, you're read
 ## How this repo is organized
 
 ```
-docs/
-├── curriculum/   Lesson materials (READMEs, exercises, solutions) per day
-├── capstone/     The threaded capstone project — one folder per day
-├── data/         Dataset documentation
-└── instructor/   Setup checklist and timing notes for whoever is teaching
-data/olist/       Download script + SQLite loader (the actual scripts)
-mkdocs.yml        Site config for the published version
+web/                            The Astro static-site that publishes scripts-and-tables.github.io/daa
+├── package.json                Astro 5 + minimal deps
+├── astro.config.mjs            Site URL, base path, markdown config
+├── public/assets/              Static SVG illustrations served as-is
+└── src/
+    ├── content/curriculum/     All 25 lesson markdown files + 5 day READMEs + 5 self-tests
+    ├── content/capstone/       6 capstone markdowns (overview + 5 day-specific)
+    ├── content/pages/          about-the-role, next-steps, data, instructor pages
+    ├── layouts/                BaseLayout (head/footer)
+    ├── components/             TopNav, Footer (homepage components are inline in index.astro)
+    ├── pages/                  index.astro (Coursera-style homepage), [...slug].astro (every lesson)
+    └── styles/global.css       Design tokens + base styles
+
+data/olist/                     Download script + SQLite loader (referenced from lessons)
 ```
 
 ## Getting started
 
-**Students:** start with [`docs/curriculum/day1_excel/README.md`](docs/curriculum/day1_excel/README.md). Before Day 2, download the dataset via [`data/olist/download.sh`](data/olist/download.sh).
+**Students:** start with [Day 1 — Excel](https://scripts-and-tables.github.io/daa/curriculum/day1_excel/). Before Day 2, download the dataset via [`data/olist/download.sh`](data/olist/download.sh).
 
-**Instructors:** start with [`docs/instructor/setup_checklist.md`](docs/instructor/setup_checklist.md).
+**Instructors:** start with the [setup checklist](https://scripts-and-tables.github.io/daa/instructor-setup/).
+
+**Working on the site:**
+
+```bash
+cd web
+npm install
+npm run dev      # local preview at http://localhost:4321
+npm run build    # production build into web/dist
+```
 
 ## License
 

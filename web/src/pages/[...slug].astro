@@ -1,0 +1,139 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const [curriculum, capstone, pages] = await Promise.all([
+    getCollection('curriculum'),
+    getCollection('capstone'),
+    getCollection('pages'),
+  ]);
+
+  const all = [
+    ...curriculum.map((e) => ({
+      params: { slug: `curriculum/${e.slug.replace(/\/readme$/i, '')}` },
+      props: { entry: e, kind: 'curriculum' },
+    })),
+    ...capstone.map((e) => ({
+      params: { slug: `capstone/${e.slug.replace(/\/readme$/i, '').replace(/^readme$/i, '')}` },
+      props: { entry: e, kind: 'capstone' },
+    })),
+    ...pages.map((e) => ({
+      params: { slug: e.slug },
+      props: { entry: e, kind: 'page' },
+    })),
+  ];
+
+  // Strip trailing slash artifacts and empty slugs
+  return all.map((p) => ({
+    ...p,
+    params: {
+      slug: p.params.slug === '' || p.params.slug === '/' ? 'capstone' : p.params.slug,
+    },
+  }));
+}
+
+const { entry, kind } = Astro.props;
+const { Content, headings } = await entry.render();
+
+const title =
+  entry.data.title ??
+  entry.body.split('\n').find((l) => l.startsWith('# '))?.replace(/^#\s+/, '') ??
+  'Data Analytics Academy';
+
+// Detect which day we're on (for the accent strip)
+const slug = entry.slug || '';
+let day = 0;
+const match = slug.match(/day(\d)_/);
+if (match) day = parseInt(match[1], 10);
+---
+
+<BaseLayout title={`${title} · Data Analytics Academy`} description={entry.data.description ?? ''}>
+  <article class={`prose prose--${kind}` + (day ? ` prose--day${day}` : '')}>
+    <div class="prose__inner">
+      <Content />
+    </div>
+  </article>
+
+  <style>
+    .prose {
+      padding: var(--space-12) 0 var(--space-16);
+      background: var(--color-bg);
+    }
+    .prose__inner {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+      position: relative;
+    }
+    .prose--day1 .prose__inner { border-left: 3px solid var(--day-1); padding-left: var(--space-8); }
+    .prose--day2 .prose__inner { border-left: 3px solid var(--day-2); padding-left: var(--space-8); }
+    .prose--day3 .prose__inner { border-left: 3px solid var(--day-3); padding-left: var(--space-8); }
+    .prose--day4 .prose__inner { border-left: 3px solid var(--day-4); padding-left: var(--space-8); }
+    .prose--day5 .prose__inner { border-left: 3px solid var(--day-5); padding-left: var(--space-8); }
+
+    @media (max-width: 600px) {
+      .prose--day1 .prose__inner,
+      .prose--day2 .prose__inner,
+      .prose--day3 .prose__inner,
+      .prose--day4 .prose__inner,
+      .prose--day5 .prose__inner { padding-left: var(--space-4); border-left-width: 2px; }
+    }
+
+    .prose__inner :global(h1) {
+      margin-top: 0;
+      font-size: clamp(2rem, 2vw + 1.2rem, 2.6rem);
+    }
+    .prose__inner :global(h2) {
+      margin-top: var(--space-12);
+      padding-top: var(--space-4);
+    }
+    .prose__inner :global(h3) { margin-top: var(--space-8); }
+    .prose__inner :global(table) {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--space-6) 0;
+      font-size: 0.92rem;
+    }
+    .prose__inner :global(th),
+    .prose__inner :global(td) {
+      border-bottom: 1px solid var(--color-border);
+      padding: var(--space-3);
+      text-align: left;
+    }
+    .prose__inner :global(th) {
+      background: var(--color-bg-soft);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+    }
+    .prose__inner :global(blockquote) {
+      border-left: 3px solid var(--color-primary);
+      background: var(--color-primary-soft);
+      padding: var(--space-3) var(--space-4);
+      margin: var(--space-6) 0;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+    .prose__inner :global(blockquote p) { margin: 0; }
+    .prose__inner :global(details) {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+      margin: var(--space-4) 0;
+    }
+    .prose__inner :global(details > summary) {
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .prose__inner :global(details[open] > summary) {
+      margin-bottom: var(--space-3);
+    }
+    .prose__inner :global(img) {
+      border-radius: var(--radius-md);
+      margin: var(--space-6) 0;
+    }
+    .prose__inner :global(pre) { margin: var(--space-4) 0; }
+  </style>
+</BaseLayout>
