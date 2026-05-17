@@ -237,7 +237,7 @@ OUTPUT: theme, count, samples</pre>
 ## The Olist dataset — eight tables, one threaded story
 
 <figure class="schema-figure">
-<img src="assets/illustrations/olist_schema.svg" alt="Olist database schema showing 8 tables and their relationships" />
+<img src="assets/illustrations/olist_schema.svg" alt="Olist database schema showing 8 tables and their relationships" width="620" height="460" loading="lazy" />
 <figcaption>~100,000 Brazilian e-commerce orders, 2017–2018. Every day's lesson joins a different subset of these tables.</figcaption>
 </figure>
 
@@ -259,7 +259,7 @@ OUTPUT: theme, count, samples</pre>
 <div class="feature-rows">
 
 <div class="feature-row" data-day="1">
-<div class="feature-row__image"><img src="assets/illustrations/day1_artifact.svg" alt="Excel pivot table preview" /></div>
+<div class="feature-row__image"><img src="assets/illustrations/day1_artifact.svg" alt="Excel pivot table preview" width="320" height="220" loading="lazy" /></div>
 <div class="feature-row__text">
 <p class="feature-row__eyebrow">Day 1 · Excel</p>
 <h3 class="feature-row__title">Your first cut at the question, in a workbook</h3>
@@ -270,7 +270,7 @@ OUTPUT: theme, count, samples</pre>
 </div>
 
 <div class="feature-row feature-row--reverse" data-day="2">
-<div class="feature-row__image"><img src="assets/illustrations/day2_artifact.svg" alt="SQL result set preview" /></div>
+<div class="feature-row__image"><img src="assets/illustrations/day2_artifact.svg" alt="SQL result set preview" width="320" height="220" loading="lazy" /></div>
 <div class="feature-row__text">
 <p class="feature-row__eyebrow">Day 2 · SQL</p>
 <h3 class="feature-row__title">Two CSVs the rest of the week will pick up</h3>
@@ -281,7 +281,7 @@ OUTPUT: theme, count, samples</pre>
 </div>
 
 <div class="feature-row" data-day="3">
-<div class="feature-row__image"><img src="assets/illustrations/day3_artifact.svg" alt="pandas chart preview" /></div>
+<div class="feature-row__image"><img src="assets/illustrations/day3_artifact.svg" alt="pandas chart preview" width="320" height="220" loading="lazy" /></div>
 <div class="feature-row__text">
 <p class="feature-row__eyebrow">Day 3 · pandas</p>
 <h3 class="feature-row__title">The headline chart, in a re-runnable notebook</h3>
@@ -292,7 +292,7 @@ OUTPUT: theme, count, samples</pre>
 </div>
 
 <div class="feature-row feature-row--reverse" data-day="4">
-<div class="feature-row__image"><img src="assets/illustrations/day4_artifact.svg" alt="Power BI dashboard preview" /></div>
+<div class="feature-row__image"><img src="assets/illustrations/day4_artifact.svg" alt="Power BI dashboard preview" width="320" height="220" loading="lazy" /></div>
 <div class="feature-row__text">
 <p class="feature-row__eyebrow">Day 4 · Power BI</p>
 <h3 class="feature-row__title">A one-page interactive dashboard a stakeholder will click</h3>
@@ -303,7 +303,7 @@ OUTPUT: theme, count, samples</pre>
 </div>
 
 <div class="feature-row" data-day="5">
-<div class="feature-row__image"><img src="assets/illustrations/day5_artifact.svg" alt="1-page stakeholder report preview" /></div>
+<div class="feature-row__image"><img src="assets/illustrations/day5_artifact.svg" alt="1-page stakeholder report preview" width="320" height="220" loading="lazy" /></div>
 <div class="feature-row__text">
 <p class="feature-row__eyebrow">Day 5 · Final report</p>
 <h3 class="feature-row__title">One page, three findings, recommendations the ops team can act on</h3>
@@ -328,14 +328,14 @@ OUTPUT: theme, count, samples</pre>
 
 <a class="day-card" data-day="1" href="curriculum/day1_excel/README.md" markdown="1">
 <span class="day-card__top">
-<span class="day-card__icon"><img src="assets/illustrations/day1.svg" alt="" class="illus"></span>
+<span class="day-card__icon"><img src="assets/illustrations/day1.svg" alt="" width="78" height="78" loading="lazy" class="illus"></span>
 <span class="day-card__label">
 <span class="day-card__eyebrow">Day 1</span>
 <span class="day-card__title">Excel</span>
 </span>
 </span>
 <span class="day-card__meta">4 hours · 5 lessons</span>
-<span class="day-card__thumb"><img src="assets/illustrations/day1_artifact.svg" alt="" /></span>
+<span class="day-card__thumb"><img src="assets/illustrations/day1_artifact.svg" alt="" width="320" height="220" loading="lazy" /></span>
 <span class="day-card__bullets">
 <span class="day-card__bullet">Tables, references, sort/filter</span>
 <span class="day-card__bullet">Logic, lookups, conditional aggregation</span>
@@ -346,14 +346,14 @@ OUTPUT: theme, count, samples</pre>
 
 <a class="day-card" data-day="2" href="curriculum/day2_sql/README.md" markdown="1">
 <span class="day-card__top">
-<span class="day-card__icon"><img src="assets/illustrations/day2.svg" alt="" class="illus"></span>
+<span class="day-card__icon"><img src="assets/illustrations/day2.svg" alt="" width="78" height="78" loading="lazy" class="illus"></span>
 <span class="day-card__label">
 <span class="day-card__eyebrow">Day 2</span>
 <span class="day-card__title">SQL</span>
 </span>
 </span>
 <span class="day-card__meta">4 hours · 5 lessons</span>
-<span class="day-card__thumb"><img src="assets/illustrations/day2_artifact.svg" alt="" /></span>
+<span class="day-card__thumb"><img src="assets/illustrations/day2_artifact.svg" alt="" width="320" height="220" loading="lazy" /></span>
 <span class="day-card__bullets">
 <span class="day-card__bullet">SELECT, WHERE, GROUP BY</span>
 <span class="day-card__bullet">Joins across 4+ tables</span>
@@ -364,14 +364,14 @@ OUTPUT: theme, count, samples</pre>
 
 <a class="day-card" data-day="3" href="curriculum/day3_python/README.md" markdown="1">
 <span class="day-card__top">
-<span class="day-card__icon"><img src="assets/illustrations/day3.svg" alt="" class="illus"></span>
+<span class="day-card__icon"><img src="assets/illustrations/day3.svg" alt="" width="78" height="78" loading="lazy" class="illus"></span>
 <span class="day-card__label">
 <span class="day-card__eyebrow">Day 3</span>
 <span class="day-card__title">Python</span>
 </span>
 </span>
 <span class="day-card__meta">4 hours · 5 lessons</span>
-<span class="day-card__thumb"><img src="assets/illustrations/day3_artifact.svg" alt="" /></span>
+<span class="day-card__thumb"><img src="assets/illustrations/day3_artifact.svg" alt="" width="320" height="220" loading="lazy" /></span>
 <span class="day-card__bullets">
 <span class="day-card__bullet">pandas DataFrames, filtering</span>
 <span class="day-card__bullet">merge with row-count sanity checks</span>
@@ -382,14 +382,14 @@ OUTPUT: theme, count, samples</pre>
 
 <a class="day-card" data-day="4" href="curriculum/day4_powerbi/README.md" markdown="1">
 <span class="day-card__top">
-<span class="day-card__icon"><img src="assets/illustrations/day4.svg" alt="" class="illus"></span>
+<span class="day-card__icon"><img src="assets/illustrations/day4.svg" alt="" width="78" height="78" loading="lazy" class="illus"></span>
 <span class="day-card__label">
 <span class="day-card__eyebrow">Day 4</span>
 <span class="day-card__title">Power BI</span>
 </span>
 </span>
 <span class="day-card__meta">4 hours · 5 lessons</span>
-<span class="day-card__thumb"><img src="assets/illustrations/day4_artifact.svg" alt="" /></span>
+<span class="day-card__thumb"><img src="assets/illustrations/day4_artifact.svg" alt="" width="320" height="220" loading="lazy" /></span>
 <span class="day-card__bullets">
 <span class="day-card__bullet">Power Query and the data model</span>
 <span class="day-card__bullet">DAX measures, filter context</span>
@@ -400,14 +400,14 @@ OUTPUT: theme, count, samples</pre>
 
 <a class="day-card" data-day="5" href="curriculum/day5_claude_code/README.md" markdown="1">
 <span class="day-card__top">
-<span class="day-card__icon"><img src="assets/illustrations/day5.svg" alt="" class="illus"></span>
+<span class="day-card__icon"><img src="assets/illustrations/day5.svg" alt="" width="78" height="78" loading="lazy" class="illus"></span>
 <span class="day-card__label">
 <span class="day-card__eyebrow">Day 5</span>
 <span class="day-card__title">Claude Code</span>
 </span>
 </span>
 <span class="day-card__meta">4 hours · 5 lessons</span>
-<span class="day-card__thumb"><img src="assets/illustrations/day5_artifact.svg" alt="" /></span>
+<span class="day-card__thumb"><img src="assets/illustrations/day5_artifact.svg" alt="" width="320" height="220" loading="lazy" /></span>
 <span class="day-card__bullets">
 <span class="day-card__bullet">Prompting that works</span>
 <span class="day-card__bullet">Plan mode and verification</span>

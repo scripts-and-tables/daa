@@ -2,7 +2,7 @@
    Data Analytics Academy — editorial academy theme
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap');
+/* Geist now preloaded via overrides/main.html — non-blocking */
 
 /* 1. Tokens
    ----------------------------------------------------------- */
@@ -2410,5 +2410,178 @@ details.day-accordion__item[open] .day-accordion__chevron {
 [data-md-color-scheme="slate"] .toa-pill {
   color: #fcd34d;
   background: color-mix(in srgb, var(--accent-warm) 18%, transparent);
+}
+
+/* ============================================================
+   30. Accessibility — focus-visible rings on every interactive
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+.hero-home__cta:focus-visible,
+.gh-badge:focus-visible,
+.day-card:focus-visible,
+.code-card:focus-visible,
+.build-tile:focus-visible,
+.lesson-card:focus-visible,
+.timeline-node:focus-visible,
+.day-accordion__lesson:focus-visible,
+.sample-lesson__cta a:focus-visible,
+.feature-row__cta:focus-visible,
+.sticky-cta__btn:focus-visible,
+.day-card__cta:focus-visible,
+.skill-pill:focus-visible,
+details.day-accordion__item > summary:focus-visible,
+.faq details > summary:focus-visible {
+  outline: 3px solid #fbbf24;
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
+/* Active (pressed) states on primary CTAs */
+.hero-home__cta:active,
+.sample-lesson__cta a:active,
+.sticky-cta__btn:active {
+  transform: translateY(0) scale(0.985);
+  transition: transform 0.05s ease;
+}
+
+/* ============================================================
+   31. Portal mode — also hide the search on the homepage
+   ============================================================ */
+
+body.is-home .md-header__option,
+body.is-home .md-search,
+body.is-home .md-header__topic + .md-header__topic {
+  display: none !important;
+}
+
+/* ============================================================
+   32. Dark-mode polish for hardcoded surfaces
+   ============================================================ */
+
+[data-md-color-scheme="slate"] .schema-figure img {
+  background: #1a1a2e;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-md-color-scheme="slate"] .sample-lesson {
+  background: #1a1a2e;
+}
+
+[data-md-color-scheme="slate"] .sample-lesson__body::after {
+  background: linear-gradient(180deg, transparent, #1a1a2e);
+}
+
+[data-md-color-scheme="slate"] .build-tile,
+[data-md-color-scheme="slate"] .code-card,
+[data-md-color-scheme="slate"] .day-card,
+[data-md-color-scheme="slate"] .lesson-card,
+[data-md-color-scheme="slate"] .feature-cell,
+[data-md-color-scheme="slate"] details.day-accordion__item,
+[data-md-color-scheme="slate"] .faq details,
+[data-md-color-scheme="slate"] .compare__col {
+  background: #1a1a2e;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-md-color-scheme="slate"] .compare__col--free {
+  background: color-mix(in srgb, var(--md-primary-fg-color) 18%, #1a1a2e);
+  border-color: color-mix(in srgb, var(--md-primary-fg-color) 50%, transparent);
+}
+
+[data-md-color-scheme="slate"] .compare__col--paid .compare__list li {
+  color: rgba(248, 247, 255, 0.55);
+}
+
+/* ============================================================
+   33. Touch targets — bump small ones to 44×44 minimum on mobile
+   ============================================================ */
+
+@media (max-width: 600px) {
+  .day-accordion__num {
+    width: 44px;
+    height: 44px;
+  }
+  .day-accordion__chevron {
+    width: 32px;
+    height: 32px;
+  }
+  .lesson-card,
+  .day-card,
+  .build-tile {
+    min-height: 64px;
+  }
+  .skill-pill,
+  .course-pill {
+    padding: 0.5rem 0.95rem;
+    min-height: 38px;
+  }
+}
+
+/* ============================================================
+   34. Shadow + radius standardisation (use these going forward)
+   ============================================================ */
+
+:root {
+  --shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 10px 26px rgba(15, 23, 42, 0.09);
+  --shadow-lg: 0 18px 40px rgba(15, 23, 42, 0.12);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+}
+
+[data-md-color-scheme="slate"] {
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.30);
+  --shadow-md: 0 10px 26px rgba(0, 0, 0, 0.38);
+  --shadow-lg: 0 18px 40px rgba(0, 0, 0, 0.46);
+}
+
+/* ============================================================
+   35. Sticky CTA — ensure it never overlaps content tail
+   ============================================================ */
+
+body.is-home.cta-visible {
+  padding-bottom: 72px;
+}
+
+@media (min-width: 900px) {
+  body.is-home.cta-visible {
+    padding-bottom: 0;
+  }
+}
+
+/* ============================================================
+   36. Header polish — when homepage scrolled, hint that nav exists
+   ============================================================ */
+
+body.is-home.scrolled .md-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Skip-to-content link for keyboard users (a11y best practice) */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--md-primary-fg-color);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 1rem;
 }
 
