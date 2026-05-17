@@ -229,3 +229,83 @@
     window.document$.subscribe(setupCounters);
   }
 })();
+
+/* ============================================================
+   Portal mode — body class toggles for the homepage chrome
+   ============================================================ */
+(function () {
+  "use strict";
+
+  function isHome() {
+    var p = window.location.pathname;
+    return (
+      p === "/" ||
+      p === "/daa/" ||
+      p === "/index.html" ||
+      p === "/daa/index.html" ||
+      p.endsWith("/daa/")
+    );
+  }
+
+  function applyHomeClass() {
+    if (isHome()) {
+      document.body.classList.add("is-home");
+    } else {
+      document.body.classList.remove("is-home");
+      document.body.classList.remove("cta-visible");
+      document.body.classList.remove("scrolled");
+    }
+  }
+
+  function setupScrollClass() {
+    var onScroll = function () {
+      if (window.scrollY > 80) {
+        document.body.classList.add("scrolled");
+      } else {
+        document.body.classList.remove("scrolled");
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  function setupHeroObserver() {
+    if (!isHome() || !("IntersectionObserver" in window)) return;
+    var hero = document.querySelector(".hero-home");
+    if (!hero) return;
+
+    var obs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            document.body.classList.remove("cta-visible");
+          } else {
+            document.body.classList.add("cta-visible");
+          }
+        });
+      },
+      { threshold: 0, rootMargin: "-40px 0px 0px 0px" }
+    );
+    obs.observe(hero);
+  }
+
+  function init() {
+    applyHomeClass();
+    setupHeroObserver();
+  }
+
+  // Scroll listener attaches once for the page lifetime
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      setupScrollClass();
+      init();
+    });
+  } else {
+    setupScrollClass();
+    init();
+  }
+
+  if (typeof window.document$ !== "undefined" && typeof window.document$.subscribe === "function") {
+    window.document$.subscribe(init);
+  }
+})();

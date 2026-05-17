@@ -546,6 +546,98 @@ Finished all five days plus the capstone? Read **[What to learn next →](next_s
 </div>
 </div>
 
+<div class="full-bleed indigo-tint" markdown>
+<div class="full-bleed__inner" markdown>
+
+<span class="section-eyebrow">Where you start vs where you finish</span>
+
+## The five-day transformation
+
+<div class="beforeafter">
+
+<div class="beforeafter__col beforeafter__col--before">
+<span class="beforeafter__label">Monday morning</span>
+<h3 class="beforeafter__heading">When you start</h3>
+<ul class="beforeafter__list">
+<li>You've used Excel a handful of times but never trusted a pivot table</li>
+<li>You've heard "just write a SQL query" and panicked</li>
+<li>You think pandas is something you do in a zoo</li>
+<li>You've opened Power BI and closed it again</li>
+<li>You'd let an AI write code but couldn't verify whether it's right</li>
+<li>You'd struggle to write a stakeholder report from scratch</li>
+</ul>
+</div>
+
+<div class="beforeafter__col beforeafter__col--after">
+<span class="beforeafter__label">Friday evening</span>
+<h3 class="beforeafter__heading">When you finish</h3>
+<ul class="beforeafter__list">
+<li>You ship a pivot table on 100K-row data without breaking the dates</li>
+<li>You write a CTE that joins four tables and you can read your own query a week later</li>
+<li>You reproduce that SQL in a pandas notebook and sanity-check every merge</li>
+<li>You build a one-page Power BI dashboard a non-analyst will click through</li>
+<li>You direct an AI to do real analytics work and you know which numbers to trust</li>
+<li>You ship a 1-page stakeholder report with three findings and traceable numbers</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div  markdown>
+
+<span class="section-eyebrow">Frequently asked</span>
+
+## Questions students actually ask
+
+<div class="faq" markdown>
+
+<details>
+<summary>How long does the course take?</summary>
+<p>Five days at four hours each — twenty hours of teaching and one hour of capstone application per day. It's self-paced, so you can stretch it across a fortnight or compress it into a long weekend. The capstone takes most students another 2–3 hours after Day 5 to polish.</p>
+</details>
+
+<details>
+<summary>Do I need coding experience?</summary>
+<p>No. Day 1 starts from "what's a Table" in Excel. Day 3 starts from <code>import pandas as pd</code>. Day 5 starts from "this is how you sign in to Claude Code." If you've opened a spreadsheet a few times you're qualified. If you already know SQL and pandas, Days 1–3 will feel slow — skim them and jump to Day 4.</p>
+</details>
+
+<details>
+<summary>Is it really free?</summary>
+<p>Yes. MIT licensed, no signup, no email capture, no ads, no upsell. The source is on <a href="https://github.com/scripts-and-tables/daa">GitHub</a>. The reason it exists: it was built as an internal academy and the cost of releasing it publicly is essentially zero.</p>
+</details>
+
+<details>
+<summary>What tools do I need to install?</summary>
+<p>Excel (Microsoft 365 or any modern version), <a href="https://sqlitebrowser.org/">DB Browser for SQLite</a> (free), Jupyter (use <a href="https://jupyter.org/try-jupyter/lab/">JupyterLite in the browser</a> for zero install), <a href="https://powerbi.microsoft.com/desktop/">Power BI Desktop</a> (free, Windows only), and <a href="https://claude.ai/code">Claude Code</a> (free tier works). Detailed list in the <a href="#whats-inside">"What you'll need"</a> section below.</p>
+</details>
+
+<details>
+<summary>Can I do this on a Mac?</summary>
+<p>Mostly. Days 1, 2, 3, 5 work natively on macOS. Day 4 (Power BI Desktop) is Windows-only — Mac options are: run Windows in a VM (Parallels / UTM), use a remote Windows machine, or use Power BI Service (the browser version) which has fewer features but covers the Day 4 lessons.</p>
+</details>
+
+<details>
+<summary>Is there a certificate?</summary>
+<p>No paper certificate. The capstone — a 1-page stakeholder report on the Olist e-commerce dataset, with traceable numbers and an interactive dashboard — <em>is</em> the certificate. Push it to your GitHub, link it from your LinkedIn. A real public artifact carries more weight with hiring managers than a paid course completion badge.</p>
+</details>
+
+<details>
+<summary>What if I get stuck?</summary>
+<p>Every lesson ends with a "Common pitfalls" section that addresses the top 3–5 things that break for students. Every "Try it yourself" drill has a collapsible solution. The capstone has a rubric and worked-example references for every step. If you find something the course doesn't cover, <a href="https://github.com/scripts-and-tables/daa/issues">open an issue on GitHub</a>.</p>
+</details>
+
+<details>
+<summary>Who built this and why?</summary>
+<p>Originally written for an internal data analytics academy and released publicly under MIT. Built for working professionals who need real analytics fluency in five days and didn't want to commit to a six-month bootcamp. See <a href="about_the_role.md">"What a data analyst actually does"</a> for the framing.</p>
+</details>
+
+</div>
+
+</div>
+
 <div  markdown>
 
 <span class="section-eyebrow">About</span>
@@ -554,4 +646,9 @@ Finished all five days plus the capstone? Read **[What to learn next →](next_s
 
 Built for an internal analytics academy and released publicly under [MIT](https://github.com/scripts-and-tables/daa/blob/main/LICENSE). Source code and all materials: **[github.com/scripts-and-tables/daa](https://github.com/scripts-and-tables/daa)**.
 
+</div>
+
+<div class="sticky-cta">
+<span class="sticky-cta__label">Data Analytics Academy · 5 days · free</span>
+<a class="sticky-cta__btn" href="curriculum/day1_excel/README.md">Start Day 1 →</a>
 </div>
