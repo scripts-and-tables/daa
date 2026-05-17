@@ -247,51 +247,63 @@ OUTPUT: theme, count, samples</pre>
 
 ## Five concrete artifacts, one report
 
-<div class="build-gallery">
-<a class="build-tile" data-day="1" href="capstone/day1_excel/README.md">
-<span class="build-tile__preview"><img src="assets/illustrations/day1_artifact.svg" alt="Excel pivot table" /></span>
-<span class="build-tile__body">
-<span class="build-tile__eyebrow">Day 1 · Excel</span>
-<span class="build-tile__title">exploration.xlsx</span>
-<span class="build-tile__caption">A pivot of review scores by order status, plus a delivery-vs-rating cross-tab. First crack at the question.</span>
-</span>
-</a>
+<div class="feature-rows">
 
-<a class="build-tile" data-day="2" href="capstone/day2_sql/README.md">
-<span class="build-tile__preview"><img src="assets/illustrations/day2_artifact.svg" alt="SQL result set" /></span>
-<span class="build-tile__body">
-<span class="build-tile__eyebrow">Day 2 · SQL</span>
-<span class="build-tile__title">risky_sellers.csv</span>
-<span class="build-tile__caption">Top-N sellers by revenue and worst-categories tables, exported from a CTE-heavy query.</span>
-</span>
-</a>
+<div class="feature-row" data-day="1">
+<div class="feature-row__image"><img src="assets/illustrations/day1_artifact.svg" alt="Excel pivot table preview" /></div>
+<div class="feature-row__text">
+<p class="feature-row__eyebrow">Day 1 · Excel</p>
+<h3 class="feature-row__title">Your first cut at the question, in a workbook</h3>
+<p class="feature-row__filename">capstone/day1_excel/exploration.xlsx</p>
+<p class="feature-row__body">Load two Olist CSVs, join them with XLOOKUP, derive delivery_days with date arithmetic, and ship two pivot tables — review-score distribution and delivery-vs-rating. Your first hypothesis: bad reviews correlate with slow delivery. You'll spend the next four days testing it.</p>
+<a class="feature-row__cta" href="capstone/day1_excel/README.md">See the Day 1 capstone task →</a>
+</div>
+</div>
 
-<a class="build-tile" data-day="3" href="capstone/day3_python/README.md">
-<span class="build-tile__preview"><img src="assets/illustrations/day3_artifact.svg" alt="pandas chart" /></span>
-<span class="build-tile__body">
-<span class="build-tile__eyebrow">Day 3 · pandas</span>
-<span class="build-tile__title">analysis.ipynb</span>
-<span class="build-tile__caption">Same numbers, in code. Plus a bucketed delivery-vs-review chart that becomes the headline visual.</span>
-</span>
-</a>
+<div class="feature-row feature-row--reverse" data-day="2">
+<div class="feature-row__image"><img src="assets/illustrations/day2_artifact.svg" alt="SQL result set preview" /></div>
+<div class="feature-row__text">
+<p class="feature-row__eyebrow">Day 2 · SQL</p>
+<h3 class="feature-row__title">Two CSVs the rest of the week will pick up</h3>
+<p class="feature-row__filename">capstone/day2_sql/risky_sellers.csv</p>
+<p class="feature-row__body">Join four tables with a CTE-heavy query, compute per-seller revenue and average review score, and rank by financial-impact-of-bad-reviews. Hand-off artifacts that Day 3 (pandas) reproduces and Day 4 (Power BI) visualises.</p>
+<a class="feature-row__cta" href="capstone/day2_sql/README.md">See the Day 2 capstone task →</a>
+</div>
+</div>
 
-<a class="build-tile" data-day="4" href="capstone/day4_powerbi/README.md">
-<span class="build-tile__preview"><img src="assets/illustrations/day4_artifact.svg" alt="Power BI dashboard" /></span>
-<span class="build-tile__body">
-<span class="build-tile__eyebrow">Day 4 · Power BI</span>
-<span class="build-tile__title">dashboard.pbix</span>
-<span class="build-tile__caption">One-page interactive dashboard. KPI cards, category bars, bottom-10 sellers table, three slicers.</span>
-</span>
-</a>
+<div class="feature-row" data-day="3">
+<div class="feature-row__image"><img src="assets/illustrations/day3_artifact.svg" alt="pandas chart preview" /></div>
+<div class="feature-row__text">
+<p class="feature-row__eyebrow">Day 3 · pandas</p>
+<h3 class="feature-row__title">The headline chart, in a re-runnable notebook</h3>
+<p class="feature-row__filename">capstone/day3_python/analysis.ipynb</p>
+<p class="feature-row__body">Reproduce yesterday's SQL findings in pandas and reconcile them row-by-row — the most important debugging exercise of the week. Then bucket deliveries (0–7, 8–14, 15–30, 30+ days) and chart the average review per bucket. This chart becomes the visual centrepiece of the final report.</p>
+<a class="feature-row__cta" href="capstone/day3_python/README.md">See the Day 3 capstone task →</a>
+</div>
+</div>
 
-<a class="build-tile" data-day="5" href="capstone/day5_ai/README.md">
-<span class="build-tile__preview"><img src="assets/illustrations/day5_artifact.svg" alt="1-page stakeholder report" /></span>
-<span class="build-tile__body">
-<span class="build-tile__eyebrow">Day 5 · Final report</span>
-<span class="build-tile__title">final_report.md</span>
-<span class="build-tile__caption">One page. Three findings, embedded chart, recommendations the head of ops can act on — written with AI, owned by you.</span>
-</span>
-</a>
+<div class="feature-row feature-row--reverse" data-day="4">
+<div class="feature-row__image"><img src="assets/illustrations/day4_artifact.svg" alt="Power BI dashboard preview" /></div>
+<div class="feature-row__text">
+<p class="feature-row__eyebrow">Day 4 · Power BI</p>
+<h3 class="feature-row__title">A one-page interactive dashboard a stakeholder will click</h3>
+<p class="feature-row__filename">capstone/day4_powerbi/dashboard.pbix</p>
+<p class="feature-row__body">Set up the data model with seven relationships, write five DAX measures (SUM, AVERAGE, CALCULATE, DIVIDE), and build a one-page dashboard with three KPI cards, a category bar chart, a Brazilian-state map, and the bottom-10 risky sellers table.</p>
+<a class="feature-row__cta" href="capstone/day4_powerbi/README.md">See the Day 4 capstone task →</a>
+</div>
+</div>
+
+<div class="feature-row" data-day="5">
+<div class="feature-row__image"><img src="assets/illustrations/day5_artifact.svg" alt="1-page stakeholder report preview" /></div>
+<div class="feature-row__text">
+<p class="feature-row__eyebrow">Day 5 · Final report</p>
+<h3 class="feature-row__title">One page, three findings, recommendations the ops team can act on</h3>
+<p class="feature-row__filename">capstone/day5_ai/final_report.md</p>
+<p class="feature-row__body">Use Claude Code to draft a 1-page stakeholder report combining numbers from Days 1–4 and themes extracted from ~10,000 Portuguese review comments. Verify every number against your earlier work. Write the recommendations yourself — that's why an analyst is hired.</p>
+<a class="feature-row__cta" href="capstone/day5_ai/README.md">See the Day 5 capstone task →</a>
+</div>
+</div>
+
 </div>
 
 </div>
