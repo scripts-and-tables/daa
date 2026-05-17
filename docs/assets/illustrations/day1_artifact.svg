@@ -1,0 +1,69 @@
+<svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Excel pivot table mockup">
+  <defs>
+    <style>
+      .frame { fill: #fff; stroke: #d1d5db; stroke-width: 1; }
+      .ribbon { fill: #10b981; }
+      .formula { fill: #f3f4f6; stroke: #d1d5db; stroke-width: 0.8; }
+      .ribbon-txt { font: 600 7px "Inter", sans-serif; fill: #fff; }
+      .formula-txt { font: 500 8px ui-monospace, monospace; fill: #065f46; }
+      .col-head { fill: #d1fae5; stroke: #10b981; stroke-width: 0.6; }
+      .col-head-txt { font: 700 8.5px "Inter", sans-serif; fill: #065f46; }
+      .cell { fill: #fff; stroke: #e5e7eb; stroke-width: 0.5; }
+      .cell-txt { font: 500 8px "Inter", sans-serif; fill: #1f2937; }
+      .cell-num { font: 500 8px ui-monospace, monospace; fill: #1f2937; text-anchor: end; }
+      .grouped { fill: #ecfdf5; }
+      .total-row { fill: #10b981; fill-opacity: 0.18; }
+      .total-txt { font: 700 8.5px "Inter", sans-serif; fill: #065f46; }
+    </style>
+  </defs>
+  <rect class="frame" width="320" height="220" rx="6"/>
+  <rect class="ribbon" width="320" height="18" rx="6"/>
+  <rect class="ribbon" y="12" width="320" height="6"/>
+  <text class="ribbon-txt" x="10" y="12">File   Home   Insert   Formulas   Data</text>
+  <rect class="formula" x="0" y="20" width="320" height="16"/>
+  <text class="formula-txt" x="10" y="31">fx  =SUM(Items[price])</text>
+
+  <rect class="col-head" x="0" y="40" width="180" height="18"/>
+  <rect class="col-head" x="180" y="40" width="140" height="18"/>
+  <text class="col-head-txt" x="10" y="52">Category</text>
+  <text class="col-head-txt" x="190" y="52">Total revenue</text>
+
+  <rect class="cell grouped" x="0" y="58" width="180" height="18"/>
+  <rect class="cell grouped" x="180" y="58" width="140" height="18"/>
+  <text class="cell-txt" x="10" y="70">▾ Electronics</text>
+  <text class="cell-num" x="310" y="70">$ 9 300</text>
+
+  <rect class="cell" x="0" y="76" width="180" height="16"/>
+  <rect class="cell" x="180" y="76" width="140" height="16"/>
+  <text class="cell-txt" x="22" y="87">Phones</text>
+  <text class="cell-num" x="310" y="87">4 200</text>
+
+  <rect class="cell" x="0" y="92" width="180" height="16"/>
+  <rect class="cell" x="180" y="92" width="140" height="16"/>
+  <text class="cell-txt" x="22" y="103">Laptops</text>
+  <text class="cell-num" x="310" y="103">5 100</text>
+
+  <rect class="cell grouped" x="0" y="108" width="180" height="18"/>
+  <rect class="cell grouped" x="180" y="108" width="140" height="18"/>
+  <text class="cell-txt" x="10" y="120">▾ Apparel</text>
+  <text class="cell-num" x="310" y="120">$ 4 100</text>
+
+  <rect class="cell" x="0" y="126" width="180" height="16"/>
+  <rect class="cell" x="180" y="126" width="140" height="16"/>
+  <text class="cell-txt" x="22" y="137">Shirts</text>
+  <text class="cell-num" x="310" y="137">1 800</text>
+
+  <rect class="cell" x="0" y="142" width="180" height="16"/>
+  <rect class="cell" x="180" y="142" width="140" height="16"/>
+  <text class="cell-txt" x="22" y="153">Footwear</text>
+  <text class="cell-num" x="310" y="153">2 300</text>
+
+  <rect class="cell grouped" x="0" y="158" width="180" height="18"/>
+  <rect class="cell grouped" x="180" y="158" width="140" height="18"/>
+  <text class="cell-txt" x="10" y="170">▾ Home goods</text>
+  <text class="cell-num" x="310" y="170">$ 6 800</text>
+
+  <rect class="total-row" x="0" y="182" width="320" height="22"/>
+  <text class="total-txt" x="10" y="196">Grand Total</text>
+  <text class="cell-num total-txt" x="310" y="196">$ 20 200</text>
+</svg>

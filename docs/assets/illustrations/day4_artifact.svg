@@ -1,0 +1,97 @@
+<svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Power BI dashboard mockup">
+  <defs>
+    <style>
+      .frame { fill: #fafafa; stroke: #d1d5db; stroke-width: 1; }
+      .titlebar { fill: #f59e0b; }
+      .titlebar-txt { font: 700 9px "Inter", sans-serif; fill: #fff; }
+      .card { fill: #fff; stroke: #e5e7eb; stroke-width: 0.8; }
+      .kpi-num { font: 800 16px "Inter", sans-serif; fill: #1f2937; }
+      .kpi-label { font: 600 7px "Inter", sans-serif; fill: #92400e; letter-spacing: 0.06em; text-transform: uppercase; }
+      .panel-title { font: 700 8px "Inter", sans-serif; fill: #1f2937; }
+      .bar { fill: #f59e0b; }
+      .bar-light { fill: #fcd34d; }
+      .tick { font: 500 6.5px "Inter", sans-serif; fill: #64748b; }
+      .slicer-pill { fill: #fef3c7; stroke: #f59e0b; stroke-width: 0.8; }
+      .slicer-pill-active { fill: #f59e0b; }
+      .slicer-txt { font: 600 7px "Inter", sans-serif; fill: #92400e; }
+      .slicer-txt-active { fill: #fff; }
+      .table-row { fill: #fff; }
+      .table-row-alt { fill: #fffbeb; }
+      .table-txt { font: 500 7px "Inter", sans-serif; fill: #1f2937; }
+    </style>
+  </defs>
+  <rect class="frame" width="320" height="220" rx="6"/>
+  <rect class="titlebar" width="320" height="18" rx="6"/>
+  <rect class="titlebar" y="12" width="320" height="6"/>
+  <text class="titlebar-txt" x="10" y="12">Seller & Satisfaction Dashboard</text>
+  <text class="titlebar-txt" x="310" y="12" text-anchor="end">2018 · all states</text>
+
+  <!-- 3 KPI cards -->
+  <rect class="card" x="6" y="24" width="96" height="44" rx="4"/>
+  <text class="kpi-label" x="14" y="36">Revenue</text>
+  <text class="kpi-num" x="14" y="58">R$ 13.6M</text>
+
+  <rect class="card" x="106" y="24" width="96" height="44" rx="4"/>
+  <text class="kpi-label" x="114" y="36">Avg review</text>
+  <text class="kpi-num" x="114" y="58">4.1</text>
+
+  <rect class="card" x="206" y="24" width="96" height="44" rx="4"/>
+  <text class="kpi-label" x="214" y="36">% late</text>
+  <text class="kpi-num" x="214" y="58">7.4%</text>
+
+  <!-- Bar chart -->
+  <rect class="card" x="6" y="74" width="180" height="100" rx="4"/>
+  <text class="panel-title" x="14" y="86">Revenue by category — top 6</text>
+  <rect class="bar" x="14" y="92" width="120" height="9"/>
+  <rect class="bar" x="14" y="104" width="100" height="9"/>
+  <rect class="bar" x="14" y="116" width="84" height="9"/>
+  <rect class="bar-light" x="14" y="128" width="68" height="9"/>
+  <rect class="bar-light" x="14" y="140" width="56" height="9"/>
+  <rect class="bar-light" x="14" y="152" width="42" height="9"/>
+  <text class="tick" x="138" y="100">furniture</text>
+  <text class="tick" x="118" y="112">health_beauty</text>
+  <text class="tick" x="102" y="124">computer_acc</text>
+  <text class="tick" x="86" y="136">housewares</text>
+  <text class="tick" x="74" y="148">watches</text>
+  <text class="tick" x="60" y="160">garden</text>
+
+  <!-- Bottom-10 sellers table -->
+  <rect class="card" x="190" y="74" width="124" height="100" rx="4"/>
+  <text class="panel-title" x="198" y="86">Bottom-10 sellers</text>
+  <rect class="table-row" x="194" y="92" width="116" height="10"/>
+  <text class="table-txt" x="198" y="100">9f44ca…</text>
+  <text class="table-txt" x="290" y="100" text-anchor="end">2.8 ★</text>
+  <rect class="table-row-alt" x="194" y="102" width="116" height="10"/>
+  <text class="table-txt" x="198" y="110">c91077…</text>
+  <text class="table-txt" x="290" y="110" text-anchor="end">2.9 ★</text>
+  <rect class="table-row" x="194" y="112" width="116" height="10"/>
+  <text class="table-txt" x="198" y="120">e07ab1…</text>
+  <text class="table-txt" x="290" y="120" text-anchor="end">3.0 ★</text>
+  <rect class="table-row-alt" x="194" y="122" width="116" height="10"/>
+  <text class="table-txt" x="198" y="130">5c33bb…</text>
+  <text class="table-txt" x="290" y="130" text-anchor="end">3.1 ★</text>
+  <rect class="table-row" x="194" y="132" width="116" height="10"/>
+  <text class="table-txt" x="198" y="140">f3d4ab…</text>
+  <text class="table-txt" x="290" y="140" text-anchor="end">3.2 ★</text>
+  <rect class="table-row-alt" x="194" y="142" width="116" height="10"/>
+  <text class="table-txt" x="198" y="150">d4a08f…</text>
+  <text class="table-txt" x="290" y="150" text-anchor="end">3.3 ★</text>
+  <rect class="table-row" x="194" y="152" width="116" height="10"/>
+  <text class="table-txt" x="198" y="160">2a8e7d…</text>
+  <text class="table-txt" x="290" y="160" text-anchor="end">3.4 ★</text>
+
+  <!-- Slicer row at bottom -->
+  <rect class="card" x="6" y="180" width="308" height="32" rx="4"/>
+  <text class="panel-title" x="14" y="194">State</text>
+  <rect class="slicer-pill-active" x="44" y="186" width="32" height="14" rx="7"/>
+  <text class="slicer-txt slicer-txt-active" x="60" y="196" text-anchor="middle">SP</text>
+  <rect class="slicer-pill" x="80" y="186" width="32" height="14" rx="7"/>
+  <text class="slicer-txt" x="96" y="196" text-anchor="middle">RJ</text>
+  <rect class="slicer-pill" x="116" y="186" width="32" height="14" rx="7"/>
+  <text class="slicer-txt" x="132" y="196" text-anchor="middle">MG</text>
+  <rect class="slicer-pill" x="152" y="186" width="32" height="14" rx="7"/>
+  <text class="slicer-txt" x="168" y="196" text-anchor="middle">RS</text>
+  <text class="panel-title" x="200" y="194">Category</text>
+  <rect class="slicer-pill" x="244" y="186" width="64" height="14" rx="7"/>
+  <text class="slicer-txt" x="276" y="196" text-anchor="middle">furniture · 2</text>
+</svg>

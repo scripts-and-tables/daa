@@ -159,6 +159,145 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 
 <div  markdown>
 
+<span class="section-eyebrow">A taste of each day</span>
+
+## The code you'll actually write
+
+<div class="code-cards">
+<a class="code-card" data-day="1" href="curriculum/day1_excel/03_logic_lookups.md">
+<span class="code-card__eyebrow">Day 1 · Excel formula</span>
+<pre class="code-card__code">=XLOOKUP(
+  [@order_id],
+  Reviews[order_id],
+  Reviews[review_score],
+  "")</pre>
+<span class="code-card__cta">See Day 1 →</span>
+</a>
+
+<a class="code-card" data-day="2" href="curriculum/day2_sql/04_ctes.md">
+<span class="code-card__eyebrow">Day 2 · SQL CTE</span>
+<pre class="code-card__code">WITH late AS (
+  SELECT order_id
+  FROM   orders
+  WHERE  delivered_date >
+         estimated_date
+)
+SELECT AVG(review_score)
+FROM   reviews r
+JOIN   late USING (order_id);</pre>
+<span class="code-card__cta">See Day 2 →</span>
+</a>
+
+<a class="code-card" data-day="3" href="curriculum/day3_python/04_merge.md">
+<span class="code-card__eyebrow">Day 3 · pandas</span>
+<pre class="code-card__code">n = len(orders)
+merged = orders.merge(
+  reviews,
+  on='order_id',
+  how='left',
+)
+assert len(merged) == n</pre>
+<span class="code-card__cta">See Day 3 →</span>
+</a>
+
+<a class="code-card" data-day="4" href="curriculum/day4_powerbi/04_dax_measures.md">
+<span class="code-card__eyebrow">Day 4 · DAX measure</span>
+<pre class="code-card__code">% Late =
+  DIVIDE(
+    CALCULATE([N Orders],
+      Orders[is_late] = TRUE),
+    [N Orders],
+    0
+  )</pre>
+<span class="code-card__cta">See Day 4 →</span>
+</a>
+
+<a class="code-card" data-day="5" href="curriculum/day5_claude_code/02_prompting.md">
+<span class="code-card__eyebrow">Day 5 · Claude prompt</span>
+<pre class="code-card__code">INPUT:  reviews.csv,
+        score ≤ 2,
+        non-empty comment
+
+TASK:   classify into 6 themes
+OUTPUT: theme, count, samples</pre>
+<span class="code-card__cta">See Day 5 →</span>
+</a>
+</div>
+
+</div>
+
+<div class="full-bleed cream" markdown>
+<div class="full-bleed__inner" markdown>
+
+<span class="section-eyebrow">Built around real data</span>
+
+## The Olist dataset — eight tables, one threaded story
+
+<figure class="schema-figure">
+<img src="assets/illustrations/olist_schema.svg" alt="Olist database schema showing 8 tables and their relationships" />
+<figcaption>~100,000 Brazilian e-commerce orders, 2017–2018. Every day's lesson joins a different subset of these tables.</figcaption>
+</figure>
+
+</div>
+</div>
+
+<div  markdown>
+
+<span class="section-eyebrow">What you'll build by Friday</span>
+
+## Five concrete artifacts, one report
+
+<div class="build-gallery">
+<a class="build-tile" data-day="1" href="capstone/day1_excel/README.md">
+<span class="build-tile__preview"><img src="assets/illustrations/day1_artifact.svg" alt="Excel pivot table" /></span>
+<span class="build-tile__body">
+<span class="build-tile__eyebrow">Day 1 · Excel</span>
+<span class="build-tile__title">exploration.xlsx</span>
+<span class="build-tile__caption">A pivot of review scores by order status, plus a delivery-vs-rating cross-tab. First crack at the question.</span>
+</span>
+</a>
+
+<a class="build-tile" data-day="2" href="capstone/day2_sql/README.md">
+<span class="build-tile__preview"><img src="assets/illustrations/day2_artifact.svg" alt="SQL result set" /></span>
+<span class="build-tile__body">
+<span class="build-tile__eyebrow">Day 2 · SQL</span>
+<span class="build-tile__title">risky_sellers.csv</span>
+<span class="build-tile__caption">Top-N sellers by revenue and worst-categories tables, exported from a CTE-heavy query.</span>
+</span>
+</a>
+
+<a class="build-tile" data-day="3" href="capstone/day3_python/README.md">
+<span class="build-tile__preview"><img src="assets/illustrations/day3_artifact.svg" alt="pandas chart" /></span>
+<span class="build-tile__body">
+<span class="build-tile__eyebrow">Day 3 · pandas</span>
+<span class="build-tile__title">analysis.ipynb</span>
+<span class="build-tile__caption">Same numbers, in code. Plus a bucketed delivery-vs-review chart that becomes the headline visual.</span>
+</span>
+</a>
+
+<a class="build-tile" data-day="4" href="capstone/day4_powerbi/README.md">
+<span class="build-tile__preview"><img src="assets/illustrations/day4_artifact.svg" alt="Power BI dashboard" /></span>
+<span class="build-tile__body">
+<span class="build-tile__eyebrow">Day 4 · Power BI</span>
+<span class="build-tile__title">dashboard.pbix</span>
+<span class="build-tile__caption">One-page interactive dashboard. KPI cards, category bars, bottom-10 sellers table, three slicers.</span>
+</span>
+</a>
+
+<a class="build-tile" data-day="5" href="capstone/day5_ai/README.md">
+<span class="build-tile__preview"><img src="assets/illustrations/day5_artifact.svg" alt="1-page stakeholder report" /></span>
+<span class="build-tile__body">
+<span class="build-tile__eyebrow">Day 5 · Final report</span>
+<span class="build-tile__title">final_report.md</span>
+<span class="build-tile__caption">One page. Three findings, embedded chart, recommendations the head of ops can act on — written with AI, owned by you.</span>
+</span>
+</a>
+</div>
+
+</div>
+
+<div  markdown>
+
 <span class="section-eyebrow">Skills you'll gain</span>
 
 ## The toolbox
@@ -210,6 +349,7 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 </span>
 </span>
 <span class="day-card__meta">4 hours · 5 lessons</span>
+<span class="day-card__thumb"><img src="assets/illustrations/day1_artifact.svg" alt="" /></span>
 <span class="day-card__bullets">
 <span class="day-card__bullet">Tables, references, sort/filter</span>
 <span class="day-card__bullet">Logic, lookups, conditional aggregation</span>
@@ -227,6 +367,7 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 </span>
 </span>
 <span class="day-card__meta">4 hours · 5 lessons</span>
+<span class="day-card__thumb"><img src="assets/illustrations/day2_artifact.svg" alt="" /></span>
 <span class="day-card__bullets">
 <span class="day-card__bullet">SELECT, WHERE, GROUP BY</span>
 <span class="day-card__bullet">Joins across 4+ tables</span>
@@ -244,6 +385,7 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 </span>
 </span>
 <span class="day-card__meta">4 hours · 5 lessons</span>
+<span class="day-card__thumb"><img src="assets/illustrations/day3_artifact.svg" alt="" /></span>
 <span class="day-card__bullets">
 <span class="day-card__bullet">pandas DataFrames, filtering</span>
 <span class="day-card__bullet">merge with row-count sanity checks</span>
@@ -261,6 +403,7 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 </span>
 </span>
 <span class="day-card__meta">4 hours · 5 lessons</span>
+<span class="day-card__thumb"><img src="assets/illustrations/day4_artifact.svg" alt="" /></span>
 <span class="day-card__bullets">
 <span class="day-card__bullet">Power Query and the data model</span>
 <span class="day-card__bullet">DAX measures, filter context</span>
@@ -278,6 +421,7 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 </span>
 </span>
 <span class="day-card__meta">4 hours · 5 lessons</span>
+<span class="day-card__thumb"><img src="assets/illustrations/day5_artifact.svg" alt="" /></span>
 <span class="day-card__bullets">
 <span class="day-card__bullet">Prompting that works</span>
 <span class="day-card__bullet">Plan mode and verification</span>
@@ -321,6 +465,61 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 
 **Students** — head straight to [Day 1 — Excel](curriculum/day1_excel/README.md). **Instructors** — start with the [setup checklist](instructor/setup_checklist.md) and [timing notes](instructor/timing_notes.md).
 
+</div>
+
+<div class="full-bleed cream" markdown>
+<div class="full-bleed__inner" markdown>
+
+<span class="section-eyebrow">Why this course</span>
+
+## What you actually get
+
+<div class="feature-strip">
+  <div class="feature-cell">
+    <span class="feature-cell__icon">📊</span>
+    <span class="feature-cell__text">
+      <span class="feature-cell__title">Real Olist dataset</span>
+      <span class="feature-cell__sub">~100K Brazilian e-commerce orders, 2017–2018</span>
+    </span>
+  </div>
+  <div class="feature-cell">
+    <span class="feature-cell__icon">🎯</span>
+    <span class="feature-cell__text">
+      <span class="feature-cell__title">One capstone project</span>
+      <span class="feature-cell__sub">Threaded through all 5 days, ships as a 1-page report</span>
+    </span>
+  </div>
+  <div class="feature-cell">
+    <span class="feature-cell__icon">🆓</span>
+    <span class="feature-cell__text">
+      <span class="feature-cell__title">Free &amp; MIT-licensed</span>
+      <span class="feature-cell__sub">Source on GitHub, no signup, no tracking</span>
+    </span>
+  </div>
+  <div class="feature-cell">
+    <span class="feature-cell__icon">🔁</span>
+    <span class="feature-cell__text">
+      <span class="feature-cell__title">Self-paced</span>
+      <span class="feature-cell__sub">20 hours of teaching, revisit any lesson anytime</span>
+    </span>
+  </div>
+  <div class="feature-cell">
+    <span class="feature-cell__icon">🛠️</span>
+    <span class="feature-cell__text">
+      <span class="feature-cell__title">Production tools</span>
+      <span class="feature-cell__sub">Excel · SQL · Python · Power BI · Claude Code</span>
+    </span>
+  </div>
+  <div class="feature-cell">
+    <span class="feature-cell__icon">🤖</span>
+    <span class="feature-cell__text">
+      <span class="feature-cell__title">AI-native</span>
+      <span class="feature-cell__sub">A full day on directing an AI assistant for real analytics work</span>
+    </span>
+  </div>
+</div>
+
+</div>
 </div>
 
 <div class="full-bleed dark" markdown>

@@ -44,6 +44,13 @@ Each folder has its own README with the precise task for that day.
 
     A good final report names at least two of these explicitly in its caveats section. A great one names the one that most threatens its conclusion and explains how it could be checked.
 
+## What the final deliverable looks like
+
+<figure class="schema-figure">
+<img src="../assets/illustrations/day5_artifact.svg" alt="Mockup of the 1-page stakeholder report" />
+<figcaption>The Day 5 deliverable: one page, three findings, embedded chart, recommendations.</figcaption>
+</figure>
+
 ## Rubric
 
 You'll be assessed on the final report (Day 5) against four dimensions, equally weighted:

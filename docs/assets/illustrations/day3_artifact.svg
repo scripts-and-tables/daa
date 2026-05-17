@@ -1,0 +1,53 @@
+<svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="pandas matplotlib bar chart mockup">
+  <defs>
+    <style>
+      .frame { fill: #fff; stroke: #d1d5db; stroke-width: 1; }
+      .titlebar { fill: #f1f5f9; }
+      .titlebar-txt { font: 700 9px "Inter", sans-serif; fill: #475569; }
+      .chart-title { font: 700 11px "Inter", sans-serif; fill: #1f2937; }
+      .axis-label { font: 500 8px "Inter", sans-serif; fill: #64748b; }
+      .tick-label { font: 500 8px "Inter", sans-serif; fill: #475569; }
+      .bar { fill: #8b5cf6; }
+      .bar-light { fill: #c4b5fd; }
+      .grid { stroke: #e5e7eb; stroke-width: 0.6; stroke-dasharray: 3 3; }
+      .axis { stroke: #94a3b8; stroke-width: 1; }
+    </style>
+  </defs>
+  <rect class="frame" width="320" height="220" rx="6"/>
+  <rect class="titlebar" width="320" height="20" rx="6"/>
+  <rect class="titlebar" y="14" width="320" height="6"/>
+  <text class="titlebar-txt" x="10" y="13">In [12]: avg_review_by_bucket.plot(kind='bar')</text>
+
+  <text class="chart-title" x="160" y="40" text-anchor="middle">Avg review score by delivery bucket</text>
+
+  <!-- grid lines -->
+  <line class="grid" x1="40" y1="65" x2="305" y2="65"/>
+  <line class="grid" x1="40" y1="90" x2="305" y2="90"/>
+  <line class="grid" x1="40" y1="115" x2="305" y2="115"/>
+  <line class="grid" x1="40" y1="140" x2="305" y2="140"/>
+  <line class="grid" x1="40" y1="165" x2="305" y2="165"/>
+
+  <!-- Y axis -->
+  <line class="axis" x1="40" y1="55" x2="40" y2="180"/>
+  <text class="tick-label" x="34" y="68" text-anchor="end">5</text>
+  <text class="tick-label" x="34" y="93" text-anchor="end">4</text>
+  <text class="tick-label" x="34" y="118" text-anchor="end">3</text>
+  <text class="tick-label" x="34" y="143" text-anchor="end">2</text>
+  <text class="tick-label" x="34" y="168" text-anchor="end">1</text>
+
+  <!-- X axis -->
+  <line class="axis" x1="40" y1="180" x2="305" y2="180"/>
+
+  <!-- Bars: 0-7d ~4.5, 8-14d ~4.0, 15-30d ~3.2, 30+ ~2.5 -->
+  <rect class="bar" x="58" y="72" width="50" height="108"/>
+  <rect class="bar" x="125" y="86" width="50" height="94"/>
+  <rect class="bar-light" x="192" y="111" width="50" height="69"/>
+  <rect class="bar-light" x="259" y="129" width="46" height="51"/>
+
+  <text class="tick-label" x="83" y="194" text-anchor="middle">0–7 days</text>
+  <text class="tick-label" x="150" y="194" text-anchor="middle">8–14</text>
+  <text class="tick-label" x="217" y="194" text-anchor="middle">15–30</text>
+  <text class="tick-label" x="282" y="194" text-anchor="middle">30+</text>
+
+  <text class="axis-label" x="160" y="213" text-anchor="middle">delivery_bucket</text>
+</svg>

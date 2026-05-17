@@ -67,6 +67,11 @@ The loader gives the eight Olist tables short, query-friendly names:
 | `payments` | Payment info |
 | `category_translation` | Portuguese → English category names |
 
+<figure class="schema-figure">
+<img src="../../assets/illustrations/olist_schema.svg" alt="Olist database schema showing 8 tables and their relationships" />
+<figcaption>The eight Olist tables you'll join across today's lessons and capstone.</figcaption>
+</figure>
+
 ## Agenda
 
 | Time | Block | Topic | Lesson |

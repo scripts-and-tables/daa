@@ -1,0 +1,146 @@
+<svg viewBox="0 0 620 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Olist database schema: 8 tables and their relationships">
+  <defs>
+    <style>
+      .tbl { fill: #fff; stroke: #4f46e5; stroke-width: 1.6; }
+      .tbl-hdr { fill: #4f46e5; }
+      .tbl-name { font: 700 11px ui-monospace, SFMono-Regular, monospace; fill: #fff; }
+      .tbl-col { font: 500 10px ui-monospace, SFMono-Regular, monospace; fill: #1f2937; }
+      .tbl-pk { font-weight: 700; fill: #4f46e5; }
+      .rel { stroke: #6366f1; stroke-width: 1.4; fill: none; }
+      .rel-many { stroke-dasharray: 4 3; }
+      .marker { fill: #6366f1; }
+    </style>
+  </defs>
+
+  <!-- customers -->
+  <g transform="translate(20 40)">
+    <rect class="tbl" width="140" height="86" rx="6"/>
+    <rect class="tbl-hdr" width="140" height="20" rx="6"/>
+    <rect class="tbl-hdr" y="14" width="140" height="6"/>
+    <text class="tbl-name" x="10" y="14">customers</text>
+    <text class="tbl-col tbl-pk" x="10" y="34">customer_id  PK</text>
+    <text class="tbl-col" x="10" y="48">customer_unique_id</text>
+    <text class="tbl-col" x="10" y="62">customer_state</text>
+    <text class="tbl-col" x="10" y="76">customer_city</text>
+  </g>
+
+  <!-- orders -->
+  <g transform="translate(240 40)">
+    <rect class="tbl" width="160" height="114" rx="6"/>
+    <rect class="tbl-hdr" width="160" height="20" rx="6"/>
+    <rect class="tbl-hdr" y="14" width="160" height="6"/>
+    <text class="tbl-name" x="10" y="14">orders</text>
+    <text class="tbl-col tbl-pk" x="10" y="34">order_id  PK</text>
+    <text class="tbl-col" x="10" y="48">customer_id  FK</text>
+    <text class="tbl-col" x="10" y="62">order_status</text>
+    <text class="tbl-col" x="10" y="76">order_purchase_timestamp</text>
+    <text class="tbl-col" x="10" y="90">order_delivered_customer_date</text>
+    <text class="tbl-col" x="10" y="104">order_estimated_delivery_date</text>
+  </g>
+
+  <!-- reviews -->
+  <g transform="translate(460 40)">
+    <rect class="tbl" width="140" height="86" rx="6"/>
+    <rect class="tbl-hdr" width="140" height="20" rx="6"/>
+    <rect class="tbl-hdr" y="14" width="140" height="6"/>
+    <text class="tbl-name" x="10" y="14">reviews</text>
+    <text class="tbl-col tbl-pk" x="10" y="34">review_id  PK</text>
+    <text class="tbl-col" x="10" y="48">order_id  FK</text>
+    <text class="tbl-col" x="10" y="62">review_score</text>
+    <text class="tbl-col" x="10" y="76">review_comment_message</text>
+  </g>
+
+  <!-- payments -->
+  <g transform="translate(20 170)">
+    <rect class="tbl" width="140" height="72" rx="6"/>
+    <rect class="tbl-hdr" width="140" height="20" rx="6"/>
+    <rect class="tbl-hdr" y="14" width="140" height="6"/>
+    <text class="tbl-name" x="10" y="14">payments</text>
+    <text class="tbl-col" x="10" y="34">order_id  FK</text>
+    <text class="tbl-col" x="10" y="48">payment_type</text>
+    <text class="tbl-col" x="10" y="62">payment_value</text>
+  </g>
+
+  <!-- items -->
+  <g transform="translate(240 200)">
+    <rect class="tbl" width="160" height="86" rx="6"/>
+    <rect class="tbl-hdr" width="160" height="20" rx="6"/>
+    <rect class="tbl-hdr" y="14" width="160" height="6"/>
+    <text class="tbl-name" x="10" y="14">items</text>
+    <text class="tbl-col" x="10" y="34">order_id  FK</text>
+    <text class="tbl-col" x="10" y="48">product_id  FK</text>
+    <text class="tbl-col" x="10" y="62">seller_id  FK</text>
+    <text class="tbl-col" x="10" y="76">price</text>
+  </g>
+
+  <!-- sellers -->
+  <g transform="translate(20 320)">
+    <rect class="tbl" width="140" height="86" rx="6"/>
+    <rect class="tbl-hdr" width="140" height="20" rx="6"/>
+    <rect class="tbl-hdr" y="14" width="140" height="6"/>
+    <text class="tbl-name" x="10" y="14">sellers</text>
+    <text class="tbl-col tbl-pk" x="10" y="34">seller_id  PK</text>
+    <text class="tbl-col" x="10" y="48">seller_state</text>
+    <text class="tbl-col" x="10" y="62">seller_city</text>
+    <text class="tbl-col" x="10" y="76">seller_zip_code</text>
+  </g>
+
+  <!-- products -->
+  <g transform="translate(240 340)">
+    <rect class="tbl" width="160" height="86" rx="6"/>
+    <rect class="tbl-hdr" width="160" height="20" rx="6"/>
+    <rect class="tbl-hdr" y="14" width="160" height="6"/>
+    <text class="tbl-name" x="10" y="14">products</text>
+    <text class="tbl-col tbl-pk" x="10" y="34">product_id  PK</text>
+    <text class="tbl-col" x="10" y="48">product_category_name  FK</text>
+    <text class="tbl-col" x="10" y="62">product_weight_g</text>
+    <text class="tbl-col" x="10" y="76">product_photos_qty</text>
+  </g>
+
+  <!-- category_translation -->
+  <g transform="translate(460 360)">
+    <rect class="tbl" width="140" height="60" rx="6"/>
+    <rect class="tbl-hdr" width="140" height="20" rx="6"/>
+    <rect class="tbl-hdr" y="14" width="140" height="6"/>
+    <text class="tbl-name" x="10" y="14">category_translation</text>
+    <text class="tbl-col tbl-pk" x="10" y="34">product_category_name</text>
+    <text class="tbl-col" x="10" y="48">…_english</text>
+  </g>
+
+  <!-- relationships -->
+  <path class="rel" d="M 160 80 L 240 80"/>
+  <circle class="marker" cx="160" cy="80" r="3"/>
+  <circle class="marker" cx="240" cy="80" r="3"/>
+
+  <path class="rel" d="M 400 80 L 460 80"/>
+  <circle class="marker" cx="400" cy="80" r="3"/>
+  <circle class="marker" cx="460" cy="80" r="3"/>
+
+  <path class="rel" d="M 320 154 L 320 200"/>
+  <circle class="marker" cx="320" cy="154" r="3"/>
+  <circle class="marker" cx="320" cy="200" r="3"/>
+
+  <path class="rel" d="M 240 220 Q 200 218 165 218 L 160 206"/>
+  <circle class="marker" cx="240" cy="220" r="3"/>
+  <circle class="marker" cx="160" cy="206" r="3"/>
+
+  <path class="rel" d="M 280 286 L 280 340"/>
+  <circle class="marker" cx="280" cy="286" r="3"/>
+  <circle class="marker" cx="280" cy="340" r="3"/>
+
+  <path class="rel" d="M 240 260 Q 200 290 160 320"/>
+  <circle class="marker" cx="240" cy="260" r="3"/>
+  <circle class="marker" cx="160" cy="320" r="3"/>
+
+  <path class="rel" d="M 400 390 L 460 390"/>
+  <circle class="marker" cx="400" cy="390" r="3"/>
+  <circle class="marker" cx="460" cy="390" r="3"/>
+
+  <!-- legend -->
+  <g transform="translate(420 200)">
+    <text class="tbl-col tbl-pk" x="0" y="0">PK</text>
+    <text class="tbl-col" x="22" y="0">= primary key</text>
+    <text class="tbl-col" x="0" y="14">FK</text>
+    <text class="tbl-col" x="22" y="14">= foreign key</text>
+  </g>
+</svg>
