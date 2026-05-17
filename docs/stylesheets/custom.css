@@ -1569,6 +1569,141 @@ body.is-home .hero-home {
   margin-top: 0;
   border-radius: 0;
   padding-top: clamp(4.5rem, 7vw + 2rem, 8rem);
+  min-height: 100vh;
+}
+
+/* Gradient ink on the homepage hero title — animates in */
+body.is-home .hero-home__title {
+  background: linear-gradient(120deg, #ffffff 0%, #ffffff 35%, #c4b5fd 65%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+  animation: hero-title-in 0.85s cubic-bezier(0.2, 0.65, 0.25, 1) both;
+}
+
+@keyframes hero-title-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+body.is-home .hero-home__sub,
+body.is-home .hero-home__eyebrow,
+body.is-home .course-pills,
+body.is-home .hero-home__stats {
+  animation: hero-fade-up 0.85s 0.15s cubic-bezier(0.2, 0.65, 0.25, 1) both;
+}
+
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Animate the SVG inside the hero illustration */
+body.is-home .hero-home__visual svg rect[fill="#a5b4fc"],
+body.is-home .hero-home__visual svg rect[fill="#c4b5fd"],
+body.is-home .hero-home__visual svg rect[fill="#fbbf24"] {
+  transform-origin: bottom center;
+  animation: bar-grow 0.9s cubic-bezier(0.18, 0.7, 0.25, 1) both;
+}
+
+body.is-home .hero-home__visual svg g[transform="translate(28 30)"] rect:nth-child(1) { animation-delay: 0.40s; }
+body.is-home .hero-home__visual svg g[transform="translate(28 30)"] rect:nth-child(2) { animation-delay: 0.50s; }
+body.is-home .hero-home__visual svg g[transform="translate(28 30)"] rect:nth-child(3) { animation-delay: 0.60s; }
+body.is-home .hero-home__visual svg g[transform="translate(28 30)"] rect:nth-child(4) { animation-delay: 0.70s; }
+body.is-home .hero-home__visual svg g[transform="translate(28 30)"] rect:nth-child(5) { animation-delay: 0.80s; }
+
+@keyframes bar-grow {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+/* Draw the trend line */
+body.is-home .hero-home__visual svg path[stroke="#fbbf24"] {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: line-draw 1.2s 0.9s cubic-bezier(0.18, 0.7, 0.25, 1) forwards;
+}
+
+@keyframes line-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Fade in trend-line dots in sequence */
+body.is-home .hero-home__visual svg circle[fill="#fbbf24"] {
+  opacity: 0;
+  animation: dot-pop 0.4s cubic-bezier(0.22, 1.4, 0.36, 1) forwards;
+}
+body.is-home .hero-home__visual svg circle[fill="#fbbf24"]:nth-of-type(1) { animation-delay: 1.10s; }
+body.is-home .hero-home__visual svg circle[fill="#fbbf24"]:nth-of-type(2) { animation-delay: 1.20s; }
+body.is-home .hero-home__visual svg circle[fill="#fbbf24"]:nth-of-type(3) { animation-delay: 1.30s; }
+body.is-home .hero-home__visual svg circle[fill="#fbbf24"]:nth-of-type(4) { animation-delay: 1.40s; }
+body.is-home .hero-home__visual svg circle[fill="#fbbf24"]:nth-of-type(5) { animation-delay: 1.50s; }
+body.is-home .hero-home__visual svg circle[fill="#fbbf24"]:nth-of-type(6) { animation-delay: 1.60s; }
+
+@keyframes dot-pop {
+  from { opacity: 0; transform: scale(0); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Scroll cue at the bottom of the hero */
+body.is-home .hero-home::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 38px;
+  border: 2px solid rgba(255, 255, 255, 0.36);
+  border-radius: 14px;
+  z-index: 2;
+}
+
+body.is-home .hero-home > .hero-home__scroll-dot {
+  position: absolute;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 2px;
+  z-index: 3;
+  animation: scroll-dot 1.6s ease-in-out infinite;
+}
+
+@keyframes scroll-dot {
+  0%, 100% { transform: translate(-50%, 0); opacity: 0.92; }
+  50%      { transform: translate(-50%, 10px); opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.is-home .hero-home__title,
+  body.is-home .hero-home__sub,
+  body.is-home .hero-home__eyebrow,
+  body.is-home .course-pills,
+  body.is-home .hero-home__stats,
+  body.is-home .hero-home__visual svg rect[fill="#a5b4fc"],
+  body.is-home .hero-home__visual svg rect[fill="#c4b5fd"],
+  body.is-home .hero-home__visual svg rect[fill="#fbbf24"],
+  body.is-home .hero-home__visual svg circle[fill="#fbbf24"] {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  body.is-home .hero-home__visual svg path[stroke="#fbbf24"] {
+    stroke-dasharray: 0 !important;
+  }
+  body.is-home .hero-home > .hero-home__scroll-dot {
+    animation: none !important;
+  }
+}
+
+@media (max-height: 700px) {
+  body.is-home .hero-home {
+    min-height: auto;
+  }
 }
 
 /* ============================================================

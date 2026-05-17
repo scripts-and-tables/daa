@@ -63,6 +63,8 @@
 </svg>
 </div>
 
+<div class="hero-home__scroll-dot" aria-hidden="true"></div>
+
 </div>
 
 <div class="full-bleed cream" markdown>
