@@ -11,6 +11,13 @@
 [Start Day 1 →](curriculum/day1_excel/README.md){ .hero-home__cta }
 [See the syllabus](#whats-inside){ .hero-home__cta .hero-home__cta--ghost }
 
+<a href="https://github.com/scripts-and-tables/daa" class="gh-badge" target="_blank" rel="noopener">
+<svg class="gh-badge__icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+<span>scripts-and-tables / daa</span>
+<span class="gh-badge__separator"></span>
+<span class="gh-badge__stars">★ Open source · MIT</span>
+</a>
+
 <div class="course-pills">
   <span class="course-pill"><span class="course-pill__dot"></span> Beginner level</span>
   <span class="course-pill"><span class="course-pill__dot"></span> Self-paced</span>
@@ -116,44 +123,38 @@ Five days of tool fluency is what this site teaches. But the job an analyst is *
 
 </div>
 
-<div class="full-bleed indigo-tint" markdown>
+<div class="full-bleed cream" markdown>
 <div class="full-bleed__inner" markdown>
 
-<span class="section-eyebrow">Course at a glance</span>
+<span class="section-eyebrow">Sample lesson · Day 1 Lesson 1</span>
+## Read a real lesson before you commit
 
-## Five days, five tools, one capstone
+<div class="sample-lesson" markdown>
+<div class="sample-lesson__chrome">
+<span class="sample-lesson__chrome-dots"><span></span><span></span><span></span></span>
+<span>curriculum/day1_excel/01_tables.md</span>
+</div>
+<div class="sample-lesson__body" markdown>
 
-<div class="timeline">
-<a class="timeline-node" data-day="1" href="curriculum/day1_excel/README.md">
-<span class="timeline-node__dot"><img src="assets/illustrations/day1.svg" alt="" class="illus"></span>
-<p class="timeline-node__num">Day 1</p>
-<p class="timeline-node__title">Excel</p>
-<p class="timeline-node__meta">4 hours · 5 lessons</p>
-</a>
-<a class="timeline-node" data-day="2" href="curriculum/day2_sql/README.md">
-<span class="timeline-node__dot"><img src="assets/illustrations/day2.svg" alt="" class="illus"></span>
-<p class="timeline-node__num">Day 2</p>
-<p class="timeline-node__title">SQL</p>
-<p class="timeline-node__meta">4 hours · 5 lessons</p>
-</a>
-<a class="timeline-node" data-day="3" href="curriculum/day3_python/README.md">
-<span class="timeline-node__dot"><img src="assets/illustrations/day3.svg" alt="" class="illus"></span>
-<p class="timeline-node__num">Day 3</p>
-<p class="timeline-node__title">Python</p>
-<p class="timeline-node__meta">4 hours · 5 lessons</p>
-</a>
-<a class="timeline-node" data-day="4" href="curriculum/day4_powerbi/README.md">
-<span class="timeline-node__dot"><img src="assets/illustrations/day4.svg" alt="" class="illus"></span>
-<p class="timeline-node__num">Day 4</p>
-<p class="timeline-node__title">Power BI</p>
-<p class="timeline-node__meta">4 hours · 5 lessons</p>
-</a>
-<a class="timeline-node" data-day="5" href="curriculum/day5_claude_code/README.md">
-<span class="timeline-node__dot"><img src="assets/illustrations/day5.svg" alt="" class="illus"></span>
-<p class="timeline-node__num">Day 5</p>
-<p class="timeline-node__title">Claude Code</p>
-<p class="timeline-node__meta">4 hours · 5 lessons</p>
-</a>
+### Lesson 1 — Tables & references
+
+**Time:** ~30 min.  **You'll be able to:**
+
+- Convert a range to an Excel Table with `Ctrl+T` and reference its columns by name
+- Use structured references like `[@col]` and `Sales[Revenue]` instead of `B2:B1000`
+- Tell when to use `$A$1`, `A$1`, `$A1`, and `A1` — and stop guessing
+- Sort, filter, and freeze panes without breaking your formulas
+
+Tables are the single most under-used Excel feature. Convert any data range to a Table with `Ctrl+T` (Windows) or `⌘+T` (Mac). The moment you do, three things happen:
+
+1. **Headers freeze automatically** when you scroll past the first row.
+2. **Formulas auto-extend** when you add a row at the bottom — no copy-paste.
+3. **You can reference columns by name**: `=SUM(Sales[Revenue])` instead of `=SUM(B2:B1000)`.
+
+</div>
+<div class="sample-lesson__cta">
+<a href="curriculum/day1_excel/01_tables.md">Read the rest of Lesson 1 →</a>
+</div>
 </div>
 
 </div>
@@ -249,6 +250,12 @@ OUTPUT: theme, count, samples</pre>
 
 ## Five concrete artifacts, one report
 
+<div class="toa-pills">
+<span class="toa-pill">First pivot in 90 minutes</span>
+<span class="toa-pill">First SQL CTE by hour 6</span>
+<span class="toa-pill">First dashboard by hour 16</span>
+</div>
+
 <div class="feature-rows">
 
 <div class="feature-row" data-day="1">
@@ -306,41 +313,6 @@ OUTPUT: theme, count, samples</pre>
 </div>
 </div>
 
-</div>
-
-</div>
-
-<div  markdown>
-
-<span class="section-eyebrow">Skills you'll gain</span>
-
-## The toolbox
-
-<div class="skill-pills">
-<span class="skill-pill">Excel Tables</span>
-<span class="skill-pill">XLOOKUP</span>
-<span class="skill-pill">SUMIFS &amp; COUNTIFS</span>
-<span class="skill-pill">Pivot tables</span>
-<span class="skill-pill">SQL SELECT</span>
-<span class="skill-pill">GROUP BY</span>
-<span class="skill-pill">JOIN</span>
-<span class="skill-pill">CTEs</span>
-<span class="skill-pill">SQLite</span>
-<span class="skill-pill">pandas DataFrames</span>
-<span class="skill-pill">groupby + agg</span>
-<span class="skill-pill">pd.merge</span>
-<span class="skill-pill">Jupyter</span>
-<span class="skill-pill">Power Query (M)</span>
-<span class="skill-pill">Data modeling</span>
-<span class="skill-pill">DAX measures</span>
-<span class="skill-pill">CALCULATE</span>
-<span class="skill-pill">Slicers &amp; cross-filtering</span>
-<span class="skill-pill">Claude Code</span>
-<span class="skill-pill">AI prompting</span>
-<span class="skill-pill">Plan mode</span>
-<span class="skill-pill">Verification habits</span>
-<span class="skill-pill">Theme extraction</span>
-<span class="skill-pill">Stakeholder reports</span>
 </div>
 
 </div>
@@ -536,18 +508,6 @@ OUTPUT: theme, count, samples</pre>
 </div>
 </div>
 
-<div class="full-bleed dark" markdown>
-<div class="full-bleed__inner" markdown>
-
-<span class="section-eyebrow">After the course</span>
-
-## Where to go from here
-
-Finished all five days plus the capstone? Read **[What to learn next →](next_steps.md)** — the books, courses, and habits that take a fluent beginner to a working analyst.
-
-</div>
-</div>
-
 <div class="full-bleed indigo-tint" markdown>
 <div class="full-bleed__inner" markdown>
 
@@ -640,14 +600,66 @@ Finished all five days plus the capstone? Read **[What to learn next →](next_s
 
 </div>
 
-<div  markdown>
+<div class="full-bleed cream" markdown>
+<div class="full-bleed__inner" markdown>
 
+<span class="section-eyebrow">Free vs paid certificates</span>
+
+## Where this course fits
+
+<div class="compare">
+
+<div class="compare__col compare__col--free">
+<span class="compare__badge">You are here</span>
+<h3 class="compare__heading">This course</h3>
+<p class="compare__price">$0</p>
+<ul class="compare__list">
+<li>5 days · ~20 hours of teaching</li>
+<li>Real dataset (~100K Brazilian e-commerce orders)</li>
+<li>Capstone is a public 1-page report you can share</li>
+<li>MIT licensed; fork the repo, customise for your team</li>
+<li>No signup, no email, no ads, no tracking</li>
+<li>Includes a full day on AI-assisted analytics</li>
+</ul>
+</div>
+
+<div class="compare__col compare__col--paid">
+<h3 class="compare__heading">Paid certificate (e.g. Coursera Google / IBM)</h3>
+<p class="compare__price">$400–$4,000</p>
+<ul class="compare__list">
+<li>6 months · ~240 hours</li>
+<li>Toy datasets per module</li>
+<li>Capstone is a PDF certificate</li>
+<li>Curriculum is fixed; you can't adapt it</li>
+<li>Email signup, marketing reminders, paid upsells</li>
+<li>AI usually a final-week module, not the workflow</li>
+</ul>
+</div>
+
+</div>
+
+<p style="text-align: center; margin-top: 1.5rem; font-size: 0.92rem; color: var(--md-default-fg-color--light);">Different tools for different jobs. Paid certs are better for credentials in formal hiring pipelines. This course is better for fast portfolio impact and team upskilling.</p>
+
+</div>
+</div>
+
+<div class="full-bleed dark" markdown>
+<div class="full-bleed__inner" markdown>
+
+<div class="maintainer-card">
+<div class="maintainer-card__col">
+<span class="section-eyebrow">After the course</span>
+<h2>Where to go from here</h2>
+<p>Finished all five days plus the capstone? Read <a href="next_steps.md">What to learn next</a> — the books, courses, and habits that take a fluent beginner to a working analyst.</p>
+</div>
+<div class="maintainer-card__col">
 <span class="section-eyebrow">About</span>
+<h2>Built in the open</h2>
+<p>Built for an internal analytics academy and released publicly under <a href="https://github.com/scripts-and-tables/daa/blob/main/LICENSE">MIT</a>. Source, issues, and contributions: <a href="https://github.com/scripts-and-tables/daa">github.com/scripts-and-tables/daa</a>. Spotted a typo or have a better worked example? Open a PR.</p>
+</div>
+</div>
 
-## This course
-
-Built for an internal analytics academy and released publicly under [MIT](https://github.com/scripts-and-tables/daa/blob/main/LICENSE). Source code and all materials: **[github.com/scripts-and-tables/daa](https://github.com/scripts-and-tables/daa)**.
-
+</div>
 </div>
 
 <div class="sticky-cta">

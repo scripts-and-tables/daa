@@ -2080,3 +2080,335 @@ details.day-accordion__item[open] .day-accordion__chevron {
   color: var(--md-default-fg-color--light);
   max-width: none;
 }
+
+/* ============================================================
+   25. GitHub badge under hero CTAs
+   ============================================================ */
+
+.gh-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.85rem 0 0;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(4px);
+  text-decoration: none !important;
+  color: rgba(255, 255, 255, 0.94) !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22) !important;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.gh-badge:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.42);
+}
+
+.gh-badge__icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.gh-badge__separator {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.3);
+  display: inline-block;
+}
+
+.gh-badge__stars {
+  color: #fcd34d;
+}
+
+/* ============================================================
+   26. Sample lesson preview card
+   ============================================================ */
+
+.sample-lesson {
+  --accent: var(--day-1);
+  margin: 1.75rem 0 0;
+  background: var(--md-default-bg-color);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.sample-lesson__chrome {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 14%, transparent);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color--light);
+  letter-spacing: 0.02em;
+}
+
+.sample-lesson__chrome-dots {
+  display: inline-flex;
+  gap: 0.3rem;
+}
+
+.sample-lesson__chrome-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.sample-lesson__body {
+  padding: 1.75rem clamp(1.25rem, 3vw, 2.25rem) 0.5rem;
+  max-height: 360px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sample-lesson__body::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 110px;
+  background: linear-gradient(180deg, transparent, var(--md-default-bg-color));
+  pointer-events: none;
+}
+
+.sample-lesson__body h3 {
+  font-family: var(--display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5rem;
+  color: var(--md-default-fg-color);
+}
+
+.sample-lesson__body p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--md-default-fg-color);
+  margin: 0.6rem 0;
+}
+
+.sample-lesson__body code {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  font-size: 0.86em;
+}
+
+.sample-lesson__cta {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1.5rem 1.5rem;
+  position: relative;
+  z-index: 1;
+  margin-top: -1rem;
+}
+
+.sample-lesson__cta a {
+  background: var(--accent);
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  text-decoration: none !important;
+  border: 0 !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sample-lesson__cta a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+/* ============================================================
+   27. Free vs paid comparison
+   ============================================================ */
+
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.75rem 0 0;
+}
+
+.compare__col {
+  background: var(--md-default-bg-color);
+  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 10%, transparent);
+  border-radius: 16px;
+  padding: 1.75rem;
+}
+
+.compare__col--free {
+  border-color: color-mix(in srgb, var(--md-primary-fg-color) 30%, transparent);
+  background: color-mix(in srgb, var(--md-primary-fg-color) 5%, var(--md-default-bg-color));
+  position: relative;
+}
+
+.compare__badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--md-primary-fg-color);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+}
+
+.compare__heading {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: -0.005em;
+  margin: 0 0 0.4rem;
+  color: var(--md-default-fg-color);
+}
+
+.compare__price {
+  font-family: var(--display);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.1rem;
+  color: var(--md-default-fg-color);
+}
+
+.compare__col--free .compare__price {
+  color: var(--md-primary-fg-color);
+}
+
+.compare__list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.compare__list li {
+  padding: 0 0 0 1.5rem !important;
+  position: relative;
+  font-size: 0.93rem;
+  line-height: 1.5;
+  margin: 0 !important;
+  color: var(--md-default-fg-color);
+}
+
+.compare__col--free .compare__list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--md-primary-fg-color);
+  font-weight: 800;
+}
+
+.compare__col--paid .compare__list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--md-default-fg-color--light);
+}
+
+.compare__col--paid .compare__list li {
+  color: var(--md-default-fg-color--light);
+}
+
+@media (max-width: 700px) {
+  .compare {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   28. Maintainer + after-the-course combined card
+   ============================================================ */
+
+.maintainer-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.maintainer-card__col h2 {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  margin: 0.4rem 0 0.6rem;
+  color: var(--ink-on-dark) !important;
+}
+
+.maintainer-card__col p {
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: rgba(248, 247, 255, 0.78);
+  margin: 0;
+  max-width: 44ch;
+}
+
+.maintainer-card__col a {
+  color: #fcd34d !important;
+  border-bottom: 1px solid rgba(252, 211, 77, 0.32) !important;
+}
+
+@media (max-width: 700px) {
+  .maintainer-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ============================================================
+   29. Time-to-first-artifact pills
+   ============================================================ */
+
+.toa-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.8rem 0 0;
+}
+
+.toa-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.8rem;
+  background: color-mix(in srgb, var(--accent-warm) 12%, transparent);
+  color: #92400e;
+  border: 1px solid color-mix(in srgb, var(--accent-warm) 30%, transparent);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.toa-pill::before {
+  content: "⏱";
+  font-size: 0.85em;
+}
+
+[data-md-color-scheme="slate"] .toa-pill {
+  color: #fcd34d;
+  background: color-mix(in srgb, var(--accent-warm) 18%, transparent);
+}
+
